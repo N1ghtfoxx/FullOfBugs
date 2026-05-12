@@ -82,6 +82,8 @@ public class SaveLoadManager : MonoBehaviour
         }
     }
 
+    // The following two methods are just for testing 
+    // - they create a sample save file and load it back to verify everything is working correctly
     [ContextMenu("Test Save")]
     private void TestSave()
     {
@@ -90,6 +92,18 @@ public class SaveLoadManager : MonoBehaviour
         testData.playtime = 123.45f;
         testData.posX = 10.0f;
         testData.posY = 20.0f;
+
+        ItemData testItem1 = new ItemData();
+        testItem1.name = "Strawberry";
+        testItem1.quantity = 3;
+        testItem1.description = "A juicy red fruit.";
+        testItem1.type = "Food";
+
+        testData.inventory = new System.Collections.Generic.List<ItemData>();
+        testData.inventory.Add(testItem1);
+        testData.chest = new System.Collections.Generic.List<ItemData>();
+        testData.chest.Add(testItem1);
+
         SaveGame(testData, 1);
     }
 
@@ -101,6 +115,14 @@ public class SaveLoadManager : MonoBehaviour
             Debug.Log("Level: " + loadedData.level);
             Debug.Log("Playtime: " + loadedData.playtime);
             Debug.Log("Position: (" + loadedData.posX + ", " + loadedData.posY + ")");
+            if (loadedData.inventory != null && loadedData.inventory.Count > 0)
+            {
+                Debug.Log("Inventory items: " + loadedData.inventory[0].name);
+            }
+            if (loadedData.chest != null && loadedData.chest.Count > 0)
+            {
+                Debug.Log("Chest items: " + loadedData.chest[0].name);
+            }
         }
     }
 }
