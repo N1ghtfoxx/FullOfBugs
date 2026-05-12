@@ -81,4 +81,26 @@ public class SaveLoadManager : MonoBehaviour
             Debug.LogError("File not found: " + filePath);
         }
     }
+
+    [ContextMenu("Test Save")]
+    private void TestSave()
+    {
+        SaveData testData = new SaveData();
+        testData.level = 5;
+        testData.playtime = 123.45f;
+        testData.posX = 10.0f;
+        testData.posY = 20.0f;
+        SaveGame(testData, 1);
+    }
+
+    [ContextMenu("Test Load")]
+    private void TestLoad()    {
+        SaveData loadedData = LoadGame(1);
+        if (loadedData != null)
+        {
+            Debug.Log("Level: " + loadedData.level);
+            Debug.Log("Playtime: " + loadedData.playtime);
+            Debug.Log("Position: (" + loadedData.posX + ", " + loadedData.posY + ")");
+        }
+    }
 }
