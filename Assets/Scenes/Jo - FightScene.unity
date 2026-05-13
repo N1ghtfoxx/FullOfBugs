@@ -608,6 +608,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 348562847}
   m_CullTransparentMesh: 1
+--- !u!1 &351794464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 351794466}
+  - component: {fileID: 351794465}
+  m_Layer: 0
+  m_Name: FightManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &351794465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351794464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08b9756ec7a6efa4a89c199a8ec06c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FightManager
+  uiManager: {fileID: 1840898880}
+  playerName: PoopyDoopy
+  playerLevel: 1
+  playerWeapon: 0
+  attackModifier: 0
+  playerHealth: 50
+  enemyName: SchnupiFuppi
+  enemyVariant: Boop
+  enemyHealth: 30
+--- !u!4 &351794466
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351794464}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 317.6937, y: 220.99545, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &454283883
 GameObject:
   m_ObjectHideFlags: 0
@@ -2875,6 +2928,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1840898882}
+        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
+        m_MethodName: OnClickSetWeapon
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Slingshot
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 351794465}
+        m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 724928239}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -3090,7 +3167,7 @@ GameObject:
   - component: {fileID: 1598637807}
   - component: {fileID: 1598637808}
   m_Layer: 5
-  m_Name: EnemyHealthSlider
+  m_Name: PlayerHealthSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3250,6 +3327,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1840898882}
+        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
+        m_MethodName: OnClickSetWeapon
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ThrowPoopAndScream
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 351794465}
+        m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 724928239}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -3395,7 +3496,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 100
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 70
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4217,25 +4318,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e46d814bd452444dbee22a64f9c55e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UiManager
-  flightPanel: {fileID: 1746569882}
-  enemyStatPanel: {fileID: 853775149}
-  enemySpritePanel: {fileID: 564219821}
-  playerStatPanel: {fileID: 1983296905}
-  playerSpritePanel: {fileID: 1507755274}
-  blackscreen: {fileID: 1241472069}
+  fightManager: {fileID: 351794464}
+  fightCanvas: {fileID: 239399855}
+  fightPanel: {fileID: 0}
   actionPanel: {fileID: 1392303534}
-  attackButton: {fileID: 757276245}
-  itemButton: {fileID: 588644632}
   attackMenuPanel: {fileID: 724928239}
-  attack1Button: {fileID: 1961617021}
-  attack2Button: {fileID: 1397550305}
-  attack3Button: {fileID: 1930190343}
-  attack4Button: {fileID: 1643337537}
   itemMenuPanel: {fileID: 1912032732}
-  item1Button: {fileID: 1146664771}
-  item2Button: {fileID: 664437980}
-  item3Button: {fileID: 1745371798}
-  item4Button: {fileID: 934094357}
 --- !u!1 &1853880316
 GameObject:
   m_ObjectHideFlags: 0
@@ -4697,6 +4785,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1840898882}
+        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
+        m_MethodName: OnClickSetWeapon
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MagicStuff
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 351794465}
+        m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 724928239}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -4842,6 +4954,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1840898882}
+        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
+        m_MethodName: OnClickSetWeapon
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: CheeseFork
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 351794465}
+        m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 724928239}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -5126,5 +5262,6 @@ SceneRoots:
   - {fileID: 346077251}
   - {fileID: 287682694}
   - {fileID: 1840898881}
+  - {fileID: 351794466}
   - {fileID: 1466521693}
   - {fileID: 239399859}
