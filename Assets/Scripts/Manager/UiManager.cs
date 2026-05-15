@@ -1,12 +1,7 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
-using static UnityEngine.LowLevelPhysics2D.PhysicsLayers;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 using UnityEngine.UI;
-using UnityEditor.Experimental.GraphView;
 
 public class UiManager : MonoBehaviour
 {
@@ -40,18 +35,32 @@ public class UiManager : MonoBehaviour
     private GameObject item3Button;
     private GameObject item4Button;
     private bool inFightScene;
+    private GameObject fightLostPanel;
+    private GameObject fightLostText;
+    private GameObject fightLostContinueButton;
+    private GameObject fightWonPanel;
+    private GameObject fightWonText;
+    private GameObject fightWonContinueButton;
+
+    public static UiManager instance;
 
     public void Awake()
     {
+        instance = this;
+
         SearchForReferences();
-        DisableAll();
+        FightDisableAllUi();
     }
 
-    private void DisableAll()
+    private void FightDisableAllUi()
     {
         blackscreen.SetActive(false);
         attackMenuPanel.SetActive(false);
         itemMenuPanel.SetActive(false);
+        fightLostPanel.SetActive(false);
+        fightWonPanel.SetActive(false);
+        fightLostContinueButton.SetActive(false);
+        fightWonContinueButton.SetActive(false);
     }
 
     private void SearchForReferences()
@@ -93,6 +102,13 @@ public class UiManager : MonoBehaviour
             item3Button = itemMenuPanel.transform.Find("Item3Button").gameObject;
             item4Button = itemMenuPanel.transform.Find("Item4Button").gameObject;
 
+            fightLostPanel = fightCanvas.transform.Find("FightLostPanel").gameObject;
+            fightLostText = fightLostPanel.transform.Find("FightLostText").gameObject;
+            fightLostContinueButton = fightLostPanel.transform.Find("ContinueButton").gameObject;
+            fightWonPanel = fightCanvas.transform.Find("FightWonPanel").gameObject;
+            fightWonText = fightWonPanel.transform.Find("FightWonText").gameObject;
+            fightWonContinueButton = fightWonPanel.transform.Find("ContinueButton").gameObject;
+
             fightManager.GetComponent<FightManager>().tempSetFightUI();
         }
     }
@@ -118,4 +134,47 @@ public class UiManager : MonoBehaviour
         if (!playerTurn)
             fightManager.GetComponent<FightManager>().Attack();
     }
+
+    public void FightEnded(bool playerWon, string enemyNameText, int playerHealth)
+    {
+        if (playerWon)
+            ShowFightWonScreen(playerWon, enemyNameText, playerHealth);
+        else ShowFightLostScreen(playerWon, enemyNameText, playerHealth);
+
+        StartCoroutine(FightManager.instance.Wait("beforeContinueAfterFight", 10));
+    }
+
+    public void ShowFightWonScreen(bool playerWon, string enemyNameText, int playerHealth)
+    {
+        fightWonText.GetComponent<TextMeshProUGUI>().text = "You won against " + enemyNameText + "with " + playerHealth.ToString() + " HP.";
+        FightDisableAllUi();
+        fightWonPanel.SetActive(true);
+    }
+
+    public void ShowFightLostScreen(bool playerWon, string enemyNameText, int playerHealth)
+    {
+        fightLostText.GetComponent<TextMeshProUGUI>().text = "You lost against " + enemyNameText + ".";
+        FightDisableAllUi();
+        fightLostPanel.SetActive(true);
+    }
+
+    public void UpdateHealthUi(int playerHealth, int enemyHealth)
+    {
+        playerHealthSlider.GetComponent<Slider>().value = playerHealth;
+        enemyHealthSlider.GetComponent<Slider>().value = enemyHealth;
+    }
+
+    public void ShowContinueButtonAfterFight(bool playerWon)
+    {
+        if (playerWon)
+            fightWonContinueButton.SetActive(true);
+        else
+            fightLostContinueButton.SetActive(true);
+    }
+
+    public void OnClickContinueAfterFight()
+    {
+        Debug.Log("Exit the FightScene.");
+    }
+
 }
