@@ -66,7 +66,7 @@ public class UiManager : MonoBehaviour
     private void SearchForReferences()
     {
         // #TO-DO Jo: put this check into gamemanager maybe?
-        if (SceneManager.GetActiveScene().name == "Jo - FightScene")
+        if (SceneManager.GetActiveScene().name == "MainScene")    // change this later to FightScene (ask Naomi if we want a SceneChange tho)
             inFightScene = true;
 
         if (inFightScene)
