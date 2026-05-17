@@ -10,30 +10,12 @@ public class Slot : MonoBehaviour
     public TMP_Text emptySlotText;
     public TMP_Text playtimeText;
     public TMP_Text progressText;
-    public StartScreenManager startScreenManager;
+    private StartScreenManager startScreenManager;
 
     private void Start()
     {
-        if(SaveLoadManager.Instance.SaveExists(slotIndex))
-        {
-            // If a save file exists for this slot, load the data and update the UI
-            SaveData data = SaveLoadManager.Instance.LoadGame(slotIndex);
-            emptySlotText.gameObject.SetActive(false);
-            playtimeText.gameObject.SetActive(true);
-            playtimeText.text = "Playtime: " + Mathf.FloorToInt(data.playtime) + "s";
-            progressText.gameObject.SetActive(true);
-            progressText.text = "Level: " + data.level;
-            slotImage.gameObject.SetActive(true);
-            
-        }
-        else
-        {
-            // No save file - show empty slot UI
-            emptySlotText.gameObject.SetActive(true);
-            playtimeText.gameObject.SetActive(false);
-            progressText.gameObject.SetActive(false);
-            slotImage.gameObject.SetActive(false);
-        }
+        startScreenManager = FindFirstObjectByType<StartScreenManager>();
+        RefreshUI();
 
         // Add a click listener to the button to load the game when clicked
         slotButton.onClick.AddListener(OnSlotClicked);
@@ -58,9 +40,30 @@ public class Slot : MonoBehaviour
             newData.inventory = new System.Collections.Generic.List<ItemData>();
             newData.chest = new System.Collections.Generic.List<ItemData>();
             SaveLoadManager.Instance.SaveGame(newData, slotIndex);
+            RefreshUI();
             startScreenManager.OnSlotSelected(slotIndex);
         }
     }
 
     /// TODO: Add a method to update the UI for this slot when the save data changes (e.g. after loading a game or deleting a save)
+    public void RefreshUI()
+    {
+        if(SaveLoadManager.Instance.SaveExists(slotIndex))
+        {
+            SaveData data = SaveLoadManager.Instance.LoadGame(slotIndex);
+            emptySlotText.gameObject.SetActive(false);
+            playtimeText.gameObject.SetActive(true);
+            playtimeText.text = "Playtime: " + Mathf.FloorToInt(data.playtime) + "s";
+            progressText.gameObject.SetActive(true);
+            progressText.text = "Level: " + data.level;
+            slotImage.gameObject.SetActive(true);
+        }
+        else
+        {
+            emptySlotText.gameObject.SetActive(true);
+            playtimeText.gameObject.SetActive(false);
+            progressText.gameObject.SetActive(false);
+            slotImage.gameObject.SetActive(false);
+        }
+    }
 }

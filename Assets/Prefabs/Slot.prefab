@@ -498,6 +498,7 @@ GameObject:
   - component: {fileID: 156784864457832400}
   - component: {fileID: 328963143843325724}
   - component: {fileID: 7936751571118632867}
+  - component: {fileID: 1468489572176385512}
   m_Layer: 5
   m_Name: Slot
   m_TagString: Untagged
@@ -610,3 +611,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1468489572176385512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8533940971613137244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e11e905036e18e4aa30bccb28642d41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Slot
+  slotIndex: 0
+  slotButton: {fileID: 7936751571118632867}
+  slotImage: {fileID: 88940793329130060}
+  emptySlotText: {fileID: 2894006144220754393}
+  playtimeText: {fileID: 8938978376768241117}
+  progressText: {fileID: 9001218159322648316}
+  startScreenManager: {fileID: 0}

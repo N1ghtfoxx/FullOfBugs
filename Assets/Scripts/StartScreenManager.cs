@@ -48,5 +48,11 @@ public class StartScreenManager : MonoBehaviour
             SaveLoadManager.Instance.DeleteSave(selectedSlotIndex);
             Debug.Log("Save deleted for slot " + selectedSlotIndex);
         }
+
+        // Refresh the UI for all slots to reflect the deleted save
+        foreach(Slot slot in slots)
+        {
+            slot.RefreshUI();
+        }
     }
 }
