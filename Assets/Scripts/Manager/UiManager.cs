@@ -66,7 +66,7 @@ public class UiManager : MonoBehaviour
     private void SearchForReferences()
     {
         // #TO-DO Jo: put this check into gamemanager maybe?
-        if (SceneManager.GetActiveScene().name == "MainScene")    // change this later to FightScene (ask Naomi if we want a SceneChange tho)
+        if (SceneManager.GetActiveScene().name == "FightScene")
             inFightScene = true;
 
         if (inFightScene)
@@ -141,9 +141,10 @@ public class UiManager : MonoBehaviour
             ShowFightWonScreen(playerWon, enemyNameText, playerHealth);
         else ShowFightLostScreen(playerWon, enemyNameText, playerHealth);
 
-        StartCoroutine(FightManager.instance.Wait("beforeContinueAfterFight", 10));
+        StartCoroutine(FightManager.instance.Wait("beforeContinueAfterFight", 3));
     }
 
+    // actually, #TO-DO Jo: This can be one method
     public void ShowFightWonScreen(bool playerWon, string enemyNameText, int playerHealth)
     {
         fightWonText.GetComponent<TextMeshProUGUI>().text = "You won against " + enemyNameText + "with " + playerHealth.ToString() + " HP.";
