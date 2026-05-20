@@ -8,6 +8,8 @@ public class SaveLoadManager : MonoBehaviour
 {
     // The one and only instance of this manager, accessible from anywhere
     public static SaveLoadManager Instance { get; private set; }
+    public SaveData currentSaveData; // The currently loaded save data, which can be accessed and modified by other scripts
+    public int selectedSlotIndex; // The index of the currently selected save slot, which can be accessed by other scripts (e.g. to save to the correct slot when saving from the main game scene)
 
     private void Awake()
     {
@@ -50,7 +52,7 @@ public class SaveLoadManager : MonoBehaviour
             // Read the raw JSON text from disk and convert it back into a SaveData
             string json = System.IO.File.ReadAllText(filePath);
             SaveData data = JsonUtility.FromJson<SaveData>(json);
-            Debug.Log("Game loaded from" + filePath);
+            // Debug.Log("Game loaded from" + filePath); //
             return data;
         }
         else
