@@ -40,6 +40,7 @@ public class StartScreenManager : MonoBehaviour
             // Load the game for the selected slot and switch to the main game scene
             SaveData data = SaveLoadManager.Instance.LoadGame(selectedSlotIndex);
             SaveLoadManager.Instance.currentSaveData = data; // Store the loaded data in the manager so it can be accessed by other scripts
+            SaveLoadManager.Instance.LoadInventory(); // Load the inventory data from the save file
             SaveLoadManager.Instance.selectedSlotIndex = selectedSlotIndex; // Store the selected slot index in the manager so it can be accessed by other scripts
             Debug.Log("Game loaded from slot " + selectedSlotIndex);
             SceneLoadingManager.Instance.LoadScene("MainScene");          

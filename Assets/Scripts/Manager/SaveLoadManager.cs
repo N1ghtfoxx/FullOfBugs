@@ -84,6 +84,24 @@ public class SaveLoadManager : MonoBehaviour
         }
     }
 
+    public void SaveInventory()
+    {
+        if(currentSaveData != null)
+        {
+            currentSaveData.inventory = InventoryManager.Instance.inventory;
+            currentSaveData.chest = InventoryManager.Instance.chest;
+        }
+    }
+
+    public void LoadInventory()
+    {
+        if(currentSaveData != null)
+        {
+            InventoryManager.Instance.inventory = currentSaveData.inventory;
+            InventoryManager.Instance.chest = currentSaveData.chest;
+        }
+    }
+
     // The following two methods are just for testing 
     // - they create a sample save file and load it back to verify everything is working correctly
     [ContextMenu("Test Save")]
