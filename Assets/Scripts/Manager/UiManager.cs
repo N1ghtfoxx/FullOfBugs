@@ -13,6 +13,11 @@ public class UiManager : MonoBehaviour
     private GameObject playerLevelText;
     private GameObject playerHealthSlider;
 
+    private GameObject devPanel;
+    private GameObject devButton1;
+    private GameObject devButton2;
+    private GameObject devButton3;
+
     [Header("GameScene")]
     [SerializeField] private GameObject uiCanvas;
     [SerializeField] private GameObject playerPanel;
@@ -24,6 +29,7 @@ public class UiManager : MonoBehaviour
     private GameObject loadButton;
     private GameObject optionsButton;
     private GameObject exitButton;
+    [SerializeField] private GameObject optionsPanel;
     [SerializeField] private GameObject messagePanel;
     private GameObject messageText;
     private GameObject messageButtonPanel;
@@ -75,6 +81,9 @@ public class UiManager : MonoBehaviour
         
         if (inFightScene)
             FightDisableAllUi();
+
+        if (inGameScene)
+            GameDisableUi();
     }
 
     /// <summary>
@@ -144,12 +153,18 @@ public class UiManager : MonoBehaviour
             loadButton = pausePanel.transform.Find("LoadButton").gameObject;
             optionsButton = pausePanel.transform.Find("OptionsButton").gameObject;
             exitButton = pausePanel.transform.Find("ExitButton").gameObject;
+            optionsPanel = uiCanvas.transform.Find("OptionsPanel").gameObject;
 
             messagePanel = uiCanvas.transform.Find("MessagePanel").gameObject;
             messageText = messagePanel.transform.Find("MessageText").gameObject;
             messageButtonPanel = messagePanel.transform.Find("MessageButtonPanel").gameObject;
             yesButton = messageButtonPanel.transform.Find("YesButton").gameObject;
             noButton = messageButtonPanel.transform.Find("NoButton").gameObject;
+
+            devPanel = uiCanvas.transform.Find("DevPanel").gameObject;
+            devButton1 = devPanel.transform.Find("DevButton1").gameObject;
+            devButton2 = devPanel.transform.Find("DevButton2").gameObject;
+            devButton3 = devPanel.transform.Find("DevButton3").gameObject;
         }
     }
 
@@ -171,6 +186,10 @@ public class UiManager : MonoBehaviour
                 inFightScene = false;
                 inGameScene = true;
                 break;
+            case "Jo - Ui":
+                inFightScene = false;
+                inGameScene = true;
+                break;
             default:
                 Debug.LogError("No active Scene found.");
                 break;
@@ -186,6 +205,13 @@ public class UiManager : MonoBehaviour
         playerNameText.GetComponent<TextMeshProUGUI>().text = playerName;
         playerLevelText.GetComponent<TextMeshProUGUI>().text = playerLevel.ToString();
         playerHealthSlider.GetComponent<Slider>().value = playerHealth;
+    }
+
+    public void GameDisableUi()
+    {
+        pausePanel.SetActive(false);
+        optionsPanel.SetActive(false);
+        messagePanel.SetActive(false);
     }
 
     #endregion
