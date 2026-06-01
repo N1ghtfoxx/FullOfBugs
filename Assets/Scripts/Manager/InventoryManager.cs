@@ -81,5 +81,28 @@ public class InventoryManager : MonoBehaviour
 
         }
     }
-}
 
+    // The following two methods are just for testing - they add and remove a test item to verify everything is working correctly
+    [ContextMenu("Add Test Item")]
+    private void AddTestItem()
+    {
+        ItemData testItem = new ItemData
+        {
+            name = "Test Item",
+            quantity = 1
+        };
+        AddItem(testItem, inventory, maxInventorySlots);
+    }
+
+    [ContextMenu("Remove Test Item")]
+    private void RemoveTestItem()
+    {
+        RemoveItem("Test Item", inventory);
+    }
+
+    [ContextMenu("Save Inventory")]
+    private void SaveInventory()
+    {
+        SaveLoadManager.Instance.SaveInventory();
+    }
+}

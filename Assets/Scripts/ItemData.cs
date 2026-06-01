@@ -9,4 +9,5 @@ public class ItemData
     public int quantity;
     public string description;
     public string type;
+    public Sprite icon;
 }
