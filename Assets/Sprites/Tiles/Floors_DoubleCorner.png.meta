@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7a4dae6ecc7581845888590cfc4becc6
+guid: 7a39f6ae49c15124784aeb825d98af19
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6563066755110389082
-    second: Soil_0
+      213: -5471080820534028637
+    second: Floors_DoubleCorner_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Soil_0
+      name: Floors_DoubleCorner_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a55c78fe072b41b50800000000000000
-      internalID: 6563066755110389082
+      spriteID: 3a6dd921bf0d214b0800000000000000
+      internalID: -5471080820534028637
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Soil_0: 6563066755110389082
+      Floors_DoubleCorner_0: -5471080820534028637
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
