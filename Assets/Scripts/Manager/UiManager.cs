@@ -8,7 +8,36 @@ public class UiManager : MonoBehaviour
     // temp
     public GameObject fightManager;
 
-    [Header("UiManager")]
+    [Header("General")]
+    private GameObject playerNameText;
+    private GameObject playerLevelText;
+    private GameObject playerHealthSlider;
+
+    private GameObject devPanel;
+    private GameObject devButton1;
+    private GameObject devButton2;
+    private GameObject devButton3;
+
+    [Header("GameScene")]
+    [SerializeField] private GameObject uiCanvas;
+    [SerializeField] private GameObject playerPanel;
+    private GameObject playerSprite;
+    [SerializeField] private GameObject pausePanel;
+    private GameObject pauseText;
+    private GameObject continueButton;
+    private GameObject saveButton;
+    private GameObject loadButton;
+    private GameObject optionsButton;
+    private GameObject exitButton;
+    [SerializeField] private GameObject optionsPanel;
+    [SerializeField] private GameObject messagePanel;
+    private GameObject messageText;
+    private GameObject messageButtonPanel;
+    private GameObject yesButton;
+    private GameObject noButton;
+    private bool inGameScene;
+
+    [Header("FightScene")]
     [SerializeField] private GameObject fightCanvas;
     [SerializeField] private GameObject fightPanel;
     private GameObject enemyStatPanel;
@@ -17,8 +46,6 @@ public class UiManager : MonoBehaviour
     private GameObject enemyHealthSlider;
     private GameObject enemySpritePanel;
     private GameObject playerStatPanel;
-    private GameObject playerNameText;
-    private GameObject playerHealthSlider;
     private GameObject playerSpritePanel;
     private GameObject blackscreen;
     [SerializeField] private GameObject actionPanel;
@@ -34,40 +61,37 @@ public class UiManager : MonoBehaviour
     private GameObject item2Button;
     private GameObject item3Button;
     private GameObject item4Button;
-    private bool inFightScene;
     private GameObject fightLostPanel;
     private GameObject fightLostText;
     private GameObject fightLostContinueButton;
     private GameObject fightWonPanel;
     private GameObject fightWonText;
     private GameObject fightWonContinueButton;
+    private bool inFightScene;
 
     public static UiManager instance;
+
+    #region init
 
     public void Awake()
     {
         instance = this;
 
         SearchForReferences();
-        FightDisableAllUi();
+        
+        if (inFightScene)
+            FightDisableAllUi();
+
+        if (inGameScene)
+            GameDisableUi();
     }
 
-    private void FightDisableAllUi()
-    {
-        blackscreen.SetActive(false);
-        attackMenuPanel.SetActive(false);
-        itemMenuPanel.SetActive(false);
-        fightLostPanel.SetActive(false);
-        fightWonPanel.SetActive(false);
-        fightLostContinueButton.SetActive(false);
-        fightWonContinueButton.SetActive(false);
-    }
-
+    /// <summary>
+    /// depending on the activeScene
+    /// </summary>
     private void SearchForReferences()
     {
-        // #TO-DO Jo: put this check into gamemanager maybe?
-        if (SceneManager.GetActiveScene().name == "FightScene")
-            inFightScene = true;
+        CheckActiveScene();
 
         if (inFightScene)
         {
@@ -111,13 +135,98 @@ public class UiManager : MonoBehaviour
 
             fightManager.GetComponent<FightManager>().tempSetFightUI();
         }
+   
+        if (inGameScene)
+        {
+            if (uiCanvas == null)
+                transform.Find("UiCanvas");
+
+            playerPanel = uiCanvas.transform.Find("PlayerPanel").gameObject;
+            playerSprite = playerPanel.transform.Find("PlayerSprite").gameObject;
+            playerNameText = playerPanel.transform.Find("PlayerNameText").gameObject;
+            playerLevelText = playerPanel.transform.Find("PlayerLevelText").gameObject;
+            playerHealthSlider = playerPanel.transform.Find("PlayerHealthSlider").gameObject;
+
+            pausePanel = uiCanvas.transform.Find("PausePanel").gameObject;
+            pauseText = pausePanel.transform.Find("PauseText").gameObject;
+            continueButton = pausePanel.transform.Find("ContinueButton").gameObject;
+            loadButton = pausePanel.transform.Find("LoadButton").gameObject;
+            optionsButton = pausePanel.transform.Find("OptionsButton").gameObject;
+            exitButton = pausePanel.transform.Find("ExitButton").gameObject;
+            optionsPanel = uiCanvas.transform.Find("OptionsPanel").gameObject;
+
+            messagePanel = uiCanvas.transform.Find("MessagePanel").gameObject;
+            messageText = messagePanel.transform.Find("MessageText").gameObject;
+            messageButtonPanel = messagePanel.transform.Find("MessageButtonPanel").gameObject;
+            yesButton = messageButtonPanel.transform.Find("YesButton").gameObject;
+            noButton = messageButtonPanel.transform.Find("NoButton").gameObject;
+
+            devPanel = uiCanvas.transform.Find("DevPanel").gameObject;
+            devButton1 = devPanel.transform.Find("DevButton1").gameObject;
+            devButton2 = devPanel.transform.Find("DevButton2").gameObject;
+            devButton3 = devPanel.transform.Find("DevButton3").gameObject;
+        }
     }
 
-    public void OnClickSetWeapon(string weapon)
+    // #TO-DO Jo: put this check into gamemanager maybe?
+    private void CheckActiveScene()
     {
-        fightManager.GetComponent<FightManager>().SetWeapon(weapon);
+        string activeScene = SceneManager.GetActiveScene().name;
+        Debug.Log("You're in " +  activeScene);
+
+        switch (activeScene)
+        {
+            case "TitleScene":
+                break;
+            case "FightScene":
+                inFightScene = true;
+                inGameScene = false;
+                break;
+            case "MainScene":
+                inFightScene = false;
+                inGameScene = true;
+                break;
+            case "Jo - Ui":
+                inFightScene = false;
+                inGameScene = true;
+                break;
+            default:
+                Debug.LogError("No active Scene found.");
+                break;
+        }
     }
 
+    #endregion
+
+    #region GameScene
+
+    public void SetGameUI(string playerName, int playerLevel, int playerHealth, string enemyName, string enemyVariant, int enemyHealth)
+    {
+        playerNameText.GetComponent<TextMeshProUGUI>().text = playerName;
+        playerLevelText.GetComponent<TextMeshProUGUI>().text = playerLevel.ToString();
+        playerHealthSlider.GetComponent<Slider>().value = playerHealth;
+    }
+
+    public void GameDisableUi()
+    {
+        pausePanel.SetActive(false);
+        optionsPanel.SetActive(false);
+        messagePanel.SetActive(false);
+    }
+
+    #endregion
+
+    #region FightScene
+
+    /// <summary>
+    /// is collecting and setting the PlayerData
+    /// </summary>
+    /// <param name="playerName"></param>
+    /// <param name="playerLevel"></param>
+    /// <param name="playerHealth"></param>
+    /// <param name="enemyName"></param>
+    /// <param name="enemyVariant"></param>
+    /// <param name="enemyHealth"></param>
     public void SetFightUi(string playerName, int playerLevel, int playerHealth, string enemyName, string enemyVariant, int enemyHealth)
     {
         playerNameText.GetComponent<TextMeshProUGUI>().text = playerName;
@@ -128,12 +237,16 @@ public class UiManager : MonoBehaviour
         enemyHealthSlider.GetComponent<Slider>().value = enemyHealth;
     }
 
+    /// <summary>
+    /// is checking which turn is it and acts accordingly
+    /// </summary>
+    /// <param name="playerTurn"></param> true if it's the players turn
     public void PlayerFightControl(bool playerTurn)
-    {
-        actionPanel.SetActive(playerTurn);
-        if (!playerTurn)
-            fightManager.GetComponent<FightManager>().Attack();
-    }
+        {
+            actionPanel.SetActive(playerTurn);
+            if (!playerTurn)
+                fightManager.GetComponent<FightManager>().Attack();
+        }
 
     public void FightEnded(bool playerWon, string enemyNameText, int playerHealth)
     {
@@ -144,6 +257,20 @@ public class UiManager : MonoBehaviour
         StartCoroutine(FightManager.instance.Wait("beforeContinueAfterFight", 3));
     }
 
+    public void ShowContinueButtonAfterFight(bool playerWon)
+    {
+        if (playerWon)
+            fightWonContinueButton.SetActive(true);
+        else
+            fightLostContinueButton.SetActive(true);
+    }
+
+    public void UpdateHealthUi(int playerHealth, int enemyHealth)
+    {
+        playerHealthSlider.GetComponent<Slider>().value = playerHealth;
+        enemyHealthSlider.GetComponent<Slider>().value = enemyHealth;
+    }
+    
     // actually, #TO-DO Jo: This can be one method
     public void ShowFightWonScreen(bool playerWon, string enemyNameText, int playerHealth)
     {
@@ -159,23 +286,30 @@ public class UiManager : MonoBehaviour
         fightLostPanel.SetActive(true);
     }
 
-    public void UpdateHealthUi(int playerHealth, int enemyHealth)
+    private void FightDisableAllUi()
     {
-        playerHealthSlider.GetComponent<Slider>().value = playerHealth;
-        enemyHealthSlider.GetComponent<Slider>().value = enemyHealth;
+        blackscreen.SetActive(false);
+        attackMenuPanel.SetActive(false);
+        itemMenuPanel.SetActive(false);
+        fightLostPanel.SetActive(false);
+        fightWonPanel.SetActive(false);
+        fightLostContinueButton.SetActive(false);
+        fightWonContinueButton.SetActive(false);
     }
 
-    public void ShowContinueButtonAfterFight(bool playerWon)
+    #endregion
+
+    #region OnClickFight
+
+    public void OnClickSetWeapon(string weapon)
     {
-        if (playerWon)
-            fightWonContinueButton.SetActive(true);
-        else
-            fightLostContinueButton.SetActive(true);
-    }
+        fightManager.GetComponent<FightManager>().SetWeapon(weapon);
+    }   
 
     public void OnClickContinueAfterFight()
     {
         Debug.Log("Exit the FightScene.");
     }
 
+    #endregion
 }
