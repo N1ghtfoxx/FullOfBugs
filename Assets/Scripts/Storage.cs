@@ -27,8 +27,8 @@ public class Storage : MonoBehaviour
     {
         if(ctx.performed && _playerInRange)
         {
-            Debug.Log("Interacted with storage");
-            // Here you would add code to open the storage UI and allow the player to transfer items between their inventory and the chest
+            Debug.Log("Storage interact button pressed while player is in range");
+            TestStorageUiManager.Instance.ToggleStorage();
         }
     }
 }
