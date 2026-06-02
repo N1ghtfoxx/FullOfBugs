@@ -43,8 +43,8 @@ namespace Skilltree
     }
     public enum ShadowType
     {
-        Small,
-        Medium,
-        Large
+        TS,
+        MS,
+        LS
     }
 }

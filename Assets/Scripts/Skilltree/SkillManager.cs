@@ -91,7 +91,14 @@ public class SkillManager : MonoBehaviour
     {
         for (int i = 0; i < _shadows.Length; i++)
         {
-            _shadowCounterTexts[i].text = ShadowType.GetName(typeof(ShadowType), i) + " Shadows: " + _shadows[i].ToString();
+            string shadowName = "";
+            switch (i)
+            {
+                case 0: shadowName = "Tiny"; break;
+                case 1: shadowName = "Medium"; break;
+                case 2: shadowName = "Large"; break;
+            }
+            _shadowCounterTexts[i].text = shadowName + " Shadows(" + ShadowType.GetName(typeof(ShadowType), i) + "): " + _shadows[i].ToString();
         }
 
     }

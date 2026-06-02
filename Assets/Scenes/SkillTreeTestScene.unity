@@ -3607,7 +3607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6709759738351391231, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
       propertyPath: m_Name
-      value: SkillNodeGreenThumb (1)
+      value: SkillNodePlantMaster
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
