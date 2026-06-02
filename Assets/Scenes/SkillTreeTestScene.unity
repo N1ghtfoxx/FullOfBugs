@@ -2346,7 +2346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 586f5405895cb9f49b61ba0e98b7248d, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -3605,14 +3605,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 5774278549018345857, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5774278549018345857, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 2100000, guid: 2cfdef81847436740b91f5ae91ef8249, type: 2}
     - target: {fileID: 6709759738351391231, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
       propertyPath: m_Name
       value: SkillNodeGreenThumb (1)
