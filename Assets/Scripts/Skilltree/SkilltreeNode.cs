@@ -16,6 +16,20 @@ public class SkilltreeNode : MonoBehaviour
 
     [SerializeField] Skill _skill;
 
+    //Shader
+    //reached and skilled properties are used for both icon and lines, be sure both shaders use the same as well
+    private string _reachedProperty = "_reached";
+    private string _skilledProperty = "_skilled";
+    [Header("Icon Shader")]
+    [SerializeField] float _glowThreshold = 0.2f;
+    private string _glowThresholdProperty = "_glowThreshold";
+
+    [SerializeField] Color _glowColor = Color.turquoise;
+    private string _glowColorProperty = "_skilledGlowColor";
+
+    [SerializeField] float _reachedMultiplier = 0.4f;
+    private string _reachedMultiplierProperty = "_reachedColorMultiplier";
+
     private void Awake()
     {
         _expansion = transform.Find("Expansion").gameObject;
@@ -24,6 +38,23 @@ public class SkilltreeNode : MonoBehaviour
         _costText = _expansion.transform.Find("Cost").GetComponent<TMP_Text>();
         _prerequisitesLines = transform.Find("Prerequisites").GetComponentsInChildren<Image>();
         _icon = transform.Find("Icon").GetComponent<Image>();
+
+        foreach (Image line in _prerequisitesLines)
+        {
+            line.material = Instantiate(line.material);
+            line.material.SetFloat(_skilledProperty, 0f);
+            if (_skill.prerequisites.Count == 0)
+                    line.material.SetFloat(_reachedProperty, 1f);
+            else
+                line.material.SetFloat(_reachedProperty, 0f);
+        }
+
+        _icon.material = Instantiate(_icon.material);
+        _icon.material.SetFloat(_skilledProperty, 0f);
+        _icon.material.SetFloat(_reachedProperty, 0f);
+        _icon.material.SetFloat(_glowThresholdProperty, _glowThreshold);
+        _icon.material.SetColor(_glowColorProperty, _glowColor);
+        _icon.material.SetFloat(_reachedMultiplierProperty, _reachedMultiplier);
     }
 
     void Start()
@@ -39,23 +70,23 @@ public class SkilltreeNode : MonoBehaviour
         if (SkillManager.instance.HasSkill(_skill.skillID))
         {
             foreach (Image line in _prerequisitesLines)
-                line.color = Color.white;
+                line.material.SetFloat(_skilledProperty, 1f);
 
-            _icon.color = Color.white;
+            _icon.material.SetFloat(_skilledProperty, 1f);
         }
         else
         {
             for (int i = 0; i < _skill.prerequisites.Count; i++)
             {
                 if (SkillManager.instance.HasSkill(_skill.prerequisites[i]))
-                    _prerequisitesLines[i].color = new Color(0.7f, 0.7f, 0.7f);
+                    _prerequisitesLines[i].material.SetFloat(_reachedProperty, 1f);
                 else
-                    _prerequisitesLines[i].color = new Color(0.4f, 0.4f, 0.4f);
+                    _prerequisitesLines[i].material.SetFloat(_reachedProperty, 0f);
             }
             if (CheckRequisites())
-                _icon.color = Color.gray;
+                _icon.material.SetFloat(_reachedProperty, 1f);
             else
-                _icon.color = Color.black;
+                _icon.material.SetFloat(_reachedProperty, 0f);
         }
 
         _nameText.text = _skill.skillName;
