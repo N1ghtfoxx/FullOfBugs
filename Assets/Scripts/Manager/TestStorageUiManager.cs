@@ -34,6 +34,7 @@ public class TestStorageUiManager : MonoBehaviour
 
     public void UpdateStorageUI()
     {
+        Debug.Log("Chest count: " + InventoryManager.Instance.chest.Count);
         for (int i = 0; i < storageSlots.Length; i++)
         {
             if (i < InventoryManager.Instance.chest.Count)
