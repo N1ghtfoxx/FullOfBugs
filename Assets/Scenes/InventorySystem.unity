@@ -3568,6 +3568,7 @@ MonoBehaviour:
   - {fileID: 2036157390}
   - {fileID: 2139731992}
   storage: {fileID: 1361521289}
+  storagePanel: {fileID: 678186449}
 --- !u!4 &1839792147
 Transform:
   m_ObjectHideFlags: 0
@@ -4429,6 +4430,9 @@ MonoBehaviour:
   - {fileID: 662904218}
   - {fileID: 1146665975}
   inventory: {fileID: 883260900}
+  detailPanel: {fileID: 1190999872}
+  inventoryPanel: {fileID: 1058304504}
+  slotPanel: {fileID: 445976859}
 --- !u!114 &1453207226194305645
 MonoBehaviour:
   m_ObjectHideFlags: 0

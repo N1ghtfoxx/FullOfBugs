@@ -1,10 +1,25 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class TestInventoryUiManager : MonoBehaviour
 {
+    public static TestInventoryUiManager Instance { get; private set; }
     public InventorySlot[] inventorySlots;
     public GameObject inventory;
+        
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void ToggleInventory()
     {
@@ -13,6 +28,15 @@ public class TestInventoryUiManager : MonoBehaviour
             UpdateInventoryUI();
         }
         inventory.SetActive(!inventory.activeSelf);
+    }
+
+    public void SetInventoryActive(bool newState)
+    {
+        if (newState)
+        {
+            UpdateInventoryUI();
+        }
+        inventory.SetActive(newState);
     }
 
     public void OnInventoryToggle(InputAction.CallbackContext ctx)

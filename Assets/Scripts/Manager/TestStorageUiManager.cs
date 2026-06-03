@@ -23,13 +23,14 @@ public class TestStorageUiManager : MonoBehaviour
         }
     }
 
-   public void ToggleStorage()
+    public void ToggleStorage()
     {
         if (!storage.activeSelf) // if storage is currently closed, update the UI before opening
         {
             UpdateStorageUI();
         }
-        storage.SetActive(!storage.activeSelf);
+        bool newState = !storage.activeSelf;
+        storage.SetActive(newState);
     }
 
     public void UpdateStorageUI()
