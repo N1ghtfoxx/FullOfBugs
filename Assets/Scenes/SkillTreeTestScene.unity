@@ -154,6 +154,7 @@ MonoBehaviour:
   _moveSpeed: 300
   _mouseMoveEnterInput: {fileID: 8244367113343902605, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _mouseMoveInput: {fileID: 8282754643320153569, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  _zoomInput: {fileID: 1075789127059411999, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
 --- !u!4 &51049999
 Transform:
   m_ObjectHideFlags: 0

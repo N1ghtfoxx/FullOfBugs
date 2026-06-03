@@ -1,20 +1,20 @@
-using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
-using Skilltree;
 using TMPro;
 using UnityEngine.InputSystem;
+using Skilltree;
 
 public class SkillManager : MonoBehaviour
 {
     public static SkillManager instance;
-    private GameObject _skilltreePanel;
-    private GameObject _skilltreeUI;
-    private List<SkilltreeNode> _skillNodes = new List<SkilltreeNode>();
-    private List<Skill> _skills;
-    private List<SkillID> _unlockedSkills = new List<SkillID>();
-    private int[] _shadows;
-    private TMP_Text[] _shadowCounterTexts;
+    //UI References
+    private GameObject _skilltreePanel; //used to toggle
+    private List<SkilltreeNode> _skillNodes = new List<SkilltreeNode>(); //reference to all skill nodes
+    private TMP_Text[] _shadowCounterTexts; //references to the shadow counter ui texts, index corresponds to ShadowType enum
+
+    //Data
+    private List<SkillID> _unlockedSkills; //storage of unlocked skills
+    private int[] _shadows; //storage of shadow amounts, index corresponds to ShadowType enum
 
     private void Awake()
     {
@@ -23,8 +23,10 @@ public class SkillManager : MonoBehaviour
         else
             Destroy(gameObject);
 
+    //Get UI references
         _skilltreePanel = GameObject.Find("SkilltreePanel");
-        _skilltreeUI = _skilltreePanel.transform.Find("Skilltree").gameObject;
+        GameObject _skilltreeUI = _skilltreePanel.transform.Find("Skilltree").gameObject;
+        _rectTransform = _skilltreeUI.GetComponent<RectTransform>();
         foreach (SkilltreeNode node in _skilltreeUI.GetComponentsInChildren<SkilltreeNode>())
             _skillNodes.Add(node);
 
@@ -34,9 +36,14 @@ public class SkillManager : MonoBehaviour
         for (int i = 0; i < _shadows.Length; i++)
         {
             _shadowCounterTexts[i] = shadowCounterParent.GetChild(i).GetComponent<TMP_Text>();
-            //Test
+    //Load Values
+            //Test replace with load shadows
             _shadows[i] = 5;
         }
+        //load skill list
+        _unlockedSkills = new List<SkillID>();
+
+    //Update UI
         UpdateShadowUI();
     }
 
@@ -47,6 +54,7 @@ public class SkillManager : MonoBehaviour
         if (SpendShadows(skill.cost))
         {
             _unlockedSkills.Add(skill.skillID);
+            UpdateSkilltree();
             return true;
         }
         return false;
@@ -105,58 +113,69 @@ public class SkillManager : MonoBehaviour
 
     //TODO: Save and load
 
-    private RectTransform _rectTransform;
-    private Vector2 _lastMousePos;
-    private bool _skilltreeOpen = false;
+
+    #region Interaction
+    private RectTransform _rectTransform; //reference to the skilltree rect transform for movement and zooming
+    private Vector2 _lastMousePos; //used to calculate mouse movement delta for dragging the skilltree
+    private bool _skilltreeOpen = false; //state of the skilltree, used to toggle and to prevent interaction when closed
+    //Input references and settings
     [SerializeField] InputActionReference _toggleInput;
     [SerializeField] InputActionReference _resetInput;
-    [SerializeField] InputActionReference _moveInput;
-    [SerializeField] float _moveSpeed = 100f;
+    [SerializeField] InputActionReference _moveInput; //keyboard movement
+    [SerializeField] float _moveSpeed = 100f; //just for keyboard movement
     [SerializeField] InputActionReference _mouseMoveEnterInput;
     [SerializeField] InputActionReference _mouseMoveInput;
+    [SerializeField] InputActionReference _zoomInput;
+    [SerializeField] float _zoomSpeed = 0.1f;
+    [SerializeField] float _zoomMin = 0.3f;
+    [SerializeField] float _zoomMax = 3f;
 
     void Start()
     {
-        _skilltreePanel.SetActive(_skilltreeOpen);
+        _skilltreePanel.SetActive(_skilltreeOpen); //Close skilltree after initialization
     }
     private void Update()
     {
-        if (_rectTransform == null)
-        {
-            _rectTransform = _skilltreeUI.GetComponent<RectTransform>();
-        }
-
+        //Toggle Skilltree by key
         if (_toggleInput.action.WasPerformedThisFrame())
         {
             _skilltreeOpen = !_skilltreeOpen;
             _skilltreePanel.SetActive(_skilltreeOpen);
             //toggle pause
         }
-
+        //Prevent interaction when skilltree is closed
         if (!_skilltreeOpen) return;
-
+        //Keyboard movement
+        if (_moveInput.action.WasPerformedThisFrame()) //check for input
+        {
+            Vector2 move = _moveInput.action.ReadValue<Vector2>(); //read the input
+            _rectTransform.anchoredPosition += move * _moveSpeed * Time.deltaTime; //apply the input
+        }
+        //Mouse movement
         if (_mouseMoveEnterInput.action.WasPressedThisFrame())
         {
             _lastMousePos = _mouseMoveInput.action.ReadValue<Vector2>();
         }
-
         if (_mouseMoveEnterInput.action.IsPressed())
         {
             Vector2 mouseDelta = _mouseMoveInput.action.ReadValue<Vector2>() - _lastMousePos;
             _rectTransform.anchoredPosition +=mouseDelta;
             _lastMousePos = _mouseMoveInput.action.ReadValue<Vector2>();
         }
-
-        Vector2 move = _moveInput.action.ReadValue<Vector2>();
-
-        if (move != Vector2.zero)
+        //Zooming
+        if (_zoomInput.action.WasPerformedThisFrame())
         {
-            _rectTransform.anchoredPosition += move * _moveSpeed * Time.deltaTime;
+            float zoomAmount = _zoomInput.action.ReadValue<Vector2>().y;
+            _rectTransform.localScale += Vector3.one * zoomAmount * _zoomSpeed;
+            _rectTransform.localScale = Vector3.Max(_rectTransform.localScale, Vector3.one * _zoomMin);
+            _rectTransform.localScale = Vector3.Min(_rectTransform.localScale, Vector3.one * _zoomMax);
         }
-
+        //Reset position and zoom
         if (_resetInput.action.WasPressedThisFrame())
         {
             _rectTransform.anchoredPosition = Vector2.zero;
+            _rectTransform.localScale = Vector3.one;
         }
     }
+    #endregion
 }

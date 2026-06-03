@@ -16,7 +16,7 @@ namespace Skilltree
 
     public enum SkillID
     {
-        none,
+        NoSkill,
         HealingPotion,
         StrongHealingPotion,
         GlowPotion,
@@ -41,10 +41,11 @@ namespace Skilltree
         public ShadowType costType;
         public int amount;
     }
+
     public enum ShadowType
     {
-        TS,
-        MS,
-        LS
+        TS,//Tiny Shadow
+        MS,//Medium Shadow
+        LS //Large Shadow
     }
 }
