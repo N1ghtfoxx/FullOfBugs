@@ -146,7 +146,7 @@ public class SkillManager : MonoBehaviour
         //Prevent interaction when skilltree is closed
         if (!_skilltreeOpen) return;
         //Keyboard movement
-        if (_moveInput.action.WasPerformedThisFrame()) //check for input
+        if (_moveInput.action.IsPressed()) //check for input
         {
             Vector2 move = _moveInput.action.ReadValue<Vector2>(); //read the input
             _rectTransform.anchoredPosition += move * _moveSpeed * Time.deltaTime; //apply the input
