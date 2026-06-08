@@ -97,12 +97,14 @@ public class SkilltreeNode : MonoBehaviour
     {
         if (CheckRequisites())
         {
-            SkillManager.instance.TryAddSkill(_skill);//Try to add the skill to the skill manager
+            if(!SkillManager.instance.TryAddSkill(_skill))//Try to add the skill to the skill manager
+                FailFeedbackManager.instance.ShowFailFeedbackUI(_icon.sprite, _icon.gameObject);
         }
         else
         {
             //TODO: Display message that requisites are not met
             Debug.Log("Cannot unlock skill: requisites not met");
+            FailFeedbackManager.instance.ShowFailFeedbackUI(_icon.sprite, _icon.gameObject);
         }
         //close the tooltip after clicking
         _expansion.SetActive(false);
