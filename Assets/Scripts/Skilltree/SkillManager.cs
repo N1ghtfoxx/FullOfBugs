@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine.InputSystem;
 using Skilltree;
+using UnityEngine.Events;
 
 public class SkillManager : MonoBehaviour
 {
@@ -51,13 +52,17 @@ public class SkillManager : MonoBehaviour
     {
         if(HasSkill(skill.skillID))
             return false;
-        if (SpendShadows(skill.cost))
+        if (SpendShadows(skill))
         {
-            _unlockedSkills.Add(skill.skillID);
-            UpdateSkilltree();
             return true;
         }
         return false;
+    }
+
+    private void AddSkill(SkillID skill)
+    {
+        _unlockedSkills.Add(skill);
+        UpdateSkilltree();
     }
 
     public bool HasSkill(SkillID skillID)
@@ -83,12 +88,18 @@ public class SkillManager : MonoBehaviour
         return _shadows[(int)cost.costType] >= cost.amount;
     }
 
-    public bool SpendShadows(Cost cost)
+    public bool SpendShadows(Skill skill)
     {
-        if (HasShadows(cost))
+        if (HasShadows(skill.cost))
         {
-            _shadows[(int)cost.costType] -= cost.amount;
-            UpdateShadowUI();
+            UnityEvent e = new UnityEvent();
+            e.AddListener(() =>
+            {
+                _shadows[(int)skill.cost.costType] -= skill.cost.amount;
+                AddSkill(skill.skillID);
+                UpdateShadowUI();
+            });
+            ConfirmManager.instance.Show(e, DontAskRegion.SkillTree, $"Do you want to spend {skill.cost.amount} {ShadowType.GetName(typeof(ShadowType),skill.cost.costType)} for {skill.skillName}");
             return true;
         }
         //TODO: feedback for not enough shadows
