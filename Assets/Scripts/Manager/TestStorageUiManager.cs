@@ -8,6 +8,7 @@ public class TestStorageUiManager : MonoBehaviour
 {
     public static TestStorageUiManager Instance { get; private set; }
     public InventorySlot[] storageSlots;
+    public InventorySlot[] storageViewInventorySlots;
     public GameObject storage;
     
     private void Awake()
@@ -45,6 +46,18 @@ public class TestStorageUiManager : MonoBehaviour
             else
             {
                 storageSlots[i].UpdateItemSlot(null);
+            }
+        }
+
+        for (int i = 0; i < storageViewInventorySlots.Length; i++)
+        {
+            if (i < InventoryManager.Instance.inventory.Count)
+            {
+                storageViewInventorySlots[i].UpdateItemSlot(InventoryManager.Instance.inventory[i]);
+            }
+            else
+            {
+                storageViewInventorySlots[i].UpdateItemSlot(null);
             }
         }
     }
