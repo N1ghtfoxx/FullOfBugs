@@ -124,7 +124,7 @@ public class SkilltreeNode : MonoBehaviour
         return canUnlock;
     }
 
-    public void OnHoverEnter() //Show the tooltip when hovering over the node
+    public void OnHoverEnter() //AskForConfirmation the tooltip when hovering over the node
     {
         _expansion.SetActive(true);
     }

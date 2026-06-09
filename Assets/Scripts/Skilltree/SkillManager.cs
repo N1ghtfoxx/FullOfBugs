@@ -52,7 +52,7 @@ public class SkillManager : MonoBehaviour
     {
         if(HasSkill(skill.skillID))
             return false;
-        if (SpendShadows(skill))
+        if (TrySpendShadows(skill))
         {
             return true;
         }
@@ -88,22 +88,34 @@ public class SkillManager : MonoBehaviour
         return _shadows[(int)cost.costType] >= cost.amount;
     }
 
-    public bool SpendShadows(Skill skill)
+    public bool TrySpendShadows(Skill skill)
     {
         if (HasShadows(skill.cost))
         {
-            UnityEvent e = new UnityEvent();
-            e.AddListener(() =>
+            if(ConfirmManager.instance.CheckDontAsk(DontAskRegion.Skilltree))
             {
-                _shadows[(int)skill.cost.costType] -= skill.cost.amount;
-                AddSkill(skill.skillID);
-                UpdateShadowUI();
-            });
-            ConfirmManager.instance.Show(e, DontAskRegion.SkillTree, $"Do you want to spend {skill.cost.amount} {ShadowType.GetName(typeof(ShadowType),skill.cost.costType)} for {skill.skillName}");
+                ApplySkillBuy(skill);
+            }
+            else
+            {
+                UnityEvent e = new UnityEvent();
+                e.AddListener(() =>
+                {
+                    ApplySkillBuy(skill);
+                });
+                ConfirmManager.instance.AskForConfirmation(e, DontAskRegion.Skilltree, $"Do you want to spend {skill.cost.amount} {ShadowType.GetName(typeof(ShadowType),skill.cost.costType)} for {skill.skillName}");
+            }
             return true;
         }
         //TODO: feedback for not enough shadows
         return false;
+    }
+
+    private void ApplySkillBuy(Skill skill)
+    {
+        _shadows[(int)skill.cost.costType] -= skill.cost.amount;
+        AddSkill(skill.skillID);
+        UpdateShadowUI();
     }
 
     private void UpdateShadowUI()
