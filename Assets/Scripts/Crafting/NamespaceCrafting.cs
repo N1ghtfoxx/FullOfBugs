@@ -1,0 +1,39 @@
+using Skilltree;
+using UnityEngine;
+
+namespace Crafting
+{
+    [System.Serializable]
+    public class Recipe
+    {
+        public RecipeName name;
+        public Ingrediant[] ingrediants;
+        public Result result;
+        public Sprite[] slotSprites;
+        public float craftTime;
+        public SkillID requiredSkill;
+    }
+
+    public enum Ingrediant
+    {
+        Strawberry,
+        Mint,
+        LuminousMoss,
+        DungBall,
+        CaveMineral
+    }
+
+    public enum Result
+    {
+        HealingPotion,
+        GlowingPotion,
+        Fertilizer,
+    }
+
+    public enum RecipeName
+    {
+        HealingRecipe,
+        GlowingRecipe,
+        FertilizerRecipe
+    }
+}

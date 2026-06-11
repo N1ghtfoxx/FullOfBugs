@@ -4,24 +4,15 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 
-public class TestStorageUiManager : MonoBehaviour
+public class TestStorageUiManager : Singleton<TestStorageUiManager>
 {
-    public static TestStorageUiManager Instance { get; private set; }
     public InventorySlot[] storageSlots;
     public InventorySlot[] storageViewInventorySlots;
     public GameObject storage;
     
-    private void Awake()
+    void Start()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        storage.SetActive(false);
     }
 
     public void ToggleStorage()
