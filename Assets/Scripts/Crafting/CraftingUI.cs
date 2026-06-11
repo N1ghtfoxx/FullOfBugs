@@ -28,13 +28,19 @@ public class CraftingUI : MonoBehaviour
         _startButtonImg = _startButton.GetComponent<Image>();
         _background = transform.Find("CraftingEquation").GetComponent<Image>();
         _thirdIngrediant = _background.transform.Find("ThirdIngrediant").gameObject;
-        gameObject.SetActive(false);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         SwitchShowCrafting(CraftingManager.instance.CraftingAvailable());
+        gameObject.SetActive(false);
+    }
+
+    void OnEnable()
+    {
+        if (CraftingManager.instance?.currentRecipe != null)
+            SetRecipeUi();
     }
 
     public void SwitchShowCrafting(bool show)

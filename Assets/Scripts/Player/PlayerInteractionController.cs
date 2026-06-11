@@ -7,16 +7,24 @@ public class PlayerInteractionController : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.isTrigger && _currentInteractable == null)
+        IInteractable interactable = other.GetComponent<IInteractable>();
+        if (interactable == null) return;
+        if(interactable.instantInteract)
         {
-            _currentInteractable = other.GetComponent<IInteractable>();
+            interactable.Interact();
+        }
+        else
+        {
+            _currentInteractable = interactable;
             Debug.Log("Player entered trigger with " + other.name);
         }
     }
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        if(other.isTrigger && _currentInteractable != null && other.GetComponent<IInteractable>() == _currentInteractable)
+        IInteractable interactable = other.GetComponent<IInteractable>();
+        if (interactable == null) return;
+        if(interactable == _currentInteractable)
         {
             _currentInteractable = null;
             Debug.Log("Player left trigger with " + other.name);

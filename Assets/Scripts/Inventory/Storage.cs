@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class CraftingTable : MonoBehaviour, IInteractable
+public class Storage : MonoBehaviour, IInteractable
 {
     public bool instantInteract { get; set; } = false;
     public void Interact()
     {
         TestInventoryUiManager.instance.ToggleInventoryPlus();
-        CraftingManager.instance.ToggleCraftingMenu();
+        TestStorageUiManager.instance.ToggleStorage();
     }
 }

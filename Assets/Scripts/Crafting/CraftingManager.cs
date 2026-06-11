@@ -17,7 +17,8 @@ public class CraftingManager : Singleton<CraftingManager>
     protected override void Awake()
     {
         base.Awake();
-        craftingUI = FindObjectOfType<CraftingUI>();
+        craftingUI = FindFirstObjectByType<CraftingUI>();
+        if (craftingUI == null) Debug.Log("Hier");
     }
 
     [ContextMenu("Toggle CraftingUI")]
