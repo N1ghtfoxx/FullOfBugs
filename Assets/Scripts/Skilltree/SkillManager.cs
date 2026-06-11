@@ -5,9 +5,8 @@ using UnityEngine.InputSystem;
 using Skilltree;
 using UnityEngine.Events;
 
-public class SkillManager : MonoBehaviour
+public class SkillManager : Singleton<SkillManager>
 {
-    public static SkillManager instance;
     //UI References
     private GameObject _skilltreePanel; //used to toggle
     private List<SkilltreeNode> _skillNodes = new List<SkilltreeNode>(); //reference to all skill nodes
@@ -17,14 +16,11 @@ public class SkillManager : MonoBehaviour
     private List<SkillID> _unlockedSkills; //storage of unlocked skills
     private int[] _shadows; //storage of shadow amounts, index corresponds to ShadowType enum
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (instance == null)
-            instance = this;
-        else
-            Destroy(gameObject);
+        base.Awake();
 
-    //Get UI references
+        //Get UI references
         _skilltreePanel = GameObject.Find("SkilltreePanel");
         GameObject _skilltreeUI = _skilltreePanel.transform.Find("Skilltree").gameObject;
         _rectTransform = _skilltreeUI.GetComponent<RectTransform>();
@@ -43,6 +39,7 @@ public class SkillManager : MonoBehaviour
         }
         //load skill list
         _unlockedSkills = new List<SkillID>();
+        AddSkill(SkillID.NoSkill);
 
     //Update UI
         UpdateShadowUI();
