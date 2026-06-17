@@ -66,14 +66,23 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnDrop(PointerEventData eventData)
     {
         if(draggedSlot == null) return;
+        // Debug.Log("Von: " + draggedSlot.slotType + " nach: " + slotType);
+        // Debug.Log("draggedSlot._item: " + draggedSlot._item?.name);
+
+        ItemData transferItem = new ItemData
+        {
+            name = draggedSlot._item.name,
+            quantity = 1, // always transfer 1 item at a time
+            icon = draggedSlot._item.icon
+        };
 
         if(slotType == SlotType.Inventory)
         {
-            InventoryManager.Instance.AddItemToInventory(draggedSlot._item, InventoryManager.Instance.inventory, InventoryManager.Instance.maxInventorySlots);
+            InventoryManager.Instance.AddItemToInventory(transferItem, InventoryManager.Instance.inventory, InventoryManager.Instance.maxInventorySlots);
         } 
         else 
         {
-            InventoryManager.Instance.AddItemToStorage(draggedSlot._item, InventoryManager.Instance.chest, InventoryManager.Instance.maxChestSlots);
+            InventoryManager.Instance.AddItemToStorage(transferItem, InventoryManager.Instance.chest, InventoryManager.Instance.maxChestSlots);
         }
 
         if(draggedSlot.slotType == SlotType.Inventory)
