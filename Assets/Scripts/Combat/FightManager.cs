@@ -1,141 +1,175 @@
 using UnityEngine;
 using System.Collections;
-using System.Security.Cryptography;
-using UnityEditor.Experimental.GraphView;
-using Unity.VisualScripting;
-using System.Net;
 
-public class FightManager : MonoBehaviour
+using Skilltree;
+/*
+ To start a fight you need an Enemy yourEnemyClass.
+Call: Fightmanager.instance.StartFight(yourEnemyClass);
+ */
+public class FightManager : Singleton<FightManager>
 {
-    public GameObject UiManager;
+    [SerializeField] Enemy _enemy;
 
-    // these are just temp, will be inserted from PlayerData later
-    public string playerName;
-    public int playerLevel;
-    public Weapon playerWeapon;
-    public int attackModifier;
-    public int playerHealth;
+    private bool _playerTurn;
+    private bool _fightOver;
+    private bool _playerWon;
 
-    public string enemyName;
-    public string enemyVariant;
-    public int enemyHealth;
-
-    // temp
-    public bool playerTurn;
-    public bool fightOver;
-    public bool playerWon;
-
-    public static FightManager instance;
-
-    // #TO-DO Jo: insert PlayerData etc later after first merge with Naomi
-    public void Awake()
+    public void UseItem(string itemName)
     {
-        if (instance == null)
+        switch (itemName)
         {
-            instance = this;
+            case "HealingPotion":
+                //Chick Inventory and use() one
+                //update ui;
+                    break;
         }
-
-        // temp disabled and moved so it doesnt have race issues
-        //UiManager.GetComponent<UiManager>().SetFightUi(playerName, playerLevel, playerHealth, enemyName, enemyVariant, enemyHealthSlider);
-
-        Coinflip();
-        UiManager.GetComponent<UiManager>().PlayerFightControl(playerTurn);
+        _playerTurn = false;
+        Attack();
     }
 
     public void SetWeapon(string weaponName)
     {
-        playerWeapon = (Weapon)System.Enum.Parse(typeof(Weapon), weaponName);
-        Debug.Log("SetWeapon: " + playerWeapon.ToString());
+        Weapon weapon = (Weapon)System.Enum.Parse(typeof(Weapon), weaponName);
+        int dmg = 0;
 
-        switch (playerWeapon)
+        switch (weapon)
         {
             case Weapon.CheeseFork:
-                attackModifier = 1;
+                dmg = 1;
                 break;
             case Weapon.Slingshot:
-                attackModifier = 2;
+                dmg = 2;
+                //To-Do: Check for Ammunition and remove or cancle
                 break;
             case Weapon.MagicStuff:
-                attackModifier = 3;
+                dmg = 3;
                 break;
             case Weapon.ThrowPoopAndScream:
-                attackModifier = 4;
+                dmg = 4;
                 break;
             default:
                 Debug.Log("Attack failed successfully. Sorry.");
                 break;
         }
+
+        if (SkillManager.instance.HasSkill(SkillID.StrongAttack))
+        {
+            dmg += 1;
+            if (SkillManager.instance.HasSkill(SkillID.HeavyAttack))
+            {
+                dmg += 1;
+                if (SkillManager.instance.HasSkill(SkillID.NuklearBomb))
+                    dmg += 2;
+            }
+        }
+
+        Attack(dmg);
     }
 
-    public void Attack()
+    public void Attack(int dmg = 0)
     {
-        Debug.Log("Attacking for " + attackModifier.ToString() + " damage");
-        if (playerTurn)
+        if (_playerTurn)
         {
-            int newEnemyHealth = enemyHealth - attackModifier;
-            enemyHealth = newEnemyHealth;
-            UiManager.GetComponent<UiManager>().UpdateHealthUi(playerHealth, enemyHealth);
-            playerTurn = false;
-            CheckWinCondition();
-            return;
+            Debug.Log("Attacking for " + dmg.ToString() + " damage");
+            _enemy.hp -= dmg;
+            UiManager.instance.UpdateHealthUi(PlayerStatsManager.instance.hp, _enemy.hp);
+            _playerTurn = false;
+            EndAttack();
         }
         else
         {
-            Debug.Log("Enemy turn");
-            playerHealth = playerHealth - 2;
-            UiManager.GetComponent<UiManager>().UpdateHealthUi(playerHealth, enemyHealth);
-            playerTurn = true;
-            CheckWinCondition();
-            return;
+            StartCoroutine(EnemyAttackRoutine());
         }
+    }
 
+    private void EndAttack()
+    {
+        CheckWinCondition();
+        if (!_playerTurn && !_fightOver)
+            Attack();
+    }
+
+    private IEnumerator EnemyAttackRoutine()
+    {
+        Debug.Log("Enemy turn");
+        yield return new WaitForSeconds(1f);
+        Debug.Log("Enemy atacks");
+        yield return new WaitForSeconds(0.5f);
+        PlayerStatsManager.instance.modifyHp(-_enemy.dmg);
+        UiManager.instance.UpdateHealthUi(PlayerStatsManager.instance.hp, _enemy.hp);
+        yield return new WaitForSeconds(0.5f);
+        _playerTurn = true;
+        EndAttack();
     }
 
     public void CheckWinCondition()
     {
-        if (playerHealth <= 0 || enemyHealth <= 0)
-            fightOver = true;
+        if (PlayerStatsManager.instance.hp <= 0 || _enemy.hp <= 0)
+            _fightOver = true;
 
-        if (!fightOver)
-            UiManager.GetComponent<UiManager>().PlayerFightControl(playerTurn);
+        if (!_fightOver)
+            UiManager.instance.PlayerFightControl(_playerTurn);
         else CheckWinner();
     }
 
     public void CheckWinner()
     {
-        if (!fightOver)
+        if (!_fightOver)
             return;
-
-        if (playerHealth <= 0)
-        {
-            UiManager.GetComponent<UiManager>().FightEnded(playerWon, enemyName, playerHealth);
-            return;
-        }
-        if (enemyHealth <= 0)
-        {
-            UiManager.GetComponent<UiManager>().FightEnded(!playerWon, enemyName, playerHealth);
-            return;
-        }
+        _playerWon = PlayerStatsManager.instance.hp > 0;
+        UiManager.instance.FightEnded(_playerWon, _enemy.name, PlayerStatsManager.instance.hp);
     }
 
     public void ClearFightData()
     {
-        playerName = "";
-        playerHealth = 0;
-        enemyName = "";
-        enemyVariant = "";
-        enemyHealth = 0;
-        attackModifier = 0;
-}
-
-
-    // temp method
-    public void tempSetFightUI()
-    {
-        UiManager.GetComponent<UiManager>().SetFightUi(playerName, playerLevel, playerHealth, enemyName, enemyVariant, enemyHealth);
+        _fightOver = false;
     }
 
-    // also only temp here
+
+    public void StartFight(Enemy e)
+    {
+        _enemy = e;
+        UiManager.instance.SetFightUi("Hermbert", PlayerStatsManager.instance.maxHp, PlayerStatsManager.instance.hp, _enemy.name, _enemy.variant, _enemy.hp, _enemy.sprite);
+        Coinflip();
+        UiManager.instance.PlayerFightControl(_playerTurn);
+        if(!_playerTurn)
+            Attack();
+    }
+
+    // temp method
+    [ContextMenu("StartFight")]
+    public void tempSetFightUI()
+    {
+        StartFight(_enemy);
+    }
+
+    public void Coinflip()
+    {
+        int rng = Random.Range(1, 3);
+
+        if (rng == 1)
+            _playerTurn = true;
+        else _playerTurn = false;
+        string text = _playerTurn ? "you beginn" : _enemy.name + " beginns";
+        Debug.Log($"Battle Started {text}!");
+    }
+
+     public IEnumerator Wait(string beforeWhat, int howLong)
+     {
+        yield return new WaitForSeconds(howLong);
+
+        switch (beforeWhat)
+        {
+            case "beforeContinueAfterFight":
+                UiManager.instance.ShowContinueButtonAfterFight(_playerWon);
+                ClearFightData();
+                break;
+            default:
+                Debug.Log("Somehow, something got wrong. Sorry.");
+                break;
+        }
+     }
+
     public enum Weapon
     {
         CheeseFork,
@@ -143,35 +177,15 @@ public class FightManager : MonoBehaviour
         MagicStuff,
         ThrowPoopAndScream
     }
-
-    // also only temp here
-    public void Coinflip()
-    {
-        int rng = Random.Range(1, 2);
-
-        if (rng == 1)
-            playerTurn = true;
-        else playerTurn = false;
-
-        Debug.Log("playerTurn " + playerTurn);
-    }
-
-    // also only temp here
+}
 
 
-     public IEnumerator Wait(string beforeWhat, int howLong)
-    {
-        yield return new WaitForSeconds(howLong);
-
-        switch (beforeWhat)
-        {
-            case "beforeContinueAfterFight":
-                UiManager.GetComponent<UiManager>().ShowContinueButtonAfterFight(playerWon);
-                ClearFightData();
-                break;
-            default:
-                Debug.Log("Somehow, something got wrong. Sorry.");
-                break;
-        }
-    }
+[System.Serializable]
+public class Enemy
+{
+    public string name;
+    public string variant;
+    public int hp;
+    public int dmg;
+    public Sprite sprite;
 }

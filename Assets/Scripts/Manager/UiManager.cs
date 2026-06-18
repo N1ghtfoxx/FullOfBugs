@@ -3,79 +3,63 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UiManager : MonoBehaviour
+public class UiManager : Singleton<UiManager>
 {
-    // temp
-    public GameObject fightManager;
-
     [Header("General")]
-    private GameObject playerNameText;
-    private GameObject playerLevelText;
-    private GameObject playerHealthSlider;
+    [SerializeField] private GameObject playerNameText;
+    [SerializeField] private GameObject playerLevelText;
+    [SerializeField] private GameObject playerHealthSlider;
 
-    private GameObject devPanel;
-    private GameObject devButton1;
-    private GameObject devButton2;
-    private GameObject devButton3;
+    [SerializeField] private GameObject devPanel;
+    [SerializeField] private GameObject devButton1;
+    [SerializeField] private GameObject devButton2;
+    [SerializeField] private GameObject devButton3;
 
     [Header("GameScene")]
     [SerializeField] private GameObject uiCanvas;
     [SerializeField] private GameObject playerPanel;
-    private GameObject playerSprite;
+    [SerializeField] private GameObject playerSprite;
     [SerializeField] private GameObject pausePanel;
-    private GameObject pauseText;
-    private GameObject continueButton;
-    private GameObject saveButton;
-    private GameObject loadButton;
-    private GameObject optionsButton;
-    private GameObject exitButton;
+    [SerializeField] private GameObject pauseText;
+    [SerializeField] private GameObject continueButton;
+    [SerializeField] private GameObject saveButton;
+    [SerializeField] private GameObject loadButton;
+    [SerializeField] private GameObject optionsButton;
+    [SerializeField] private GameObject exitButton;
     [SerializeField] private GameObject optionsPanel;
     [SerializeField] private GameObject messagePanel;
-    private GameObject messageText;
-    private GameObject messageButtonPanel;
-    private GameObject yesButton;
-    private GameObject noButton;
-    private bool inGameScene;
+    [SerializeField] private GameObject messageText;
+    [SerializeField] private GameObject messageButtonPanel;
+    [SerializeField] private GameObject yesButton;
+    [SerializeField] private GameObject noButton;
+    [SerializeField] private bool inGameScene;
 
     [Header("FightScene")]
-    [SerializeField] private GameObject fightCanvas;
-    [SerializeField] private GameObject fightPanel;
-    private GameObject enemyStatPanel;
-    private GameObject enemyNameText;
-    private GameObject enemyVariantText;
-    private GameObject enemyHealthSlider;
-    private GameObject enemySpritePanel;
-    private GameObject playerStatPanel;
-    private GameObject playerSpritePanel;
-    private GameObject blackscreen;
-    [SerializeField] private GameObject actionPanel;
-    private GameObject attackButton;
-    private GameObject itemButton;
-    [SerializeField] private GameObject attackMenuPanel;
-    private GameObject attack1Button;
-    private GameObject attack2Button;
-    private GameObject attack3Button;
-    private GameObject attack4Button;
-    [SerializeField] private GameObject itemMenuPanel;
-    private GameObject item1Button;
-    private GameObject item2Button;
-    private GameObject item3Button;
-    private GameObject item4Button;
-    private GameObject fightLostPanel;
-    private GameObject fightLostText;
-    private GameObject fightLostContinueButton;
-    private GameObject fightWonPanel;
-    private GameObject fightWonText;
-    private GameObject fightWonContinueButton;
-    private bool inFightScene;
+    [SerializeField] GameObject _fightPanel;
+    [SerializeField] TMP_Text _enemyNameText;
+    [SerializeField] TMP_Text _enemyVariantText;
+    [SerializeField] Slider _enemyHealthSlider;
+    [SerializeField] Image _enemyImage;
+    [SerializeField] TMP_Text _playerNameText;
+    [SerializeField] Slider _playerHealthSlider;
+    [SerializeField] Image _playerImage;
+    [SerializeField] GameObject _actionButtons;
+    [SerializeField] GameObject _fightWonContinueButton;
+    [SerializeField] GameObject _fightLostContinueButton;
+    [SerializeField] GameObject _fightWonScreen;
+    [SerializeField] GameObject _fightLostScreen;
+    [SerializeField] GameObject _blackscreen;
+    [SerializeField] TMP_Text _fightWonText;
+    [SerializeField] TMP_Text _fightLostText;
 
-    public static UiManager instance;
+    public bool inFightScene;
+
 
     #region init
 
-    public void Awake()
+    protected override void Awake()
     {
-        instance = this;
+        base.Awake();
 
         SearchForReferences();
         
@@ -92,50 +76,6 @@ public class UiManager : MonoBehaviour
     private void SearchForReferences()
     {
         CheckActiveScene();
-
-        if (inFightScene)
-        {
-            if (fightCanvas == null)
-                transform.Find("FightCanvas");
-
-            fightPanel = fightCanvas.transform.Find("FightPanel").gameObject;
-            enemyStatPanel = fightPanel.transform.Find("EnemyStatPanel").gameObject;
-            enemyNameText = enemyStatPanel.transform.Find("EnemyNameText").gameObject;
-            enemyVariantText = enemyStatPanel.transform.Find("EnemyVariantText").gameObject;
-            enemyHealthSlider = enemyStatPanel.transform.Find("EnemyHealthSlider").gameObject;
-            enemySpritePanel = fightPanel.transform.Find("EnemySpritePanel").gameObject;
-            playerStatPanel = fightPanel.transform.Find("PlayerStatPanel").gameObject;
-            playerNameText = playerStatPanel.transform.Find("PlayerNameText").gameObject;
-            playerHealthSlider = playerStatPanel.transform.Find("PlayerHealthSlider").gameObject;
-            playerSpritePanel = fightPanel.transform.Find("PlayerSpritePanel").gameObject;
-            blackscreen = fightPanel.transform.Find("blackscreen").gameObject;
-
-            actionPanel = fightCanvas.transform.Find("ActionPanel").gameObject;
-            attackButton = actionPanel.transform.Find("AttackButton").gameObject;
-            itemButton = actionPanel.transform.Find("ItemButton").gameObject;
-
-            attackMenuPanel = fightCanvas.transform.Find("AttackMenuPanel").gameObject;
-            attack1Button = attackMenuPanel.transform.Find("Attack1Button").gameObject;
-            attack2Button = attackMenuPanel.transform.Find("Attack2Button").gameObject;
-            attack3Button = attackMenuPanel.transform.Find("Attack3Button").gameObject;
-            attack4Button = attackMenuPanel.transform.Find("Attack4Button").gameObject;
-
-            itemMenuPanel = fightCanvas.transform.Find("ItemMenuPanel").gameObject;
-            item1Button = itemMenuPanel.transform.Find("Item1Button").gameObject;
-            item2Button = itemMenuPanel.transform.Find("Item2Button").gameObject;
-            item3Button = itemMenuPanel.transform.Find("Item3Button").gameObject;
-            item4Button = itemMenuPanel.transform.Find("Item4Button").gameObject;
-
-            fightLostPanel = fightCanvas.transform.Find("FightLostPanel").gameObject;
-            fightLostText = fightLostPanel.transform.Find("FightLostText").gameObject;
-            fightLostContinueButton = fightLostPanel.transform.Find("ContinueButton").gameObject;
-            fightWonPanel = fightCanvas.transform.Find("FightWonPanel").gameObject;
-            fightWonText = fightWonPanel.transform.Find("FightWonText").gameObject;
-            fightWonContinueButton = fightWonPanel.transform.Find("ContinueButton").gameObject;
-
-            fightManager.GetComponent<FightManager>().tempSetFightUI();
-        }
-   
         if (inGameScene)
         {
             if (uiCanvas == null)
@@ -227,14 +167,17 @@ public class UiManager : MonoBehaviour
     /// <param name="enemyName"></param>
     /// <param name="enemyVariant"></param>
     /// <param name="enemyHealth"></param>
-    public void SetFightUi(string playerName, int playerLevel, int playerHealth, string enemyName, string enemyVariant, int enemyHealth)
+    public void SetFightUi(string playerName, int playerMaxHealth, int playerHealth, string enemyName, string enemyVariant, int enemyHealth, Sprite enemySprite)
     {
+        _fightPanel.SetActive(true);
         playerNameText.GetComponent<TextMeshProUGUI>().text = playerName;
-        // fehlend: playerLevel #TO-DO Jo
-        playerHealthSlider.GetComponent<Slider>().value = playerHealth;
-        enemyNameText.GetComponent<TextMeshProUGUI>().text = enemyName.ToString();
-        enemyVariantText.GetComponent<TextMeshProUGUI>().text = enemyVariant.ToString();
-        enemyHealthSlider.GetComponent<Slider>().value = enemyHealth;
+        _playerHealthSlider.GetComponent<Slider>().maxValue = playerMaxHealth;
+        _playerHealthSlider.GetComponent<Slider>().value = playerHealth;
+        _enemyNameText.GetComponent<TextMeshProUGUI>().text = enemyName.ToString();
+        _enemyVariantText.GetComponent<TextMeshProUGUI>().text = enemyVariant.ToString();
+        _enemyHealthSlider.GetComponent<Slider>().maxValue = enemyHealth;
+        _enemyHealthSlider.GetComponent<Slider>().value = enemyHealth;
+        _enemyImage.sprite = enemySprite;
     }
 
     /// <summary>
@@ -243,16 +186,16 @@ public class UiManager : MonoBehaviour
     /// <param name="playerTurn"></param> true if it's the players turn
     public void PlayerFightControl(bool playerTurn)
         {
-            actionPanel.SetActive(playerTurn);
-            if (!playerTurn)
-                fightManager.GetComponent<FightManager>().Attack();
+            _actionButtons.SetActive(playerTurn);
+            //if (!_playerTurn)
+                //fightManager.GetComponent<FightManager>().Attack();
         }
 
     public void FightEnded(bool playerWon, string enemyNameText, int playerHealth)
     {
         if (playerWon)
-            ShowFightWonScreen(playerWon, enemyNameText, playerHealth);
-        else ShowFightLostScreen(playerWon, enemyNameText, playerHealth);
+            ShowFightWonScreen(enemyNameText, playerHealth);
+        else ShowFightLostScreen(enemyNameText);
 
         StartCoroutine(FightManager.instance.Wait("beforeContinueAfterFight", 3));
     }
@@ -260,41 +203,44 @@ public class UiManager : MonoBehaviour
     public void ShowContinueButtonAfterFight(bool playerWon)
     {
         if (playerWon)
-            fightWonContinueButton.SetActive(true);
+            _fightWonContinueButton.SetActive(true);
         else
-            fightLostContinueButton.SetActive(true);
+            _fightLostContinueButton.SetActive(true);
     }
 
     public void UpdateHealthUi(int playerHealth, int enemyHealth)
     {
-        playerHealthSlider.GetComponent<Slider>().value = playerHealth;
-        enemyHealthSlider.GetComponent<Slider>().value = enemyHealth;
-    }
-    
-    // actually, #TO-DO Jo: This can be one method
-    public void ShowFightWonScreen(bool playerWon, string enemyNameText, int playerHealth)
-    {
-        fightWonText.GetComponent<TextMeshProUGUI>().text = "You won against " + enemyNameText + "with " + playerHealth.ToString() + " HP.";
-        FightDisableAllUi();
-        fightWonPanel.SetActive(true);
+        if(_playerHealthSlider.value != playerHealth)
+            _playerHealthSlider.value = playerHealth;
+        if(_enemyHealthSlider.value != enemyHealth)
+            _enemyHealthSlider.value = enemyHealth;
     }
 
-    public void ShowFightLostScreen(bool playerWon, string enemyNameText, int playerHealth)
+
+    // actually, #TO-DO Jo: This can be one method
+    public void ShowFightWonScreen(string enemyNameText, int playerHealth)
     {
-        fightLostText.GetComponent<TextMeshProUGUI>().text = "You lost against " + enemyNameText + ".";
+        _fightWonText.text = "You won against " + enemyNameText + "with " + playerHealth.ToString() + " HP.";
         FightDisableAllUi();
-        fightLostPanel.SetActive(true);
+        _fightWonScreen.SetActive(true);
+    }
+
+    public void ShowFightLostScreen(string enemyNameText)
+    {
+        _fightLostText.text = "You lost against " + enemyNameText + ".";
+        FightDisableAllUi();
+        _fightLostScreen.SetActive(true);
     }
 
     private void FightDisableAllUi()
     {
-        blackscreen.SetActive(false);
-        attackMenuPanel.SetActive(false);
-        itemMenuPanel.SetActive(false);
-        fightLostPanel.SetActive(false);
-        fightWonPanel.SetActive(false);
-        fightLostContinueButton.SetActive(false);
-        fightWonContinueButton.SetActive(false);
+        _blackscreen.SetActive(false);
+        //_attackMenuPanel.SetActive(false);
+        //_itemMenuPanel.SetActive(false);
+        _fightLostScreen.SetActive(false);
+        _fightWonScreen.SetActive(false);
+        _fightLostContinueButton.SetActive(false);
+        _fightWonContinueButton.SetActive(false);
     }
 
     #endregion
@@ -303,12 +249,17 @@ public class UiManager : MonoBehaviour
 
     public void OnClickSetWeapon(string weapon)
     {
-        fightManager.GetComponent<FightManager>().SetWeapon(weapon);
+        FightManager.instance.SetWeapon(weapon);
     }   
 
     public void OnClickContinueAfterFight()
     {
         Debug.Log("Exit the FightScene.");
+    }
+
+    public void OnClickContinueAfterLose()
+    {
+        SceneLoadingManager.Instance.LoadScene("StartScreen");
     }
 
     #endregion

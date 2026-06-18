@@ -60,6 +60,41 @@ public class SkillManager : Singleton<SkillManager>
     {
         _unlockedSkills.Add(skill);
         UpdateSkilltree();
+        switch (skill)
+        {
+            case SkillID.Tank:
+                PlayerStatsManager.instance.IncreaseMaxHp(1);
+                break;
+
+            case SkillID.Giant:
+                PlayerStatsManager.instance.IncreaseMaxHp(2);
+                break;
+
+            case SkillID.Colossus:
+                PlayerStatsManager.instance.IncreaseMaxHp(4);
+                break;
+
+            case SkillID.Garden:
+                break;
+
+            case SkillID.Farm:
+                break;
+
+            case SkillID.Fertilizer:
+                break;
+
+            case SkillID.PowerFertilizer:
+                break;
+
+            case SkillID.GreenThumb:
+                break;
+
+            case SkillID.PlantMaster:
+                break;
+
+            default:
+                break;
+        }
     }
 
     public bool HasSkill(SkillID skillID)

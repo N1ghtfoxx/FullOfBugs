@@ -11,7 +11,6 @@ namespace Skilltree
         public string description;
         public List<SkillID> prerequisites = new List<SkillID>();
         public Cost cost;
-
     }
 
     public enum SkillID
