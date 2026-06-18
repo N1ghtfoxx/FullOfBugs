@@ -13,20 +13,33 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private Canvas _canvas;
     private GameObject _draggedItem;
     private ItemData _item;
+    private Image _slotBackground;
+
+    [SerializeField] private Sprite _defaultBackground; // Assign a default background sprite in the inspector
+    [SerializeField] private Sprite _slotFilled; // Assign a filled slot background sprite in the inspector
+    
+    
 
     void Awake()
     {
         _canvas = GetComponentInParent<Canvas>();
+        _slotBackground = GetComponent<Image>();
+        // Debug.Log("SlotBackground:" + _slotBackground + "auf" + gameObject.name);
     }
 
     public void UpdateItemSlot(ItemData item)
     {
+        // Debug.Log("SlotBackground: " + _slotBackground + " DefaultBG: " + _defaultBackground + " SlotFilled: " + _slotFilled);
         _item = item;
         if(item != null)
         {
+            if(_slotBackground != null) _slotBackground.sprite = _slotFilled;
+            itemImage.color = new Color(1, 1, 1, 1); // make the image fully visible when there's an item
             itemImage.sprite = item.icon;
             itemCountText.text = item.quantity > 1 ? item.quantity.ToString() : "";
         } else {
+            if(_slotBackground != null) _slotBackground.sprite = _defaultBackground;
+            itemImage.color = new Color(1, 1, 1, 0); // make the image transparent when there's no item
             itemImage.sprite = null;
             itemCountText.text = "";
         }
