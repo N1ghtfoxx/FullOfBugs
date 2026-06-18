@@ -182,7 +182,7 @@ public class UiManager : MonoBehaviour
                 inFightScene = true;
                 inGameScene = false;
                 break;
-            case "DragAndDrop":
+            case "UI":
                 inFightScene = false;
                 inGameScene = true;
                 break;
