@@ -9,6 +9,8 @@ public class InventoryManager : MonoBehaviour
     public int maxInventorySlots = 7;
     public int maxChestSlots = 20;
 
+    [SerializeField] private Sprite _testSprite; // Assign a test sprite in the inspector
+
     private void Awake()
     {
         if (Instance == null)
@@ -114,6 +116,7 @@ public class InventoryManager : MonoBehaviour
 
     public void RemoveItemFromStorage(string itemName, List<ItemData> targetList)
     {
+        Debug.Log("RemoveFromStorage aufgerufen für " + itemName);
         ItemData existingItem = null;
 
         foreach(ItemData item in targetList)
@@ -127,6 +130,7 @@ public class InventoryManager : MonoBehaviour
 
         if(existingItem != null)
         {
+            Debug.Log("Item gefunden, quantity: " + existingItem.quantity);
             existingItem.quantity--;
 
             if(existingItem.quantity <= 0)
@@ -149,15 +153,18 @@ public class InventoryManager : MonoBehaviour
         ItemData testItem = new ItemData
         {
             name = "Test Item",
-            quantity = 1
+            quantity = 1,
+            icon = _testSprite
         };
         AddItemToInventory(testItem, inventory, maxInventorySlots);
+        TestInventoryUiManager.instance.UpdateInventoryUI();
     }
 
     [ContextMenu("Remove Test Item from Inventory")]
     private void RemoveTestItemFromInventory()
     {
         RemoveItemFromInventory("Test Item", inventory);
+        TestInventoryUiManager.instance.UpdateInventoryUI();
     }
 
     [ContextMenu("Save Inventory")]
@@ -172,15 +179,18 @@ public class InventoryManager : MonoBehaviour
         ItemData testItem = new ItemData
         {
             name = "Test Item",
-            quantity = 1
+            quantity = 1,
+            icon = _testSprite
         };
         AddItemToStorage(testItem, chest, maxChestSlots);
+        TestStorageUiManager.instance.UpdateStorageUI();
     }
 
     [ContextMenu("Remove Test Item from Storage")]
     private void RemoveTestItemFromStorage()
     {
         RemoveItemFromStorage("Test Item", chest);
+        TestStorageUiManager.instance.UpdateStorageUI();
     }
 
     [ContextMenu("Save Storage")]

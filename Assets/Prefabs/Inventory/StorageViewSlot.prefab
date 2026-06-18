@@ -264,3 +264,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InventorySlot
   itemImage: {fileID: 4082244640848907779}
   itemCountText: {fileID: 7486888160319946681}
+  slotType: 1

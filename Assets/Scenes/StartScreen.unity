@@ -288,6 +288,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8632876179693463351, guid: 70373126032c077498bb87ecfce2d852, type: 3}
+      propertyPath: _testSprite
+      value: 
+      objectReference: {fileID: 1669490993913548592, guid: 63d37c027101c144f8dd6acc5650e786, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -45,7 +45,7 @@ public class TestInventoryUiManager : Singleton<TestInventoryUiManager>
         }
     }
 
-    private void UpdateInventoryUI()
+    public void UpdateInventoryUI()
     {
         for (int i = 0; i < inventorySlots.Length; i++)
         {
