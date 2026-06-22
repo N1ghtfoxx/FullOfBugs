@@ -43,7 +43,7 @@ public class StartScreenManager : MonoBehaviour
             SaveLoadManager.Instance.LoadInventory(); // Load the inventory data from the save file
             SaveLoadManager.Instance.selectedSlotIndex = selectedSlotIndex; // Store the selected slot index in the manager so it can be accessed by other scripts
             Debug.Log("Game loaded from slot " + selectedSlotIndex);
-            SceneLoadingManager.Instance.LoadScene("UI");          
+            SceneLoadingManager.Instance.LoadScene("MainScene");          
         }
     }
 
