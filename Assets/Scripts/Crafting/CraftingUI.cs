@@ -40,7 +40,9 @@ public class CraftingUI : MonoBehaviour
     void OnEnable()
     {
         if (CraftingManager.instance?.currentRecipe != null)
+        {
             SetRecipeUi();
+        }
     }
 
     public void SwitchShowCrafting(bool show)
@@ -102,5 +104,13 @@ public class CraftingUI : MonoBehaviour
             return; 
         }
         CraftingManager.instance.StartCraft();
+    }
+
+    public void FillResultSlot(ItemData result)
+    {
+        foreach (CraftingSlot slot in _slots)
+            slot.UpdateItemSlot(null);
+
+        _slots[0].UpdateItemSlot(result);
     }
 }

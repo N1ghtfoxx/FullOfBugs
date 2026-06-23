@@ -85,12 +85,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1076965886472384929, guid: 8051d471b174fbb47be2c94c1b1cad09, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4082244640848907779, guid: 8051d471b174fbb47be2c94c1b1cad09, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1669490993913548592, guid: 63d37c027101c144f8dd6acc5650e786, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 5215555785280579479, guid: 8051d471b174fbb47be2c94c1b1cad09, type: 3}
       propertyPath: m_SizeDelta.x
       value: -10
@@ -109,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5473701583004377878, guid: 8051d471b174fbb47be2c94c1b1cad09, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6498266155392134153, guid: 8051d471b174fbb47be2c94c1b1cad09, type: 3}
       propertyPath: m_Name
@@ -195,6 +195,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7486888160319946681, guid: 8051d471b174fbb47be2c94c1b1cad09, type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8617661545817687318, guid: 8051d471b174fbb47be2c94c1b1cad09, type: 3}
     m_RemovedGameObjects: []
@@ -242,7 +246,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CraftingSlot
   itemImage: {fileID: 5664478972415633007}
   itemCountText: {fileID: 1287338308643903445}
+  slotType: 2
+  _defaultBackground: {fileID: 21300000, guid: 030f2ac23aa9dec48a0fbc5262e6a422, type: 3}
+  _slotFilled: {fileID: 21300000, guid: c51cfcf6ab0b2ad43b77a1f51617d433, type: 3}
   itemShape: {fileID: 4232225443865375046}
+  slotIndex: 0
 --- !u!114 &5664478972415633007 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4082244640848907779, guid: 8051d471b174fbb47be2c94c1b1cad09, type: 3}

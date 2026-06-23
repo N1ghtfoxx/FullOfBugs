@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
+using Crafting;
 
 public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
 {
@@ -12,8 +13,8 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public SlotType slotType;
     private Canvas _canvas;
     private GameObject _draggedItem;
-    private ItemData _item;
-    private Image _slotBackground;
+    protected ItemData _item;
+    protected Image _slotBackground;
 
     [SerializeField] private Sprite _defaultBackground; // Assign a default background sprite in the inspector
     [SerializeField] private Sprite _slotFilled; // Assign a filled slot background sprite in the inspector
@@ -86,26 +87,59 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         {
             name = draggedSlot._item.name,
             quantity = 1, // always transfer 1 item at a time
-            icon = draggedSlot._item.icon
+            icon = draggedSlot._item.icon,
+            description = draggedSlot._item.description,
+            type = draggedSlot._item.type,
+            ingrediant = draggedSlot._item.ingrediant
         };
 
-        if(slotType == SlotType.Inventory)
+        switch (slotType)
         {
-            InventoryManager.Instance.AddItemToInventory(transferItem, InventoryManager.Instance.inventory, InventoryManager.Instance.maxInventorySlots);
-        } 
-        else 
-        {
-            InventoryManager.Instance.AddItemToStorage(transferItem, InventoryManager.Instance.chest, InventoryManager.Instance.maxChestSlots);
+            case SlotType.Inventory:
+                InventoryManager.Instance.AddItemToInventory(transferItem, InventoryManager.Instance.inventory, InventoryManager.Instance.maxInventorySlots);
+                break;
+            case SlotType.Storage:
+                InventoryManager.Instance.AddItemToStorage(transferItem, InventoryManager.Instance.chest, InventoryManager.Instance.maxChestSlots);
+                break;
+            case SlotType.Ingrediant:
+                CraftingSlot cs = this as CraftingSlot;
+                if (cs.CheckIngrediant(transferItem))
+                {
+                    UpdateItemSlot(transferItem);
+                }
+                else
+                {
+                    OnEndDrag(eventData);
+                    return;
+                }
+                break;
+            case SlotType.Result:
+                FailFeedbackManager.instance.ShowFailFeedbackUI(_slotBackground.sprite, _slotBackground.gameObject);
+                return;
         }
 
-        if(draggedSlot.slotType == SlotType.Inventory)
+        switch (draggedSlot.slotType)
         {
-            InventoryManager.Instance.RemoveItemFromInventory(draggedSlot._item.name, InventoryManager.Instance.inventory);
+            case SlotType.Inventory:
+                InventoryManager.Instance.RemoveItemFromInventory(draggedSlot._item.name, InventoryManager.Instance.inventory);
+                break;
+            case SlotType.Storage:
+                InventoryManager.Instance.RemoveItemFromStorage(draggedSlot._item.name, InventoryManager.Instance.chest);
+                break;
+            case SlotType.Ingrediant:
+                if (CraftingManager.instance.isCrafting)
+                {
+                    FailFeedbackManager.instance.ShowFailFeedbackUI(draggedSlot._slotBackground.sprite, draggedSlot._slotBackground.gameObject);
+                    return;
+                }
+                CraftingSlot cs = this as CraftingSlot;
+                cs.RemoveItem();
+                break;
+            case SlotType.Result:
+                UpdateItemSlot(null);
+                break;
         }
-        else
-        {
-            InventoryManager.Instance.RemoveItemFromStorage(draggedSlot._item.name, InventoryManager.Instance.chest);
-        }
+
         TestInventoryUiManager.instance.UpdateInventoryUI();
         TestStorageUiManager.instance.UpdateStorageUI();   
     }
@@ -114,5 +148,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         Inventory,
         Storage,
+        Ingrediant,
+        Result
     }
 }

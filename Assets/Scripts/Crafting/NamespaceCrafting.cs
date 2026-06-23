@@ -16,6 +16,7 @@ namespace Crafting
 
     public enum Ingrediant
     {
+        none,
         Strawberry,
         Mint,
         LuminousMoss,

@@ -14,6 +14,8 @@ public class CraftingManager : Singleton<CraftingManager>
     public Recipe[] testRecipe;
     public bool isCrafting = false;
 
+    [SerializeField] ItemData[] resultItems;
+
     protected override void Awake()
     {
         base.Awake();
@@ -75,12 +77,12 @@ public class CraftingManager : Singleton<CraftingManager>
         _ingrediantBool = new bool[currentRecipe.ingrediants.Length];
     }
 
-    private void AddToRecipeSlot(int index)
+    public void AddToRecipeSlot(int index)
     {
         _ingrediantBool[index] = true;
     }
 
-    private void RemoveFromRecipeSlot(int index)
+    public void RemoveFromRecipeSlot(int index)
     {
         _ingrediantBool[index] = false;
     }
@@ -98,8 +100,6 @@ public class CraftingManager : Singleton<CraftingManager>
         StartCoroutine(CraftProgress());
     }
 
-
-
     private System.Collections.IEnumerator CraftProgress()
     {
         while(remainingCraftTime > 0)
@@ -113,6 +113,7 @@ public class CraftingManager : Singleton<CraftingManager>
         isCrafting = false;
 
         Debug.Log("Crafting complete");
+        craftingUI.FillResultSlot(resultItems[(int)currentRecipe.result]);
         //InventoryManager.instance.AddItem(currentRecipe.result);
     }
 
