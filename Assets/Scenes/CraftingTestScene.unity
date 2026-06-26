@@ -283,25 +283,25 @@ MonoBehaviour:
     ingrediant: 0
   - name: HealingPotionPlus
     quantity: 1
-    description: 
-    type: 
+    description: Heals You full HP
+    type: Consumable
     icon: {fileID: 21300000, guid: 77aaf69abf0d52d4e9784767cf655899, type: 3}
     ingrediant: 0
   - name: GlowingPotion
     quantity: 1
-    description: 
-    type: 
+    description: Makes you glow for some time
+    type: consumable
     icon: {fileID: 21300000, guid: fb957577aca15c141bffef16a52d963c, type: 3}
     ingrediant: 0
   - name: GlowingPotionPlus
     quantity: 1
-    description: 
-    type: 
+    description: makes you glow for a long time
+    type: Consumable
     icon: {fileID: 21300000, guid: 73db0eed871d50946851f9b0fa2b9de2, type: 3}
     ingrediant: 0
   - name: Fertilizer
     quantity: 1
-    description: 
+    description: increase your harvest
     type: 
     icon: {fileID: 21300000, guid: e3dd2696e2d381d41bedc9cc20793e4b, type: 3}
     ingrediant: 0

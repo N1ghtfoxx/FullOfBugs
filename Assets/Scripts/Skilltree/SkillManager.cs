@@ -62,38 +62,44 @@ public class SkillManager : Singleton<SkillManager>
         UpdateSkilltree();
         switch (skill)
         {
-            case SkillID.Tank:
-                PlayerStatsManager.instance.IncreaseMaxHp(1);
-                break;
+        case SkillID.StrongHealingPotion:
+            CraftingManager.instance.TryUpgradeRecipe(Crafting.RecipeName.HealingRecipe, skill);
+            break;
+        case SkillID.LongGlowPotion:
+            CraftingManager.instance.TryUpgradeRecipe(Crafting.RecipeName.GlowingRecipe, skill);
+            break;
+        case SkillID.Tank:
+            PlayerStatsManager.instance.IncreaseMaxHp(1);
+            break;
 
-            case SkillID.Giant:
-                PlayerStatsManager.instance.IncreaseMaxHp(2);
-                break;
+        case SkillID.Giant:
+            PlayerStatsManager.instance.IncreaseMaxHp(2);
+            break;
 
-            case SkillID.Colossus:
-                PlayerStatsManager.instance.IncreaseMaxHp(4);
-                break;
+        case SkillID.Colossus:
+            PlayerStatsManager.instance.IncreaseMaxHp(4);
+            break;
 
-            case SkillID.Garden:
-                break;
+        case SkillID.Garden:
+            break;
 
-            case SkillID.Farm:
-                break;
+        case SkillID.Farm:
+            break;
 
-            case SkillID.Fertilizer:
-                break;
+        case SkillID.Fertilizer:
+            break;
 
-            case SkillID.PowerFertilizer:
-                break;
+        case SkillID.PowerFertilizer:
+            break;
 
-            case SkillID.GreenThumb:
-                break;
+        case SkillID.GreenThumb:
+            break;
 
-            case SkillID.PlantMaster:
-                break;
+        case SkillID.PlantMaster:
+            break;
 
-            default:
-                break;
+        default:
+            break;
         }
     }
 

@@ -93,6 +93,11 @@ public class CraftingUI : MonoBehaviour
         UpdateProgressbar(0);
     }
 
+    public void UpdateResultShape()
+    {
+        _slots[0].itemShape.sprite = CraftingManager.instance.currentRecipe.slotSprites[0];
+    }
+
     public void UpdateProgressbar(float progress)
     {
         _progressbar.fillAmount = progress;

@@ -85,8 +85,9 @@ public class CraftingManager : Singleton<CraftingManager>
         if (SkillManager.instance.HasSkill(skill) && recipe!=null)
         {
             recipe.result = (Result)(int)recipe.result + 1;
-            recipe.slotSprites[0] = resultItems[(int)currentRecipe.result].icon;
+            recipe.slotSprites[0] = resultItems[(int)recipe.result].icon;
         }
+        craftingUI.UpdateResultShape();
     }
 
     public int GetCurrentRecipeIndex()
