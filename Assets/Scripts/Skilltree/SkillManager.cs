@@ -162,6 +162,7 @@ public class SkillManager : Singleton<SkillManager>
             _skilltreeOpen = !_skilltreeOpen;
             _skilltreePanel.SetActive(_skilltreeOpen);
             //toggle pause
+            PauseManager.instance.SetPause();
         }
         //Prevent interaction when skilltree is closed
         if (!_skilltreeOpen) return;

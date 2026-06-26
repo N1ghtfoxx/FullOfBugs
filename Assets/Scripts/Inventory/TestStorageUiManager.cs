@@ -40,16 +40,16 @@ public class TestStorageUiManager : Singleton<TestStorageUiManager>
             }
         }
 
-        for (int i = 0; i < storageViewInventorySlots.Length; i++)
-        {
-            if (i < InventoryManager.Instance.inventory.Count)
-            {
-                storageViewInventorySlots[i].UpdateItemSlot(InventoryManager.Instance.inventory[i]);
-            }
-            else
-            {
-                storageViewInventorySlots[i].UpdateItemSlot(null);
-            }
-        }
+        //for (int i = 0; i < storageViewInventorySlots.Length; i++)
+        //{
+        //    if (i < InventoryManager.Instance.inventory.Count)
+        //    {
+        //        storageViewInventorySlots[i].UpdateItemSlot(InventoryManager.Instance.inventory[i]);
+        //    }
+        //    else
+        //    {
+        //        storageViewInventorySlots[i].UpdateItemSlot(null);
+        //    }
+        //}
     }
 }

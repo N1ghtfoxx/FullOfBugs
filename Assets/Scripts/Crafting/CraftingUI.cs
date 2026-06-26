@@ -76,12 +76,14 @@ public class CraftingUI : MonoBehaviour
 
     private void SetRecipeUi()
     {
+        if (CraftingManager.instance.isCrafting) return;
         Recipe recipe = CraftingManager.instance.currentRecipe;
         int slotAmount = recipe.slotSprites.Length;
         _thirdIngrediant.SetActive(slotAmount > 3);
         for(int i = 0; i < slotAmount; i++)
         {
             _slots[i].itemShape.sprite = recipe.slotSprites[i];
+            _slots[i].UpdateItemSlot(null);
         }
         _timeText.text = recipe.craftTime.ToString() + " sec";
         Color color;
@@ -108,8 +110,11 @@ public class CraftingUI : MonoBehaviour
 
     public void FillResultSlot(ItemData result)
     {
-        foreach (CraftingSlot slot in _slots)
-            slot.UpdateItemSlot(null);
+        int slotAmount = CraftingManager.instance.currentRecipe.slotSprites.Length;
+        for (int i = 1; i < slotAmount; i++)
+        {
+            _slots[i].RemoveItem();
+        }
 
         _slots[0].UpdateItemSlot(result);
     }

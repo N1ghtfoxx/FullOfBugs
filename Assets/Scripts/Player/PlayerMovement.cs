@@ -23,7 +23,14 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseManager.instance.isPaused)
+        {
+            rb.linearVelocity = Vector2.zero;
+            anim.SetBool("Walking", false);
+            return;
+        }
         rb.linearVelocity = movementInput * moveSpeed;
+        walking = rb.linearVelocity.magnitude > 0;
         Animate();
     }
     public void OnMove(InputAction.CallbackContext ctx)
@@ -34,12 +41,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void Animate()
     {
-        if (movementInput.magnitude > 0.1f || movementInput.magnitude < -0.1f)
-        {
-            walking = true;
-        }
-        else
-            walking = false;
+        //if (movementInput.magnitude > 0.1f || movementInput.magnitude < -0.1f)
+        //{
+        //    walking = true;
+        //}
+        //else
+        //    walking = false;
 
         if (walking)
         {

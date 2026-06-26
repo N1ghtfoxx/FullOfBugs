@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using Crafting;
+using Unity.VisualScripting;
 
 public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
 {
@@ -28,7 +29,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         // Debug.Log("SlotBackground:" + _slotBackground + "auf" + gameObject.name);
     }
 
-    public void UpdateItemSlot(ItemData item)
+    public virtual void UpdateItemSlot(ItemData item)
     {
         // Debug.Log("SlotBackground: " + _slotBackground + " DefaultBG: " + _defaultBackground + " SlotFilled: " + _slotFilled);
         _item = item;
@@ -96,7 +97,13 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         switch (slotType)
         {
             case SlotType.Inventory:
-                InventoryManager.Instance.AddItemToInventory(transferItem, InventoryManager.Instance.inventory, InventoryManager.Instance.maxInventorySlots);
+                if (draggedSlot.slotType == SlotType.Ingrediant && CraftingManager.instance.isCrafting)
+                    break;
+                if (!InventoryManager.Instance.AddItemToInventory(transferItem))
+                {
+                    FailFeedbackManager.instance.ShowFailFeedbackUI(draggedSlot._slotBackground.sprite, draggedSlot._slotBackground.gameObject);
+                    return;
+                }
                 break;
             case SlotType.Storage:
                 InventoryManager.Instance.AddItemToStorage(transferItem, InventoryManager.Instance.chest, InventoryManager.Instance.maxChestSlots);
@@ -132,15 +139,18 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                     FailFeedbackManager.instance.ShowFailFeedbackUI(draggedSlot._slotBackground.sprite, draggedSlot._slotBackground.gameObject);
                     return;
                 }
-                CraftingSlot cs = this as CraftingSlot;
+                CraftingSlot cs = draggedSlot as CraftingSlot;
                 cs.RemoveItem();
                 break;
             case SlotType.Result:
-                UpdateItemSlot(null);
+                CraftingSlot csr = draggedSlot as CraftingSlot;
+                csr.RemoveItem();
+                CraftingManager.instance.craftingUI.UpdateProgressbar(0);
                 break;
         }
 
         TestInventoryUiManager.instance.UpdateInventoryUI();
+        TestInventoryUiManager.instance.UpdateInventoryPlusUI();
         TestStorageUiManager.instance.UpdateStorageUI();   
     }
 

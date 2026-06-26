@@ -3,11 +3,12 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using Crafting;
 using System.Linq;
+using System;
 
 public class CraftingManager : Singleton<CraftingManager>
 {
     public Recipe currentRecipe;
-    private CraftingUI craftingUI;
+    public CraftingUI craftingUI;
     private bool[] _ingrediantBool;
     private List<Recipe> recipes = new List<Recipe>();
     public float remainingCraftTime = 30;
@@ -54,7 +55,19 @@ public class CraftingManager : Singleton<CraftingManager>
 
     public void AddRecipe(Recipe recipe)
     {
+        if (recipes.Contains(recipe)) return;
         recipes.Add(recipe);
+        switch (recipe.name)
+        {
+            case RecipeName.HealingRecipe:
+                TryUpgradeRecipe(RecipeName.HealingRecipe, Skilltree.SkillID.StrongHealingPotion);
+                break;
+            case RecipeName.GlowingRecipe:
+                TryUpgradeRecipe(RecipeName.GlowingRecipe, Skilltree.SkillID.LongGlowPotion);
+                break;
+            default:
+                break;
+        }
         if(recipes.Count == 1)
             craftingUI.SwitchShowCrafting(true);
         List<string> options = new List<string>();
@@ -64,6 +77,16 @@ public class CraftingManager : Singleton<CraftingManager>
         }
         int i = currentRecipe != null ? recipes.IndexOf(currentRecipe) : 0;
         craftingUI.UpdateDropdown(options, i);
+    }
+
+    public void TryUpgradeRecipe(RecipeName name, Skilltree.SkillID skill)
+    {
+        Recipe recipe = recipes.Find(r => r.name == name);
+        if (SkillManager.instance.HasSkill(skill) && recipe!=null)
+        {
+            recipe.result = (Result)(int)recipe.result + 1;
+            recipe.slotSprites[0] = resultItems[(int)currentRecipe.result].icon;
+        }
     }
 
     public int GetCurrentRecipeIndex()
@@ -90,7 +113,6 @@ public class CraftingManager : Singleton<CraftingManager>
     public bool CheckIngrediants()
     {
         return !_ingrediantBool.Contains(false);
-
     }
 
     public void StartCraft()
@@ -114,7 +136,7 @@ public class CraftingManager : Singleton<CraftingManager>
 
         Debug.Log("Crafting complete");
         craftingUI.FillResultSlot(resultItems[(int)currentRecipe.result]);
-        //InventoryManager.instance.AddItem(currentRecipe.result);
+
     }
 
 }

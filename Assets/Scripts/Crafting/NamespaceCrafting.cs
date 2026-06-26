@@ -27,7 +27,9 @@ namespace Crafting
     public enum Result
     {
         HealingPotion,
+        HealingPotionPlus,
         GlowingPotion,
+        GlowingPotionPlus,
         Fertilizer,
     }
 

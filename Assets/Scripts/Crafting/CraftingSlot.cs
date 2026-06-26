@@ -6,19 +6,30 @@ public class CraftingSlot : InventorySlot
 {
     public Image itemShape;
     public int slotIndex;
-
-    private void OnEnable()
+    [SerializeField] GameObject _itemPrefab;
+    [SerializeField] Transform _spawnPoint;
+    public override void UpdateItemSlot(ItemData item)
     {
-        UpdateItemSlot(null);
+        if(_item != null)
+        {
+            if (InventoryManager.Instance.AddItemToInventory(_item))
+                TestInventoryUiManager.instance.UpdateInventoryPlusUI();
+            else
+            {
+                GameObject go = Instantiate(_itemPrefab, _spawnPoint);
+                go.GetComponent<CollectableItem>().SetItem(_item);
+            }
+        }
+        base.UpdateItemSlot(item);
     }
 
     public bool CheckIngrediant(ItemData item)
     {
         Debug.Log(CraftingManager.instance.currentRecipe.ingrediants.Length);
         Recipe current = CraftingManager.instance.currentRecipe;
-        if (item.ingrediant == current.ingrediants[slotIndex] && SkillManager.instance.HasSkill(current.requiredSkill))
+        if (item.ingrediant == current.ingrediants[slotIndex -1] && SkillManager.instance.HasSkill(current.requiredSkill))
         {
-            CraftingManager.instance.AddToRecipeSlot(slotIndex);
+            CraftingManager.instance.AddToRecipeSlot(slotIndex -1);
             return true;
         }
         else
@@ -30,7 +41,9 @@ public class CraftingSlot : InventorySlot
 
     public void RemoveItem()
     {
-        CraftingManager.instance.RemoveFromRecipeSlot(slotIndex);
+        if(slotIndex != 0)
+        CraftingManager.instance.RemoveFromRecipeSlot(slotIndex -1);
+        _item = null;
         UpdateItemSlot(null);
     }
 }

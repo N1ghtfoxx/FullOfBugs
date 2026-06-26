@@ -6,6 +6,7 @@ public class TestInventoryUiManager : Singleton<TestInventoryUiManager>
 {
     public InventorySlot[] inventorySlots;
     public GameObject inventory;
+    public InventorySlot[] inventoryPlusSlots;
     public GameObject inventoryPlus;
         
     void Start()
@@ -21,11 +22,32 @@ public class TestInventoryUiManager : Singleton<TestInventoryUiManager>
             UpdateInventoryUI();
         }
         inventory.SetActive(!inventory.activeSelf);
+        PauseManager.instance.SetPause();
     }
 
     public void ToggleInventoryPlus()
     {
+        if(!inventoryPlus.activeSelf)
+        {
+            UpdateInventoryPlusUI();
+        }
         inventoryPlus.SetActive(!inventoryPlus.activeSelf);
+        PauseManager.instance.SetPause();
+    }
+
+    public void UpdateInventoryPlusUI()
+    {
+        for (int i = 0; i < inventoryPlusSlots.Length; i++)
+        {
+            if (i < InventoryManager.Instance.inventory.Count)
+            {
+                inventoryPlusSlots[i].UpdateItemSlot(InventoryManager.Instance.inventory[i]);
+            }
+            else
+            {
+                inventoryPlusSlots[i].UpdateItemSlot(null);
+            }
+        }
     }
 
     public void SetInventoryActive(bool newState)

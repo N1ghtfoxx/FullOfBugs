@@ -34,7 +34,7 @@ public class FailFeedbackManager : MonoBehaviour
         _feedbackUiImg.sprite = original;
         _feedbackUiObj.transform.SetParent(parent.transform, false);
         RectTransform transform = parent.GetComponent<RectTransform>();
-        _feedbackUiImg.rectTransform.sizeDelta = transform.sizeDelta;
+        _feedbackUiImg.rectTransform.sizeDelta = transform.sizeDelta * 1.1f;
         _feedbackUiImg.rectTransform.position = transform.position;
         _feedbackUiImg.rectTransform.rotation = transform.rotation;
         StartCoroutine(FeedbackRoutine(_feedbackUiObj));
@@ -46,7 +46,7 @@ public class FailFeedbackManager : MonoBehaviour
         _feedbackGameObj.transform.SetParent(parent.transform, false);
         _feedbackGameObj.transform.position = parent.transform.position;
         _feedbackGameObj.transform.rotation = parent.transform.rotation;
-        _feedbackGameObj.transform.localScale = parent.transform.localScale;
+        _feedbackGameObj.transform.localScale = parent.transform.localScale * 1.1f;
         StartCoroutine(FeedbackRoutine(_feedbackGameObj));
     }
 
