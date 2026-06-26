@@ -34,7 +34,6 @@ public class CraftingUI : MonoBehaviour
     void Start()
     {
         SwitchShowCrafting(CraftingManager.instance.CraftingAvailable());
-        gameObject.SetActive(false);
     }
 
     void OnEnable()

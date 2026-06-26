@@ -12,7 +12,7 @@ public class CraftingSlot : InventorySlot
     {
         if(_item != null)
         {
-            if (InventoryManager.Instance.AddItemToInventory(_item))
+            if (InventoryManager.instance.AddItemToInventory(_item))
                 TestInventoryUiManager.instance.UpdateInventoryPlusUI();
             else
             {

@@ -1,9 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryManager : Singleton<InventoryManager>
 {
-    public static InventoryManager Instance { get; private set; }
     public List<ItemData> inventory = new List<ItemData>();
     public List<ItemData> chest = new List<ItemData>();
     public int maxInventorySlots = 7;
@@ -11,18 +10,6 @@ public class InventoryManager : MonoBehaviour
 
     [SerializeField] private Sprite _testSprite; // Assign a test sprite in the inspector
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     public bool AddItemToInventory(ItemData newItem, List<ItemData> targetList = null, int maxSlots = 7)
     {

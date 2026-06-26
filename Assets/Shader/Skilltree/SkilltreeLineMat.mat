@@ -49,7 +49,7 @@ Material:
     - _StencilWriteMask: 255
     - _UIMaskSoftnessX: 1
     - _UIMaskSoftnessY: 1
-    - _reached: 1
+    - _reached: 0
     - _skilled: 1
     m_Colors:
     - _ClipRect: {r: 0, g: 0, b: 0, a: 0}

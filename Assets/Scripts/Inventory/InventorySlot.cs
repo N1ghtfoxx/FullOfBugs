@@ -99,14 +99,14 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             case SlotType.Inventory:
                 if (draggedSlot.slotType == SlotType.Ingrediant && CraftingManager.instance.isCrafting)
                     break;
-                if (!InventoryManager.Instance.AddItemToInventory(transferItem))
+                if (!InventoryManager.instance.AddItemToInventory(transferItem))
                 {
                     FailFeedbackManager.instance.ShowFailFeedbackUI(draggedSlot._slotBackground.sprite, draggedSlot._slotBackground.gameObject);
                     return;
                 }
                 break;
             case SlotType.Storage:
-                InventoryManager.Instance.AddItemToStorage(transferItem, InventoryManager.Instance.chest, InventoryManager.Instance.maxChestSlots);
+                InventoryManager.instance.AddItemToStorage(transferItem, InventoryManager.instance.chest, InventoryManager.instance.maxChestSlots);
                 break;
             case SlotType.Ingrediant:
                 CraftingSlot cs = this as CraftingSlot;
@@ -128,10 +128,10 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         switch (draggedSlot.slotType)
         {
             case SlotType.Inventory:
-                InventoryManager.Instance.RemoveItemFromInventory(draggedSlot._item.name, InventoryManager.Instance.inventory);
+                InventoryManager.instance.RemoveItemFromInventory(draggedSlot._item.name, InventoryManager.instance.inventory);
                 break;
             case SlotType.Storage:
-                InventoryManager.Instance.RemoveItemFromStorage(draggedSlot._item.name, InventoryManager.Instance.chest);
+                InventoryManager.instance.RemoveItemFromStorage(draggedSlot._item.name, InventoryManager.instance.chest);
                 break;
             case SlotType.Ingrediant:
                 if (CraftingManager.instance.isCrafting)

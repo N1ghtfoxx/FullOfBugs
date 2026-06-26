@@ -20,8 +20,10 @@ public class CraftingManager : Singleton<CraftingManager>
     protected override void Awake()
     {
         base.Awake();
-        craftingUI = FindFirstObjectByType<CraftingUI>();
+        //craftingUI = FindFirstObjectByType<CraftingUI>();
         if (craftingUI == null) Debug.Log("Hier");
+
+        craftingUI.gameObject.SetActive(false);
     }
 
     [ContextMenu("Toggle CraftingUI")]
@@ -69,7 +71,11 @@ public class CraftingManager : Singleton<CraftingManager>
                 break;
         }
         if(recipes.Count == 1)
+        {
             craftingUI.SwitchShowCrafting(true);
+            currentRecipe = recipe;
+        }
+
         List<string> options = new List<string>();
         foreach (Recipe r in recipes)
         {
@@ -86,8 +92,8 @@ public class CraftingManager : Singleton<CraftingManager>
         {
             recipe.result = (Result)(int)recipe.result + 1;
             recipe.slotSprites[0] = resultItems[(int)recipe.result].icon;
+            craftingUI.UpdateResultShape();
         }
-        craftingUI.UpdateResultShape();
     }
 
     public int GetCurrentRecipeIndex()

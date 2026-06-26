@@ -39,9 +39,9 @@ public class TestInventoryUiManager : Singleton<TestInventoryUiManager>
     {
         for (int i = 0; i < inventoryPlusSlots.Length; i++)
         {
-            if (i < InventoryManager.Instance.inventory.Count)
+            if (i < InventoryManager.instance.inventory.Count)
             {
-                inventoryPlusSlots[i].UpdateItemSlot(InventoryManager.Instance.inventory[i]);
+                inventoryPlusSlots[i].UpdateItemSlot(InventoryManager.instance.inventory[i]);
             }
             else
             {
@@ -71,9 +71,9 @@ public class TestInventoryUiManager : Singleton<TestInventoryUiManager>
     {
         for (int i = 0; i < inventorySlots.Length; i++)
         {
-            if (i < InventoryManager.Instance.inventory.Count)
+            if (i < InventoryManager.instance.inventory.Count)
             {
-                inventorySlots[i].UpdateItemSlot(InventoryManager.Instance.inventory[i]);
+                inventorySlots[i].UpdateItemSlot(InventoryManager.instance.inventory[i]);
             }
             else
             {

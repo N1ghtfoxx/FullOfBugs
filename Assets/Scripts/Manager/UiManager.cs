@@ -76,36 +76,36 @@ public class UiManager : Singleton<UiManager>
     private void SearchForReferences()
     {
         CheckActiveScene();
-        if (inGameScene)
-        {
-            if (uiCanvas == null)
-                transform.Find("UiCanvas");
+        //if (inGameScene)
+        //{
+        //    if (uiCanvas == null)
+        //        transform.Find("UiCanvas");
 
-            playerPanel = uiCanvas.transform.Find("PlayerPanel").gameObject;
-            playerSprite = playerPanel.transform.Find("PlayerSprite").gameObject;
-            playerNameText = playerPanel.transform.Find("PlayerNameText").gameObject;
-            playerLevelText = playerPanel.transform.Find("PlayerLevelText").gameObject;
-            playerHealthSlider = playerPanel.transform.Find("PlayerHealthSlider").gameObject;
+        //    playerPanel = uiCanvas.transform.Find("PlayerPanel").gameObject;
+        //    playerSprite = playerPanel.transform.Find("PlayerSprite").gameObject;
+        //    playerNameText = playerPanel.transform.Find("PlayerNameText").gameObject;
+        //    playerLevelText = playerPanel.transform.Find("PlayerLevelText").gameObject;
+        //    playerHealthSlider = playerPanel.transform.Find("PlayerHealthSlider").gameObject;
 
-            pausePanel = uiCanvas.transform.Find("PausePanel").gameObject;
-            pauseText = pausePanel.transform.Find("PauseText").gameObject;
-            continueButton = pausePanel.transform.Find("ContinueButton").gameObject;
-            loadButton = pausePanel.transform.Find("LoadButton").gameObject;
-            optionsButton = pausePanel.transform.Find("OptionsButton").gameObject;
-            exitButton = pausePanel.transform.Find("ExitButton").gameObject;
-            optionsPanel = uiCanvas.transform.Find("OptionsPanel").gameObject;
+        //    pausePanel = uiCanvas.transform.Find("PausePanel").gameObject;
+        //    pauseText = pausePanel.transform.Find("PauseText").gameObject;
+        //    continueButton = pausePanel.transform.Find("ContinueButton").gameObject;
+        //    loadButton = pausePanel.transform.Find("LoadButton").gameObject;
+        //    optionsButton = pausePanel.transform.Find("OptionsButton").gameObject;
+        //    exitButton = pausePanel.transform.Find("ExitButton").gameObject;
+        //    optionsPanel = uiCanvas.transform.Find("OptionsPanel").gameObject;
 
-            messagePanel = uiCanvas.transform.Find("MessagePanel").gameObject;
-            messageText = messagePanel.transform.Find("MessageText").gameObject;
-            messageButtonPanel = messagePanel.transform.Find("MessageButtonPanel").gameObject;
-            yesButton = messageButtonPanel.transform.Find("YesButton").gameObject;
-            noButton = messageButtonPanel.transform.Find("NoButton").gameObject;
+        //    messagePanel = uiCanvas.transform.Find("MessagePanel").gameObject;
+        //    messageText = messagePanel.transform.Find("MessageText").gameObject;
+        //    messageButtonPanel = messagePanel.transform.Find("MessageButtonPanel").gameObject;
+        //    yesButton = messageButtonPanel.transform.Find("YesButton").gameObject;
+        //    noButton = messageButtonPanel.transform.Find("NoButton").gameObject;
 
-            devPanel = uiCanvas.transform.Find("DevPanel").gameObject;
-            devButton1 = devPanel.transform.Find("DevButton1").gameObject;
-            devButton2 = devPanel.transform.Find("DevButton2").gameObject;
-            devButton3 = devPanel.transform.Find("DevButton3").gameObject;
-        }
+        //    devPanel = uiCanvas.transform.Find("DevPanel").gameObject;
+        //    devButton1 = devPanel.transform.Find("DevButton1").gameObject;
+        //    devButton2 = devPanel.transform.Find("DevButton2").gameObject;
+        //    devButton3 = devPanel.transform.Find("DevButton3").gameObject;
+        //}
     }
 
     // #TO-DO Jo: put this check into gamemanager maybe?

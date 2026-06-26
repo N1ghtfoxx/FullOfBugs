@@ -8,7 +8,7 @@ public class CollectableItem : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if(InventoryManager.Instance.AddItemToInventory(_data))
+        if(InventoryManager.instance.AddItemToInventory(_data))
             Destroy(gameObject);
         else FailFeedbackManager.instance.ShowFailFeedbackInGame(_data.icon, gameObject);
     }
