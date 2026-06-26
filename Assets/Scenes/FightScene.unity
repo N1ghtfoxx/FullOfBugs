@@ -153,6 +153,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14cc5099cae77ac4190ff15462858e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SaveLoadManager
+  currentSaveData:
+    level: 0
+    playtime: 0
+    posX: 0
+    posY: 0
+    inventory: []
+    chest: []
+  selectedSlotIndex: 0
 --- !u!4 &430886008
 Transform:
   m_ObjectHideFlags: 0
@@ -625,6 +633,10 @@ PrefabInstance:
     - target: {fileID: 4425745177934332113, guid: fb4f9ef48e4fe0d4f90aa30d077c2364, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908066034214317465, guid: fb4f9ef48e4fe0d4f90aa30d077c2364, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5523362063396622839, guid: fb4f9ef48e4fe0d4f90aa30d077c2364, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
