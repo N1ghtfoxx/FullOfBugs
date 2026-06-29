@@ -15,7 +15,7 @@ public class TestInventoryUiManager : Singleton<TestInventoryUiManager>
         inventoryPlus.SetActive(false);
     }
 
-    private void ToggleInventory()
+    public void ToggleInventory()
     {
         if (!inventory.activeSelf) // if inventory is currently closed, update the UI before opening
         {
