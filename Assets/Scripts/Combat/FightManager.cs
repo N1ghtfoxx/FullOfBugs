@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 using Skilltree;
+using System.Collections.Generic;
 /*
  To start a fight you need an Enemy yourEnemyClass.
 Call: Fightmanager.instance.StartFight(yourEnemyClass);
@@ -13,6 +14,12 @@ public class FightManager : Singleton<FightManager>
     private bool _playerTurn;
     private bool _fightOver;
     private bool _playerWon;
+
+    public static int _enemyLevel = 0;
+    [SerializeField] int _enemiesBeforeUpgrade = 7;
+    private int _defeatedEnemys;
+    [SerializeField] EnemyGroup[] _enemiesByLevel;
+
 
     public void UseItem(string itemName)
     {
@@ -117,6 +124,17 @@ public class FightManager : Singleton<FightManager>
         if (!_fightOver)
             return;
         _playerWon = PlayerStatsManager.instance.hp > 0;
+        if (_playerWon)
+        {
+            SkillManager.instance.AddShadow(_enemy.reward);
+            _defeatedEnemys++;
+            if(_defeatedEnemys >= _enemiesBeforeUpgrade)
+            {
+                _defeatedEnemys = 0;
+                if(_enemyLevel<2)
+                    _enemyLevel++;
+            }
+        }
         UiManager.instance.FightEnded(_playerWon, _enemy.name, PlayerStatsManager.instance.hp);
     }
 
@@ -126,10 +144,21 @@ public class FightManager : Singleton<FightManager>
     }
 
 
-    public void StartFight(Enemy e)
+    public void StartFight()
     {
-        _enemy = e;
+        Enemy random = _enemiesByLevel[_enemyLevel].GetEnemy();
+        _enemy = new Enemy
+        {
+            name = random.name,
+            variant = random.variant,
+            hp = random.hp,
+            dmg = random.dmg,
+            reward = random.reward,
+            sprite = random.sprite
+        };
+
         UiManager.instance.SetFightUi("Hermbert", PlayerStatsManager.instance.maxHp, PlayerStatsManager.instance.hp, _enemy.name, _enemy.variant, _enemy.hp, _enemy.sprite);
+        PauseManager.instance.SetPause();
         Coinflip();
         UiManager.instance.PlayerFightControl(_playerTurn);
         if(!_playerTurn)
@@ -140,7 +169,7 @@ public class FightManager : Singleton<FightManager>
     [ContextMenu("StartFight")]
     public void tempSetFightUI()
     {
-        StartFight(_enemy);
+        StartFight();
     }
 
     public void Coinflip()
@@ -187,5 +216,17 @@ public class Enemy
     public string variant;
     public int hp;
     public int dmg;
+    public Skilltree.ShadowType reward;
     public Sprite sprite;
+}
+
+[System.Serializable]
+public class EnemyGroup
+{
+    public List<Enemy> _enemyList;
+
+    public Enemy GetEnemy()
+    {
+        return _enemyList[Random.Range(0, _enemyList.Count)];
+    }
 }

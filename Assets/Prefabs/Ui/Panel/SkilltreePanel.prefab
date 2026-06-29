@@ -347,7 +347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4717335079335846158}
   m_Layer: 5
-  m_Name: Farming
+  m_Name: Crafting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -528,7 +528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7166477237540331700
 RectTransform:
   m_ObjectHideFlags: 0
@@ -570,7 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -790,7 +790,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 7a7aa5de6c03aae428d8212a5ccc1f35, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1035,7 +1035,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5814024701756206924}
   m_Layer: 5
-  m_Name: Crafting
+  m_Name: Farming
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1467,6 +1467,10 @@ PrefabInstance:
       propertyPath: '_skill.prerequisites.Array.data[0]'
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5774278549018345857, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9a45eedc59f897a47b512592af800df6, type: 3}
     - target: {fileID: 6709759738351391231, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
       propertyPath: m_Name
       value: SkillNodeGlowPotion
@@ -1625,6 +1629,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5774278549018345857, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e3dd2696e2d381d41bedc9cc20793e4b, type: 3}
     - target: {fileID: 6709759738351391231, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
       propertyPath: m_Name
       value: SkillNodeFertilizer
@@ -2108,6 +2116,10 @@ PrefabInstance:
       propertyPath: '_skill.prerequisites.Array.data[0]'
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5774278549018345857, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7c2311f065dd40f4780a3e0c964e7a89, type: 3}
     - target: {fileID: 6709759738351391231, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
       propertyPath: m_Name
       value: SkillNodeStrongerHealingPotion
@@ -2246,6 +2258,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5774278549018345857, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3d62ac18ed1c1d49a70d26959a9e35f, type: 3}
     - target: {fileID: 6709759738351391231, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
       propertyPath: m_Name
       value: SkillNodeGarden
@@ -2558,6 +2574,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5774278549018345857, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3d62ac18ed1c1d49a70d26959a9e35f, type: 3}
     - target: {fileID: 6709759738351391231, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
       propertyPath: m_Name
       value: SkillNodeFarm
@@ -2871,9 +2891,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5053515307903449271, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
+      propertyPath: _prerequisitesLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053515307903449271, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
       propertyPath: _skill.prerequisites.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5053515307903449271, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
+      propertyPath: '_prerequisitesLines.Array.data[1]'
+      value: 
+      objectReference: {fileID: 3512129461730311330}
     - target: {fileID: 5053515307903449271, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
       propertyPath: '_skill.prerequisites.Array.data[0]'
       value: 15
@@ -2898,6 +2926,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5774278549018345857, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4b44a03e578e2404cbed7c9d56969013, type: 3}
     - target: {fileID: 6709759738351391231, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
       propertyPath: m_Name
       value: SkillNodePlantMaster
@@ -3072,6 +3104,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5774278549018345857, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e3dd2696e2d381d41bedc9cc20793e4b, type: 3}
     - target: {fileID: 5774278549018345857, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
       propertyPath: m_Material
       value: 
@@ -3262,6 +3298,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5774278549018345857, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4b44a03e578e2404cbed7c9d56969013, type: 3}
     - target: {fileID: 6709759738351391231, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
       propertyPath: m_Name
       value: SkillNodeGreenThumb
@@ -3567,6 +3607,10 @@ PrefabInstance:
       propertyPath: '_skill.prerequisites.Array.data[0]'
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5774278549018345857, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 29fcee1f7d91ed3408e02f754eb934ec, type: 3}
     - target: {fileID: 6709759738351391231, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
       propertyPath: m_Name
       value: SkillNodeLongerGlowPotion
@@ -3880,6 +3924,10 @@ PrefabInstance:
       value: Healing Potion
       objectReference: {fileID: 0}
     - target: {fileID: 5053515307903449271, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
+      propertyPath: _reachedMultiplier
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053515307903449271, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
       propertyPath: _skill.description
       value: Upgrade your Crafting table to be able to craft healing potions
       objectReference: {fileID: 0}
@@ -3887,6 +3935,10 @@ PrefabInstance:
       propertyPath: _skill.cost.costType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5774278549018345857, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8dbde1701174b9f489edb57f7f3e5623, type: 3}
     - target: {fileID: 6709759738351391231, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
       propertyPath: m_Name
       value: SkillNodeHealingPotion

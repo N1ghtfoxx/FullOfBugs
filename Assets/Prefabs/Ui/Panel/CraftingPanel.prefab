@@ -377,7 +377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8293423987995509375
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2472,13 +2472,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1f02766cb17103489b1422eea4a3eba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CraftingUI
+  _recipeDropdown: {fileID: 2020756351776270894}
+  _dropdownImg: {fileID: 5335380933757355155}
   _slots:
   - {fileID: 3948764484000248310}
   - {fileID: 8170197757410740869}
   - {fileID: 996454840609985026}
   - {fileID: 8392780363463160964}
+  _thirdIngrediant: {fileID: 3405619354416331409}
   _timeText: {fileID: 1234186309470166369}
   _progressbar: {fileID: 5073376325388212247}
+  _background: {fileID: 8075010446242333168}
+  _startButton: {fileID: 3721247306095406820}
+  _startButtonImg: {fileID: 2186477397782838224}
 --- !u!1 &9086795408013578004
 GameObject:
   m_ObjectHideFlags: 0
@@ -2599,7 +2605,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2186477397782838224}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2874521183655889770}
+        m_TargetAssemblyTypeName: CraftingUI, Assembly-CSharp
+        m_MethodName: StartCraft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9205016386419261663
 GameObject:
   m_ObjectHideFlags: 0

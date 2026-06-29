@@ -220,7 +220,7 @@ public class UiManager : Singleton<UiManager>
     // actually, #TO-DO Jo: This can be one method
     public void ShowFightWonScreen(string enemyNameText, int playerHealth)
     {
-        _fightWonText.text = "You won against " + enemyNameText + "with " + playerHealth.ToString() + " HP.";
+        _fightWonText.text = "You won against " + enemyNameText + " with " + playerHealth.ToString() + " HP.";
         FightDisableAllUi();
         _fightWonScreen.SetActive(true);
     }

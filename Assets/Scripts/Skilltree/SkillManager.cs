@@ -35,7 +35,7 @@ public class SkillManager : Singleton<SkillManager>
             _shadowCounterTexts[i] = shadowCounterParent.GetChild(i).GetComponent<TMP_Text>();
     //Load Values
             //Test replace with load shadows
-            _shadows[i] = 5;
+            _shadows[i] = 0;
         }
         //load skill list
         _unlockedSkills = new List<SkillID>();
@@ -119,6 +119,7 @@ public class SkillManager : Singleton<SkillManager>
     public void AddShadow(ShadowType shadowType)
     {
         _shadows[(int)shadowType]++;
+        UpdateShadowUI();
     }
 
     public bool HasShadows(Cost cost)
@@ -176,7 +177,7 @@ public class SkillManager : Singleton<SkillManager>
 
 
     #region Interaction
-    private RectTransform _rectTransform; //reference to the skilltree rect transform for movement and zooming
+    [SerializeField] RectTransform _rectTransform; //reference to the skilltree rect transform for movement and zooming
     private Vector2 _lastMousePos; //used to calculate mouse movement delta for dragging the skilltree
     private bool _skilltreeOpen = false; //state of the skilltree, used to toggle and to prevent interaction when closed
     //Input references and settings

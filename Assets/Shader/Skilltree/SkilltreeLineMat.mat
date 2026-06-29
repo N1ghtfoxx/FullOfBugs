@@ -53,8 +53,8 @@ Material:
     - _skilled: 1
     m_Colors:
     - _ClipRect: {r: 0, g: 0, b: 0, a: 0}
-    - _reachedColor: {r: 1, g: 1, b: 1, a: 1}
-    - _skilledGlowColor: {r: 0, g: 893.00415, b: 1016.27167, a: 1}
+    - _reachedColor: {r: 0.86415094, g: 0.86415094, b: 0.86415094, a: 1}
+    - _skilledGlowColor: {r: 2, g: 1.3307749, b: 0.311853, a: 1}
     - _unreachedColor: {r: 0.4415095, g: 0.4415095, b: 0.4415095, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

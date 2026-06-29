@@ -8,32 +8,34 @@ using System.Collections.Generic;
 
 public class CraftingUI : MonoBehaviour
 {
-    private TMP_Dropdown _recipeDropdown;
-    private Image _dropdownImg;
+    [SerializeField] TMP_Dropdown _recipeDropdown;
+    [SerializeField] Image _dropdownImg;
     [SerializeField] CraftingSlot[] _slots;
-    private GameObject _thirdIngrediant;
+    [SerializeField] GameObject _thirdIngrediant;
     [SerializeField] TMP_Text _timeText;
     [SerializeField] Image _progressbar;
-    private Image _background;
+    [SerializeField] Image _background;
 
-    private Button _startButton;
-    private Image _startButtonImg;
+    [SerializeField] Button _startButton;
+    [SerializeField] Image _startButtonImg;
 
     void Awake()
     {
-        _recipeDropdown = GetComponentInChildren<TMP_Dropdown>();
-        _dropdownImg = _recipeDropdown.GetComponent<Image>();
-        _startButton = GetComponentInChildren<Button>();
-        _startButton.onClick.AddListener(StartCraft);
-        _startButtonImg = _startButton.GetComponent<Image>();
-        _background = transform.Find("CraftingEquation").GetComponent<Image>();
-        _thirdIngrediant = _background.transform.Find("ThirdIngrediant").gameObject;
+        //_recipeDropdown = GetComponentInChildren<TMP_Dropdown>();
+        //_dropdownImg = _recipeDropdown.GetComponent<Image>();
+        //_startButton = GetComponentInChildren<Button>();
+        //_startButton.onClick.AddListener(StartCraft);
+        //_startButtonImg = _startButton.GetComponent<Image>();
+        //_background = transform.Find("CraftingEquation").GetComponent<Image>();
+        //_thirdIngrediant = _background.transform.Find("ThirdIngrediant").gameObject;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         SwitchShowCrafting(CraftingManager.instance.CraftingAvailable());
+        if (CraftingManager.instance.currentRecipe != null)
+            UpdateDropdown(CraftingManager.instance.GetCurrentRecipeIndex());
     }
 
     void OnEnable()
@@ -52,12 +54,14 @@ public class CraftingUI : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(!show);
     }
 
-    public void UpdateDropdown(List<string> options, int value)
+    public void UpdateDropdown(int value)
     {
-        _recipeDropdown.ClearOptions();
-        _recipeDropdown.AddOptions(options);
+        if(_recipeDropdown.options != null)
+            _recipeDropdown.ClearOptions();
+        _recipeDropdown.AddOptions(CraftingManager.instance.GetRecipeNameList());
         _recipeDropdown.value = value;
         _recipeDropdown.RefreshShownValue();
+        SetRecipe(value);
     }
 
     public void SetRecipe(int index)
