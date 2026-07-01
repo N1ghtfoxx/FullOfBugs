@@ -257,7 +257,7 @@ public class UiManager : Singleton<UiManager>
         Debug.Log("Exit the FightScene.");
     }
 
-    public void OnClickContinueAfterLose()
+    public void OnClickBackToMainMenu()
     {
         SceneLoadingManager.Instance.LoadScene("StartScreen");
     }
