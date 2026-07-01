@@ -46,7 +46,7 @@ public class FightManager : Singleton<FightManager>
                 break;
             case Weapon.Slingshot:
                 dmg = 2;
-                //To-Do: Check for Ammunition and remove or cancle
+                InventoryManager.instance.RemoveItemFromInventory("Dungball");
                 break;
             case Weapon.MagicStuff:
                 dmg = 3;

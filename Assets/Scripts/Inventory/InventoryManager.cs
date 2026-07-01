@@ -72,8 +72,10 @@ public class InventoryManager : Singleton<InventoryManager>
         }
     }
 
-    public void RemoveItemFromInventory(string itemName, List<ItemData> targetList)
+    public void RemoveItemFromInventory(string itemName, List<ItemData> targetList = null)
     {
+        targetList = targetList == null ? inventory : targetList;
+
         ItemData existingItem = null;
 
         foreach(ItemData item in targetList)

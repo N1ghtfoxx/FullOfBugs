@@ -44,6 +44,9 @@ public class UiManager : Singleton<UiManager>
     [SerializeField] Slider _playerHealthSlider;
     [SerializeField] Image _playerImage;
     [SerializeField] GameObject _actionButtons;
+    [SerializeField] GameObject _attackMenuPanel;
+    [SerializeField] GameObject _slingshotAttackButton;
+    [SerializeField] TMP_Text _slingshotAmmoCount;
     [SerializeField] GameObject _fightWonContinueButton;
     [SerializeField] GameObject _fightLostContinueButton;
     [SerializeField] GameObject _fightWonScreen;
@@ -247,9 +250,24 @@ public class UiManager : Singleton<UiManager>
 
     #region OnClickFight
 
+    public void OnClickOpenAttackPanel()
+    {
+        _blackscreen.SetActive(true);
+        _attackMenuPanel.SetActive(true);
+
+        ItemData ammo = InventoryManager.instance.inventory.Find(x => x.name == "Dungball");
+        _slingshotAttackButton.SetActive(ammo != null);
+        if (ammo != null)
+            _slingshotAmmoCount.text = ammo.quantity.ToString();
+
+    }
+
+    //very specific should be optimized but works for now
     public void OnClickSetWeapon(string weapon)
     {
         FightManager.instance.SetWeapon(weapon);
+        _attackMenuPanel.SetActive(false);
+        _blackscreen.SetActive(false);
     }   
 
     public void OnClickContinueAfterFight()
