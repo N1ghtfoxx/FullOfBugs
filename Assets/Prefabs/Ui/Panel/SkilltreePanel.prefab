@@ -2871,9 +2871,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5053515307903449271, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
+      propertyPath: _prerequisitesLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053515307903449271, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
       propertyPath: _skill.prerequisites.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5053515307903449271, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
+      propertyPath: '_prerequisitesLines.Array.data[1]'
+      value: 
+      objectReference: {fileID: 3512129461730311330}
     - target: {fileID: 5053515307903449271, guid: 19d96a856cd68b44aadbf677a8d6cb18, type: 3}
       propertyPath: '_skill.prerequisites.Array.data[0]'
       value: 15
