@@ -16,6 +16,7 @@ namespace Crafting
 
     public enum Ingrediant
     {
+        none,
         Strawberry,
         Mint,
         LuminousMoss,
@@ -26,7 +27,9 @@ namespace Crafting
     public enum Result
     {
         HealingPotion,
+        HealingPotionPlus,
         GlowingPotion,
+        GlowingPotionPlus,
         Fertilizer,
     }
 

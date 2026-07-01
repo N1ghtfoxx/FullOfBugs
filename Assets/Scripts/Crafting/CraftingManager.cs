@@ -3,22 +3,27 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using Crafting;
 using System.Linq;
+using System;
 
 public class CraftingManager : Singleton<CraftingManager>
 {
     public Recipe currentRecipe;
-    private CraftingUI craftingUI;
+    public CraftingUI craftingUI;
     private bool[] _ingrediantBool;
     private List<Recipe> recipes = new List<Recipe>();
     public float remainingCraftTime = 30;
     public Recipe[] testRecipe;
     public bool isCrafting = false;
 
+    [SerializeField] ItemData[] resultItems;
+
     protected override void Awake()
     {
         base.Awake();
-        craftingUI = FindFirstObjectByType<CraftingUI>();
+        //craftingUI = FindFirstObjectByType<CraftingUI>();
         if (craftingUI == null) Debug.Log("Hier");
+
+        craftingUI.gameObject.SetActive(false);
     }
 
     [ContextMenu("Toggle CraftingUI")]
@@ -52,9 +57,25 @@ public class CraftingManager : Singleton<CraftingManager>
 
     public void AddRecipe(Recipe recipe)
     {
+        if (recipes.Contains(recipe)) return;
         recipes.Add(recipe);
+        switch (recipe.name)
+        {
+            case RecipeName.HealingRecipe:
+                TryUpgradeRecipe(RecipeName.HealingRecipe, Skilltree.SkillID.StrongHealingPotion);
+                break;
+            case RecipeName.GlowingRecipe:
+                TryUpgradeRecipe(RecipeName.GlowingRecipe, Skilltree.SkillID.LongGlowPotion);
+                break;
+            default:
+                break;
+        }
         if(recipes.Count == 1)
+        {
             craftingUI.SwitchShowCrafting(true);
+            currentRecipe = recipe;
+        }
+
         List<string> options = new List<string>();
         foreach (Recipe r in recipes)
         {
@@ -62,6 +83,17 @@ public class CraftingManager : Singleton<CraftingManager>
         }
         int i = currentRecipe != null ? recipes.IndexOf(currentRecipe) : 0;
         craftingUI.UpdateDropdown(options, i);
+    }
+
+    public void TryUpgradeRecipe(RecipeName name, Skilltree.SkillID skill)
+    {
+        Recipe recipe = recipes.Find(r => r.name == name);
+        if (SkillManager.instance.HasSkill(skill) && recipe!=null)
+        {
+            recipe.result = (Result)(int)recipe.result + 1;
+            recipe.slotSprites[0] = resultItems[(int)recipe.result].icon;
+            craftingUI.UpdateResultShape();
+        }
     }
 
     public int GetCurrentRecipeIndex()
@@ -75,12 +107,12 @@ public class CraftingManager : Singleton<CraftingManager>
         _ingrediantBool = new bool[currentRecipe.ingrediants.Length];
     }
 
-    private void AddToRecipeSlot(int index)
+    public void AddToRecipeSlot(int index)
     {
         _ingrediantBool[index] = true;
     }
 
-    private void RemoveFromRecipeSlot(int index)
+    public void RemoveFromRecipeSlot(int index)
     {
         _ingrediantBool[index] = false;
     }
@@ -88,7 +120,6 @@ public class CraftingManager : Singleton<CraftingManager>
     public bool CheckIngrediants()
     {
         return !_ingrediantBool.Contains(false);
-
     }
 
     public void StartCraft()
@@ -97,8 +128,6 @@ public class CraftingManager : Singleton<CraftingManager>
         remainingCraftTime = currentRecipe.craftTime;
         StartCoroutine(CraftProgress());
     }
-
-
 
     private System.Collections.IEnumerator CraftProgress()
     {
@@ -113,7 +142,8 @@ public class CraftingManager : Singleton<CraftingManager>
         isCrafting = false;
 
         Debug.Log("Crafting complete");
-        //InventoryManager.instance.AddItem(currentRecipe.result);
+        craftingUI.FillResultSlot(resultItems[(int)currentRecipe.result]);
+
     }
 
 }

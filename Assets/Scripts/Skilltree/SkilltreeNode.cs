@@ -6,13 +6,13 @@ using Skilltree;
 public class SkilltreeNode : MonoBehaviour
 {
     //UI References
-    private GameObject _expansion;
-    private TMP_Text _nameText;
-    private TMP_Text _descriptionText;
-    private TMP_Text _costText;
+    [SerializeField] GameObject _expansion;
+    [SerializeField] TMP_Text _nameText;
+    [SerializeField] TMP_Text _descriptionText;
+    [SerializeField] TMP_Text _costText;
 
-    private Image[] _prerequisitesLines;
-    private Image _icon;
+    [SerializeField] Image[] _prerequisitesLines;
+    [SerializeField] Image _icon;
 
     [SerializeField] Skill _skill;
 
@@ -32,13 +32,13 @@ public class SkilltreeNode : MonoBehaviour
 
     private void Awake()
     {
-        //Get UI references
-        _expansion = transform.Find("Expansion").gameObject;
-        _nameText = _expansion.transform.Find("Name").GetComponent<TMP_Text>();
-        _descriptionText = _expansion.transform.Find("Description").GetComponent<TMP_Text>();
-        _costText = _expansion.transform.Find("Cost").GetComponent<TMP_Text>();
-        _prerequisitesLines = transform.Find("Prerequisites").GetComponentsInChildren<Image>();
-        _icon = transform.Find("Icon").GetComponent<Image>();
+        ////Get UI references
+        //_expansion = transform.Find("Expansion").gameObject;
+        //_nameText = _expansion.transform.Find("Name").GetComponent<TMP_Text>();
+        //_descriptionText = _expansion.transform.Find("Description").GetComponent<TMP_Text>();
+        //_costText = _expansion.transform.Find("Cost").GetComponent<TMP_Text>();
+        //_prerequisitesLines = transform.Find("Prerequisites").GetComponentsInChildren<Image>();
+        //_icon = transform.Find("Icon").GetComponent<Image>();
         //Initialize shader properties
         foreach (Image line in _prerequisitesLines)
         {

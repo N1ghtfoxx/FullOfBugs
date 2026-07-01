@@ -1,29 +1,19 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryManager : Singleton<InventoryManager>
 {
-    public static InventoryManager Instance { get; private set; }
     public List<ItemData> inventory = new List<ItemData>();
     public List<ItemData> chest = new List<ItemData>();
     public int maxInventorySlots = 7;
     public int maxChestSlots = 20;
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    [SerializeField] private Sprite _testSprite; // Assign a test sprite in the inspector
 
-    public void AddItemToInventory(ItemData newItem, List<ItemData> targetList, int maxSlots)
+
+    public bool AddItemToInventory(ItemData newItem, List<ItemData> targetList = null, int maxSlots = 7)
     {
+        targetList = targetList == null ? inventory : targetList;
         ItemData existingItem = null;
 
         foreach(ItemData item in targetList)
@@ -38,16 +28,16 @@ public class InventoryManager : MonoBehaviour
         if(existingItem != null)
         {
             existingItem.quantity++;
-
+            return true;
         } else {
             
             if(targetList.Count < maxSlots)
             {
                 targetList.Add(newItem);
-
+                return true;
             } else {
-
                 Debug.Log("Inventory is full! Cannot add " + newItem.name);
+                return false;
             }
         }
     }
@@ -107,13 +97,14 @@ public class InventoryManager : MonoBehaviour
 
         } else {
 
-            Debug.Log("Item " + itemName + " not found in inventory!");
+            Debug.Log("CollectableItem " + itemName + " not found in inventory!");
 
         }
     }
 
     public void RemoveItemFromStorage(string itemName, List<ItemData> targetList)
     {
+        Debug.Log("RemoveFromStorage aufgerufen für " + itemName);
         ItemData existingItem = null;
 
         foreach(ItemData item in targetList)
@@ -127,6 +118,7 @@ public class InventoryManager : MonoBehaviour
 
         if(existingItem != null)
         {
+            Debug.Log("CollectableItem gefunden, quantity: " + existingItem.quantity);
             existingItem.quantity--;
 
             if(existingItem.quantity <= 0)
@@ -137,27 +129,30 @@ public class InventoryManager : MonoBehaviour
 
         } else {
 
-            Debug.Log("Item " + itemName + " not found in storage!");
+            Debug.Log("CollectableItem " + itemName + " not found in storage!");
 
         }
     }
 
     // The following two methods are just for testing - they add and remove a test item to verify everything is working correctly
-    [ContextMenu("Add Test Item to Inventory")]
+    [ContextMenu("Add Test CollectableItem to Inventory")]
     private void AddTestItemToInventory()
     {
         ItemData testItem = new ItemData
         {
-            name = "Test Item",
-            quantity = 1
+            name = "Test CollectableItem",
+            quantity = 1,
+            icon = _testSprite
         };
         AddItemToInventory(testItem, inventory, maxInventorySlots);
+        TestInventoryUiManager.instance.UpdateInventoryUI();
     }
 
-    [ContextMenu("Remove Test Item from Inventory")]
+    [ContextMenu("Remove Test CollectableItem from Inventory")]
     private void RemoveTestItemFromInventory()
     {
-        RemoveItemFromInventory("Test Item", inventory);
+        RemoveItemFromInventory("Test CollectableItem", inventory);
+        TestInventoryUiManager.instance.UpdateInventoryUI();
     }
 
     [ContextMenu("Save Inventory")]
@@ -166,21 +161,24 @@ public class InventoryManager : MonoBehaviour
         SaveLoadManager.Instance.SaveInventory();
     }
 
-    [ContextMenu("Add Test Item to Storage")]
+    [ContextMenu("Add Test CollectableItem to Storage")]
     private void AddTestItemToStorage()
     {
         ItemData testItem = new ItemData
         {
-            name = "Test Item",
-            quantity = 1
+            name = "Test CollectableItem",
+            quantity = 1,
+            icon = _testSprite
         };
         AddItemToStorage(testItem, chest, maxChestSlots);
+        TestStorageUiManager.instance.UpdateStorageUI();
     }
 
-    [ContextMenu("Remove Test Item from Storage")]
+    [ContextMenu("Remove Test CollectableItem from Storage")]
     private void RemoveTestItemFromStorage()
     {
-        RemoveItemFromStorage("Test Item", chest);
+        RemoveItemFromStorage("Test CollectableItem", chest);
+        TestStorageUiManager.instance.UpdateStorageUI();
     }
 
     [ContextMenu("Save Storage")]

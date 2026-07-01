@@ -538,7 +538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1282657109793103770
 RectTransform:
   m_ObjectHideFlags: 0
@@ -573,6 +573,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a5996a0eb81e94b924eedf9ef9b38a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkilltreeNode
+  _expansion: {fileID: 8705684402482524868}
+  _nameText: {fileID: 5024563855028243685}
+  _descriptionText: {fileID: 9183671804645280687}
+  _costText: {fileID: 1528194870235568602}
+  _prerequisitesLines:
+  - {fileID: 8893019963643546596}
+  _icon: {fileID: 5774278549018345857}
   _skill:
     skillID: 1
     skillName: Double Strike

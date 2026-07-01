@@ -26,8 +26,8 @@ public class ConfirmManager : MonoBehaviour
     public static ConfirmManager instance;
 
     public GameObject _confirmPanel;
-    private TMP_Text _confirmText;
-    private Toggle _dontAskAgainToggle;
+    [SerializeField] TMP_Text _confirmText;
+    [SerializeField] Toggle _dontAskAgainToggle;
 
     private bool[] dontAskToggle;
 
@@ -42,9 +42,9 @@ public class ConfirmManager : MonoBehaviour
         else
             Destroy(gameObject);
 
-        _confirmPanel = GameObject.Find("ConfirmPanel");
-        _confirmText = _confirmPanel.GetComponentInChildren<TMP_Text>();
-        _dontAskAgainToggle = _confirmPanel.GetComponentInChildren<Toggle>();
+        //_confirmPanel = GameObject.Find("ConfirmPanel");
+        //_confirmText = _confirmPanel.GetComponentInChildren<TMP_Text>();
+        //_dontAskAgainToggle = _confirmPanel.GetComponentInChildren<Toggle>();
         _confirmPanel.SetActive(false);
 
         dontAskToggle = new bool[DontAskRegion.GetValues(typeof(DontAskRegion)).Length];

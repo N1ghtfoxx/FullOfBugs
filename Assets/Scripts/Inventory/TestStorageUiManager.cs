@@ -27,12 +27,12 @@ public class TestStorageUiManager : Singleton<TestStorageUiManager>
 
     public void UpdateStorageUI()
     {
-        Debug.Log("Chest count: " + InventoryManager.Instance.chest.Count);
+        Debug.Log("Chest count: " + InventoryManager.instance.chest.Count);
         for (int i = 0; i < storageSlots.Length; i++)
         {
-            if (i < InventoryManager.Instance.chest.Count)
+            if (i < InventoryManager.instance.chest.Count)
             {
-                storageSlots[i].UpdateItemSlot(InventoryManager.Instance.chest[i]);
+                storageSlots[i].UpdateItemSlot(InventoryManager.instance.chest[i]);
             }
             else
             {
@@ -40,16 +40,16 @@ public class TestStorageUiManager : Singleton<TestStorageUiManager>
             }
         }
 
-        for (int i = 0; i < storageViewInventorySlots.Length; i++)
-        {
-            if (i < InventoryManager.Instance.inventory.Count)
-            {
-                storageViewInventorySlots[i].UpdateItemSlot(InventoryManager.Instance.inventory[i]);
-            }
-            else
-            {
-                storageViewInventorySlots[i].UpdateItemSlot(null);
-            }
-        }
+        //for (int i = 0; i < storageViewInventorySlots.Length; i++)
+        //{
+        //    if (i < InventoryManager.Instance.inventory.Count)
+        //    {
+        //        storageViewInventorySlots[i].UpdateItemSlot(InventoryManager.Instance.inventory[i]);
+        //    }
+        //    else
+        //    {
+        //        storageViewInventorySlots[i].UpdateItemSlot(null);
+        //    }
+        //}
     }
 }

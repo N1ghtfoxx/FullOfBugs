@@ -34,13 +34,14 @@ public class CraftingUI : MonoBehaviour
     void Start()
     {
         SwitchShowCrafting(CraftingManager.instance.CraftingAvailable());
-        gameObject.SetActive(false);
     }
 
     void OnEnable()
     {
         if (CraftingManager.instance?.currentRecipe != null)
+        {
             SetRecipeUi();
+        }
     }
 
     public void SwitchShowCrafting(bool show)
@@ -74,12 +75,14 @@ public class CraftingUI : MonoBehaviour
 
     private void SetRecipeUi()
     {
+        if (CraftingManager.instance.isCrafting) return;
         Recipe recipe = CraftingManager.instance.currentRecipe;
         int slotAmount = recipe.slotSprites.Length;
         _thirdIngrediant.SetActive(slotAmount > 3);
         for(int i = 0; i < slotAmount; i++)
         {
             _slots[i].itemShape.sprite = recipe.slotSprites[i];
+            _slots[i].UpdateItemSlot(null);
         }
         _timeText.text = recipe.craftTime.ToString() + " sec";
         Color color;
@@ -87,6 +90,11 @@ public class CraftingUI : MonoBehaviour
         _background.color = SkillManager.instance.HasSkill(recipe.requiredSkill) ? color : Color.grey;
         _startButton.interactable = SkillManager.instance.HasSkill(recipe.requiredSkill);
         UpdateProgressbar(0);
+    }
+
+    public void UpdateResultShape()
+    {
+        _slots[0].itemShape.sprite = CraftingManager.instance.currentRecipe.slotSprites[0];
     }
 
     public void UpdateProgressbar(float progress)
@@ -102,5 +110,16 @@ public class CraftingUI : MonoBehaviour
             return; 
         }
         CraftingManager.instance.StartCraft();
+    }
+
+    public void FillResultSlot(ItemData result)
+    {
+        int slotAmount = CraftingManager.instance.currentRecipe.slotSprites.Length;
+        for (int i = 1; i < slotAmount; i++)
+        {
+            _slots[i].RemoveItem();
+        }
+
+        _slots[0].UpdateItemSlot(result);
     }
 }

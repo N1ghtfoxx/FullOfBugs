@@ -88,8 +88,8 @@ public class SaveLoadManager : MonoBehaviour
     {
         if(currentSaveData != null)
         {
-            currentSaveData.inventory = InventoryManager.Instance.inventory;
-            currentSaveData.chest = InventoryManager.Instance.chest;
+            currentSaveData.inventory = InventoryManager.instance.inventory;
+            currentSaveData.chest = InventoryManager.instance.chest;
             SaveGame(currentSaveData, selectedSlotIndex); // Save the updated inventory data back to the save file
             Debug.Log("currentSaveData: " + currentSaveData);
         }
@@ -99,8 +99,8 @@ public class SaveLoadManager : MonoBehaviour
     {
         if(currentSaveData != null)
         {
-            InventoryManager.Instance.inventory = currentSaveData.inventory;
-            InventoryManager.Instance.chest = currentSaveData.chest;
+            InventoryManager.instance.inventory = currentSaveData.inventory;
+            InventoryManager.instance.chest = currentSaveData.chest;
         }
     }
 

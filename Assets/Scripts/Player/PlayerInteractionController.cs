@@ -7,6 +7,7 @@ public class PlayerInteractionController : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
+        if (PauseManager.instance.isPaused) return;
         IInteractable interactable = other.GetComponent<IInteractable>();
         if (interactable == null) return;
         if(interactable.instantInteract)

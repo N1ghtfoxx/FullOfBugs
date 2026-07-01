@@ -8,9 +8,9 @@ using UnityEngine.Events;
 public class SkillManager : Singleton<SkillManager>
 {
     //UI References
-    private GameObject _skilltreePanel; //used to toggle
-    private List<SkilltreeNode> _skillNodes = new List<SkilltreeNode>(); //reference to all skill nodes
-    private TMP_Text[] _shadowCounterTexts; //references to the shadow counter ui texts, index corresponds to ShadowType enum
+    [SerializeField] GameObject _skilltreePanel; //used to toggle
+    [SerializeField] List<SkilltreeNode> _skillNodes = new List<SkilltreeNode>(); //reference to all skill nodes
+    [SerializeField] TMP_Text[] _shadowCounterTexts; //references to the shadow counter ui texts, index corresponds to ShadowType enum
 
     //Data
     private List<SkillID> _unlockedSkills; //storage of unlocked skills
@@ -21,11 +21,11 @@ public class SkillManager : Singleton<SkillManager>
         base.Awake();
 
         //Get UI references
-        _skilltreePanel = GameObject.Find("SkilltreePanel");
-        GameObject _skilltreeUI = _skilltreePanel.transform.Find("Skilltree").gameObject;
-        _rectTransform = _skilltreeUI.GetComponent<RectTransform>();
-        foreach (SkilltreeNode node in _skilltreeUI.GetComponentsInChildren<SkilltreeNode>())
-            _skillNodes.Add(node);
+        //_skilltreePanel = GameObject.Find("SkilltreePanel");
+        //GameObject _skilltreeUI = _skilltreePanel.transform.Find("Skilltree").gameObject;
+        //_rectTransform = _skilltreeUI.GetComponent<RectTransform>();
+        //foreach (SkilltreeNode node in _skilltreeUI.GetComponentsInChildren<SkilltreeNode>())
+        //    _skillNodes.Add(node);
 
         _shadows = new int[ShadowType.GetValues(typeof(ShadowType)).Length];
         _shadowCounterTexts = new TMP_Text[_shadows.Length];
@@ -60,6 +60,47 @@ public class SkillManager : Singleton<SkillManager>
     {
         _unlockedSkills.Add(skill);
         UpdateSkilltree();
+        switch (skill)
+        {
+        case SkillID.StrongHealingPotion:
+            CraftingManager.instance.TryUpgradeRecipe(Crafting.RecipeName.HealingRecipe, skill);
+            break;
+        case SkillID.LongGlowPotion:
+            CraftingManager.instance.TryUpgradeRecipe(Crafting.RecipeName.GlowingRecipe, skill);
+            break;
+        case SkillID.Tank:
+            PlayerStatsManager.instance.IncreaseMaxHp(1);
+            break;
+
+        case SkillID.Giant:
+            PlayerStatsManager.instance.IncreaseMaxHp(2);
+            break;
+
+        case SkillID.Colossus:
+            PlayerStatsManager.instance.IncreaseMaxHp(4);
+            break;
+
+        case SkillID.Garden:
+            break;
+
+        case SkillID.Farm:
+            break;
+
+        case SkillID.Fertilizer:
+            break;
+
+        case SkillID.PowerFertilizer:
+            break;
+
+        case SkillID.GreenThumb:
+            break;
+
+        case SkillID.PlantMaster:
+            break;
+
+        default:
+            break;
+        }
     }
 
     public bool HasSkill(SkillID skillID)
@@ -162,6 +203,7 @@ public class SkillManager : Singleton<SkillManager>
             _skilltreeOpen = !_skilltreeOpen;
             _skilltreePanel.SetActive(_skilltreeOpen);
             //toggle pause
+            PauseManager.instance.SetPause();
         }
         //Prevent interaction when skilltree is closed
         if (!_skilltreeOpen) return;
