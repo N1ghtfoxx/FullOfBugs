@@ -6904,11 +6904,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026750bbad667124c8e22c47060021c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventorySlot
---- !u!1 &691816262 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2020296073081370005, guid: 0f519d3e5e23fee488a968760ae3cc63, type: 3}
-  m_PrefabInstance: {fileID: 1617554577}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &698010149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7870,12 +7865,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5443975605039835392, guid: 83c9c36f54cd5da47b9c579b247370a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5443975605039835392, guid: 83c9c36f54cd5da47b9c579b247370a7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 691816262}
+      objectReference: {fileID: 924346989}
     - target: {fileID: 5443975605039835392, guid: 83c9c36f54cd5da47b9c579b247370a7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: OnClickBackToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5443975605039835392, guid: 83c9c36f54cd5da47b9c579b247370a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UiManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5452457601565503706, guid: 83c9c36f54cd5da47b9c579b247370a7, type: 3}
       propertyPath: m_AnchorMax.y
@@ -9258,7 +9261,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1713365903146912582, guid: 0f519d3e5e23fee488a968760ae3cc63, type: 3}
   m_PrefabInstance: {fileID: 1617554577}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691816262}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e46d814bd452444dbee22a64f9c55e0, type: 3}
