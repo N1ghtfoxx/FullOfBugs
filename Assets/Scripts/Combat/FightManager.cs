@@ -23,15 +23,11 @@ public class FightManager : Singleton<FightManager>
 
     public void UseItem(string itemName)
     {
-        switch (itemName)
-        {
-            case "HealingPotion":
-                //Chick Inventory and use() one
-                //update ui;
-                    break;
-        }
-        _playerTurn = false;
-        Attack();
+        InventoryManager.instance.RemoveItemFromInventory(itemName);
+        Consumables.instance.UseConsumable(itemName);
+        UiManager.instance.UpdateHealthUi(PlayerStatsManager.instance.hp, _enemy.hp);
+        //_playerTurn = false;
+        //Attack();
     }
 
     public void SetWeapon(string weaponName)

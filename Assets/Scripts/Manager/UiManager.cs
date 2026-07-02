@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -36,22 +37,29 @@ public class UiManager : Singleton<UiManager>
 
     [Header("FightScene")]
     [SerializeField] GameObject _fightPanel;
+    [SerializeField] GameObject _blackscreen;
+
     [SerializeField] TMP_Text _enemyNameText;
     [SerializeField] TMP_Text _enemyVariantText;
     [SerializeField] Slider _enemyHealthSlider;
     [SerializeField] Image _enemyImage;
+
     [SerializeField] TMP_Text _playerNameText;
     [SerializeField] Slider _playerHealthSlider;
     [SerializeField] Image _playerImage;
+
     [SerializeField] GameObject _actionButtons;
     [SerializeField] GameObject _attackMenuPanel;
     [SerializeField] GameObject _slingshotAttackButton;
     [SerializeField] TMP_Text _slingshotAmmoCount;
+
+    [SerializeField] GameObject _itemMenuPanel;
+    [SerializeField] GameObject[] itemButtons;
+
     [SerializeField] GameObject _fightWonContinueButton;
     [SerializeField] GameObject _fightLostContinueButton;
     [SerializeField] GameObject _fightWonScreen;
     [SerializeField] GameObject _fightLostScreen;
-    [SerializeField] GameObject _blackscreen;
     [SerializeField] TMP_Text _fightWonText;
     [SerializeField] TMP_Text _fightLostText;
 
@@ -238,8 +246,8 @@ public class UiManager : Singleton<UiManager>
     private void FightDisableAllUi()
     {
         _blackscreen.SetActive(false);
-        //_attackMenuPanel.SetActive(false);
-        //_itemMenuPanel.SetActive(false);
+        _attackMenuPanel.SetActive(false);
+        _itemMenuPanel.SetActive(false);
         _fightLostScreen.SetActive(false);
         _fightWonScreen.SetActive(false);
         _fightLostContinueButton.SetActive(false);
@@ -254,12 +262,46 @@ public class UiManager : Singleton<UiManager>
     {
         _blackscreen.SetActive(true);
         _attackMenuPanel.SetActive(true);
+        _itemMenuPanel.SetActive(false);
 
         ItemData ammo = InventoryManager.instance.inventory.Find(x => x.name == "Dungball");
         _slingshotAttackButton.SetActive(ammo != null);
         if (ammo != null)
             _slingshotAmmoCount.text = ammo.quantity.ToString();
 
+    }
+
+    public void OnClickOpenItemPanel()
+    {
+        _blackscreen.SetActive(true);
+        _itemMenuPanel.SetActive(true);
+        _attackMenuPanel.SetActive(false);
+        foreach (GameObject button in itemButtons)
+        {
+            button.SetActive(false);
+        }
+        List<ItemData> items = new List<ItemData>();
+        items.Add( InventoryManager.instance.inventory.Find(x => x.name == "Strawberry"));
+        items.Add( InventoryManager.instance.inventory.Find(x => x.name == "HealingPotion"));
+        items.Add( InventoryManager.instance.inventory.Find(x => x.name == "HealingPotionPlus"));
+        int i = 0;
+        foreach (ItemData item in items)
+        {
+            if (item == null)
+                continue;
+            else
+            {
+                itemButtons[i].SetActive(true);
+                itemButtons[i].GetComponent<Image>().sprite = item.icon;
+                itemButtons[i].GetComponentInChildren<TMP_Text>().text = item.quantity.ToString();
+                Button button = itemButtons[i].GetComponent<Button>();
+                button.onClick.RemoveAllListeners();
+                button.onClick.AddListener(() => FightManager.instance.UseItem(item.name));
+                button.onClick.AddListener(() => _blackscreen.SetActive(false));
+                button.onClick.AddListener(() => _itemMenuPanel.SetActive(false));
+                i++;
+            }
+        }
     }
 
     //very specific should be optimized but works for now

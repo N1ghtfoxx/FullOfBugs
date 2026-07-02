@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +12,7 @@ public class DangerTracker : MonoBehaviour
     private float _progress = 0f;
     private float _danger = 0f;
 
+    private List<GameObject> _lights = new List<GameObject>();
     private bool _inLight = false;
 
     [SerializeField] GameObject _enemyGo;
@@ -54,6 +53,7 @@ public class DangerTracker : MonoBehaviour
     {
         if (other.CompareTag("Light"))
         {
+            _lights.Add(other.gameObject);
             _inLight = true;
         }
     }
@@ -62,7 +62,8 @@ public class DangerTracker : MonoBehaviour
     {
         if (other.CompareTag("Light"))
         {
-            _inLight = false;
+            _lights.Remove(other.gameObject);
+            _inLight = _lights.Count != 0;
         }
     }
 
