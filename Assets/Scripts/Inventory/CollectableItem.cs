@@ -15,6 +15,7 @@ public class CollectableItem : MonoBehaviour, IInteractable
 
     void Awake()
     {
+        if(_data.ingrediant != Crafting.Ingrediant.CaveMineral)
         gameObject.GetComponent<SpriteRenderer>().sprite = _data.icon;
     }
 

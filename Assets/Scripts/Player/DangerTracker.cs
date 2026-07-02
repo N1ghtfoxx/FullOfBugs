@@ -17,6 +17,8 @@ public class DangerTracker : MonoBehaviour
 
     [SerializeField] GameObject _enemyGo;
 
+    [SerializeField] LayerMask _shadowCaster;
+
     private void Start()
     {
         _progressbar.fillAmount = _progress;
@@ -53,10 +55,42 @@ public class DangerTracker : MonoBehaviour
     {
         if (other.CompareTag("Light"))
         {
+            if (IsLightBlocked(other.gameObject)) return;
             _lights.Add(other.gameObject);
             _inLight = true;
         }
     }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Light"))
+        {
+            GameObject light = other.gameObject;
+            if (IsLightBlocked(light))
+            {
+                _lights.Remove(light);
+            }
+            else
+            {
+                if (!_lights.Contains(light))
+                    _lights.Add(light);
+            }
+            _inLight = _lights.Count != 0;
+        }
+    }
+
+    private bool IsLightBlocked(GameObject light)
+    {
+        Vector3 origin = transform.position;
+        Vector3 target = light.transform.position;
+        Vector3 dir = (target - origin).normalized;
+        float dist = Vector3.Distance(origin, target);
+
+        RaycastHit2D hit = Physics2D.Raycast(origin, dir, dist, _shadowCaster);
+
+        return hit.collider != null;
+    }
+
 
     private void OnTriggerExit2D(Collider2D other)
     {
