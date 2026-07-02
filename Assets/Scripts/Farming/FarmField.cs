@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FarmField : MonoBehaviour, IInteractable
 {
-    private FieldState _state;
+    [SerializeField] private FieldState _state;
     private ItemData _plantedSeed;
     private bool _playerInRange;
     private float _growthTime = 30f; 
@@ -77,13 +77,17 @@ public class FarmField : MonoBehaviour, IInteractable
 
     public void Harvest()
     {
-       if (_state == FieldState.ReadyToHarvest)
-        {
-            // Add the harvested crop to the player's inventory
-            InventoryManager.instance.AddItemToInventory(_plantedSeed);
-            _plantedSeed = null;
-            _state = FieldState.Empty;
-        }
+       ItemData cropResult = FarmingManager.instance.GetCropResult(_plantedSeed);
+
+       if(InventoryManager.instance.AddItemToInventory(cropResult))
+       {
+           _state = FieldState.Empty;
+           _plantedSeed = null;
+       }
+       else
+       {
+           Debug.LogWarning("Inventory is full! Cannot harvest.");
+       }
     }
 
     public enum FieldState

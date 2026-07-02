@@ -6,6 +6,9 @@ public class FarmingManager : Singleton<FarmingManager>
     public List<FarmField> fields = new List<FarmField>();
     public bool isWaitingForSeed { get; private set; } = false;
     private FarmField _activeField;
+    [SerializeField] private ItemData[] _seedTypes;
+    [SerializeField] private ItemData[] _cropResults; 
+
 
     public void StartSeedSelection(FarmField field)
     {
@@ -18,10 +21,19 @@ public class FarmingManager : Singleton<FarmingManager>
     {
         if (_activeField == null) return;
 
-        _activeField.Plant(seed);
-        isWaitingForSeed = false;
+        int index = System.Array.IndexOf(_seedTypes, seed);
+
+        if(index != -1)
+        {
+            _activeField.Plant(_cropResults[index]);
+            isWaitingForSeed = false;
         _activeField = null;
         TestInventoryUiManager.instance.ToggleInventory();
+        }
+        else 
+        {
+            Debug.LogWarning("Selected item is not a seed!");
+        } 
     }
 
     public void CancelSeedSelection()
@@ -29,5 +41,11 @@ public class FarmingManager : Singleton<FarmingManager>
         isWaitingForSeed = false;
         _activeField = null;
         TestInventoryUiManager.instance.ToggleInventory();
+    }
+
+    public ItemData GetCropResult(ItemData seed)
+    {
+        int index = System.Array.IndexOf(_seedTypes, seed);
+        return index != -1 ? _cropResults[index] : null;
     }
 }

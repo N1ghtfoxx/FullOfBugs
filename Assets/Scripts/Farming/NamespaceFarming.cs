@@ -7,13 +7,13 @@ namespace Farming
     {
         StrawberrySeed,
         MintSeed,
-        LuminousMossSeed
+        // LuminousMossSeed
     }
     
     public enum CropResult
     {
         Strawberry,
         Mint,
-        LuminousMoss
+        // LuminousMoss
     }
 }
