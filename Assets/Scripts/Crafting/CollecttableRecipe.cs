@@ -17,4 +17,10 @@ public class CollecttableRecipe : MonoBehaviour, IInteractable
         CraftingManager.instance.AddRecipe(recipe);
         Destroy(gameObject);
     }
+
+    public void Selected()
+    {
+        
+    }
+
 }
