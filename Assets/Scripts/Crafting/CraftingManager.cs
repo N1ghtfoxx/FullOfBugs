@@ -75,14 +75,22 @@ public class CraftingManager : Singleton<CraftingManager>
             craftingUI.SwitchShowCrafting(true);
             currentRecipe = recipe;
         }
+        craftingUI.UpdateDropdown(GetCurrentRecipeIndex());
+    }
 
+    public int GetCurrentRecipeIndex()
+    {
+        return currentRecipe != null ? recipes.IndexOf(currentRecipe) : 0;
+    }
+
+    public List<string> GetRecipeNameList()
+    {
         List<string> options = new List<string>();
         foreach (Recipe r in recipes)
         {
             options.Add(RecipeName.GetName(typeof(RecipeName), r.name));
         }
-        int i = currentRecipe != null ? recipes.IndexOf(currentRecipe) : 0;
-        craftingUI.UpdateDropdown(options, i);
+        return options;
     }
 
     public void TryUpgradeRecipe(RecipeName name, Skilltree.SkillID skill)
@@ -94,11 +102,6 @@ public class CraftingManager : Singleton<CraftingManager>
             recipe.slotSprites[0] = resultItems[(int)recipe.result].icon;
             craftingUI.UpdateResultShape();
         }
-    }
-
-    public int GetCurrentRecipeIndex()
-    {
-        return recipes.IndexOf(currentRecipe);
     }
 
     public void SetCurrentRecipe(int index)
