@@ -21,11 +21,13 @@ public class FarmingManager : Singleton<FarmingManager>
     {
         if (_activeField == null) return;
 
-        int index = System.Array.IndexOf(_seedTypes, seed);
+        int index = System.Array.FindIndex(_seedTypes, s => s.name == seed.name);
 
         if(index != -1)
         {
             _activeField.Plant(_cropResults[index]);
+            InventoryManager.instance.RemoveItemFromInventory(seed.name, InventoryManager.instance.inventory);
+            TestInventoryUiManager.instance.UpdateInventoryUI();
             isWaitingForSeed = false;
         _activeField = null;
         TestInventoryUiManager.instance.ToggleInventory();
@@ -45,7 +47,7 @@ public class FarmingManager : Singleton<FarmingManager>
 
     public ItemData GetCropResult(ItemData seed)
     {
-        int index = System.Array.IndexOf(_seedTypes, seed);
+        int index = System.Array.FindIndex(_seedTypes, s => s.name == seed.name);
         return index != -1 ? _cropResults[index] : null;
     }
 }
