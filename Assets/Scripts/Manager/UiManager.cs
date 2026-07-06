@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -163,6 +164,36 @@ public class UiManager : Singleton<UiManager>
         pausePanel.SetActive(false);
         optionsPanel.SetActive(false);
         messagePanel.SetActive(false);
+    }
+
+
+    [SerializeField] CanvasGroup _fadeScreen;
+    [SerializeField] float _fadeDuration = 0.5f;
+
+    async Task Fade(float targetTransparency)
+    {
+        float start = _fadeScreen.alpha, t = 0;
+        while(t<_fadeDuration)
+        {
+            t += Time.deltaTime;
+            _fadeScreen.alpha = Mathf.Lerp(start, targetTransparency, t / _fadeDuration);
+            await Task.Yield();
+        }
+        _fadeScreen.alpha = targetTransparency;
+    }
+
+    public async Task FadeIn()
+    {
+        _fadeScreen.gameObject.SetActive(true);
+        PauseManager.instance.SetPause();
+        await Fade(1);
+    }
+
+    public async Task FadeOut()
+    {
+        await Fade(0);
+        _fadeScreen.gameObject.SetActive(false);
+        PauseManager.instance.SetPause();
     }
 
     #endregion

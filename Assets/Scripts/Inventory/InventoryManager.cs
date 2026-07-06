@@ -27,7 +27,7 @@ public class InventoryManager : Singleton<InventoryManager>
 
         if(existingItem != null)
         {
-            existingItem.quantity++;
+            existingItem.quantity += newItem.quantity;
             return true;
         } else {
             

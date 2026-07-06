@@ -7,7 +7,6 @@ public class PlayerInteractionController : MonoBehaviour
 {
     public GameObject progressBar;
     [SerializeField] GameObject _interactIndicator;
-    [SerializeField] GameObject _selectedIndicator;
     private List<IInteractable> _interactablesInRange = new List<IInteractable>();
 
     public void OnTriggerEnter2D(Collider2D other)
