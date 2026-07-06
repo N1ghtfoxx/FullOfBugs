@@ -7,7 +7,6 @@ public class FarmField : MonoBehaviour, IInteractable
     [SerializeField] private Sprite _emptySprite;
     private SpriteRenderer _spriteRenderer;
     private ItemData _plantedSeed;
-    private bool _playerInRange;
     private float _growthTime = 30f; 
     public bool instantInteract { get; set; } = false;
 
@@ -50,20 +49,9 @@ public class FarmField : MonoBehaviour, IInteractable
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    public void Selected()
     {
-        if (other.CompareTag("Player"))
-        {
-            _playerInRange = true;
-        }
-    }
-
-    public void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            _playerInRange = false;
-        }
+        
     }
 
     public void Plant(ItemData seed)
