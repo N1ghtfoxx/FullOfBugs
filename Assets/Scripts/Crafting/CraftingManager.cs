@@ -106,6 +106,7 @@ public class CraftingManager : Singleton<CraftingManager>
 
     public void SetCurrentRecipe(int index)
     {
+        if (index < 0 || index >= recipes.Count) return;
         currentRecipe = recipes[index];
         _ingrediantBool = new bool[currentRecipe.ingrediants.Length];
     }

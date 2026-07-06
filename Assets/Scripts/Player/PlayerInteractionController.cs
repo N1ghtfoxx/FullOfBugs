@@ -1,9 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerInteractionController : MonoBehaviour
 {
-    private IInteractable _currentInteractable;
+    public GameObject progressBar;
+    [SerializeField] GameObject _interactIndicator;
+    private List<IInteractable> _interactablesInRange = new List<IInteractable>();
 
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,7 +20,9 @@ public class PlayerInteractionController : MonoBehaviour
         }
         else
         {
-            _currentInteractable = interactable;
+            if(_interactablesInRange.Contains(interactable)) return;
+            _interactablesInRange.Add(interactable);
+            _interactIndicator.SetActive(true);
             Debug.Log("Player entered trigger with " + other.name);
         }
     }
@@ -25,19 +31,29 @@ public class PlayerInteractionController : MonoBehaviour
     {
         IInteractable interactable = other.GetComponent<IInteractable>();
         if (interactable == null) return;
-        if(interactable == _currentInteractable)
+        _interactablesInRange.Remove(interactable);
+        if (_interactablesInRange.Count == 0)
         {
-            _currentInteractable = null;
-            Debug.Log("Player left trigger with " + other.name);
+            _interactIndicator.SetActive(false);
         }
     }
 
     public void OnInteract(InputAction.CallbackContext ctx)
     {
-        if(ctx.performed && _currentInteractable != null)
+        if(ctx.performed && _interactablesInRange.Count > 0)
         {
-            Debug.Log("Interact button pressed while player is in range");
-            _currentInteractable.Interact();
+            _interactablesInRange[_interactablesInRange.Count - 1].Interact();
+        }
+    }
+
+    public void OnSwitchInteract(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed && _interactablesInRange.Count > 1)
+        {
+            IInteractable lastInteractable = _interactablesInRange[_interactablesInRange.Count - 1];
+            _interactablesInRange.RemoveAt(_interactablesInRange.Count - 1);
+            _interactablesInRange.Insert(0, lastInteractable);
+            _interactablesInRange[_interactablesInRange.Count - 1].Selected();
         }
     }
 }

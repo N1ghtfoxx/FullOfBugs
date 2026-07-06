@@ -8,4 +8,9 @@ public class CraftingTable : MonoBehaviour, IInteractable
         TestInventoryUiManager.instance.ToggleInventoryPlus();
         CraftingManager.instance.ToggleCraftingMenu();
     }
+    public void Selected()
+    {
+        FailFeedbackManager.instance.ShowFailFeedbackInGame(GetComponent<SpriteRenderer>().sprite, gameObject);
+    }
+
 }
