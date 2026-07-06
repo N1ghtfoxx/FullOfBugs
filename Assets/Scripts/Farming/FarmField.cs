@@ -101,6 +101,11 @@ public class FarmField : MonoBehaviour, IInteractable
         Debug.Log("Field watered. Crops will grow soon.");
     }
 
+    public void ReduceGrowthTime(float amount)
+    {
+        _growthTime -= amount;
+    }
+
     private System.Collections.IEnumerator GrowCrops()
     {
         yield return new WaitForSeconds(_growthTime);
