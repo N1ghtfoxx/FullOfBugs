@@ -122,7 +122,7 @@ public class UiManager : Singleton<UiManager>
                 inFightScene = true;
                 inGameScene = false;
                 break;
-            case "Farming2":
+            case "MainScene":
                 inFightScene = false;
                 inGameScene = true;
                 break;
