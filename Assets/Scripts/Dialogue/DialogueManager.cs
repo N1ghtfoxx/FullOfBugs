@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SearchService;
+using UnityEngine.UI;
 
 public class DialogueManager : Singleton<DialogueManager>
 {
@@ -26,6 +28,15 @@ public class DialogueManager : Singleton<DialogueManager>
     [SerializeField] private float typeSpeed = 0.05f;
     private bool isTyping = false;
 
+
+    [Header("Dialogue Speaker")]
+    private const string SPEAKER_TAG = "speaker";
+    private const string LAYOUT_TAG = "layout";
+    private const string VISUAL_TAG = "visual";
+    [SerializeField] private TextMeshProUGUI speakerName;
+    [SerializeField] private Image visualSpeaker;
+    [SerializeField] private List<CharacterPortrait> characterPortraits = new List<CharacterPortrait>();
+    private Animator layoutAnimator;
     public bool isDialogueActive { get; private set;  }
 
     public bool choiceVisible { get; private set; }
@@ -35,6 +46,9 @@ public class DialogueManager : Singleton<DialogueManager>
     {
         isDialogueActive = false;
         dialoguePanel.SetActive(false);
+
+        //get the animator component from the dialogue panel
+        layoutAnimator = dialoguePanel.GetComponent<Animator>();
 
         optionTexts = new TextMeshProUGUI[diaogueOptions.Length];
         int optionIndex = 0;
@@ -82,7 +96,9 @@ public class DialogueManager : Singleton<DialogueManager>
                 // check if there are choices to be made
                 ShowOptions();
 
-            }
+                HandleTags(story.currentTags);
+
+        }
         else
             {
                 // if the story has ended, end the dialogue
@@ -90,6 +106,58 @@ public class DialogueManager : Singleton<DialogueManager>
             } 
 
     }
+
+    private void HandleTags(List<string> tags)
+    {
+        foreach (string tag in tags)
+        {
+            string[] splitTag = tag.Split(':');
+            if (splitTag.Length != 2)
+            {
+                Debug.LogWarning("Tag could not be parsed: " + tag);
+                continue;
+            }
+            string tagKey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+            switch (tagKey)
+            {
+                case SPEAKER_TAG:
+                    speakerName.text = tagValue;
+                    break;
+                case LAYOUT_TAG:
+                    layoutAnimator.Play(tagValue);
+                    break;
+                case VISUAL_TAG:
+                   SetPortrait(tagValue);
+                    break;
+                default:
+                    Debug.LogWarning("Unknown tag: " + tagKey);
+                    break;
+            }
+        }
+    }
+
+    private void SetPortrait(string characterName)
+    {
+        //fail safe check to make sure the character name is not null or empty
+        if (string.IsNullOrEmpty(characterName))
+        {
+            Debug.LogWarning("Character name is null or empty.");
+            return;
+        }
+
+        foreach (CharacterPortrait portrait in characterPortraits)
+        {
+            if (portrait.characterName == characterName)
+            {
+                visualSpeaker.sprite = portrait.characterSprite;
+                return;
+            }
+        }
+
+        Debug.LogWarning("Character portrait not found for character: " + characterName);
+    }
+
 
     private void StartTyping(string line)
     {
