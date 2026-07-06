@@ -8,6 +8,9 @@ public class FarmingManager : Singleton<FarmingManager>
     private FarmField _activeField;
     [SerializeField] private ItemData[] _seedTypes;
     [SerializeField] private ItemData[] _cropResults; 
+    [SerializeField] private Sprite[] _seedSprites; // Sprites for the seed stages
+    [SerializeField] private Sprite[] _sproutSprites; // Sprites for the sprout stages
+    [SerializeField] private Sprite[] _grownPlantSprites; // Sprites for the grown plant stages
 
 
     public void StartSeedSelection(FarmField field)
@@ -48,6 +51,25 @@ public class FarmingManager : Singleton<FarmingManager>
     public ItemData GetCropResult(ItemData seed)
     {
         int index = System.Array.FindIndex(_seedTypes, s => s.name == seed.name);
-        return index != -1 ? _cropResults[index] : null;
+        ItemData result = index != -1 ? _cropResults[index] : null;
+        return result;
+    }
+
+    public Sprite GetSeedSprite(ItemData seed)
+    {
+        int index = System.Array.FindIndex(_cropResults, c => c.name == seed.name);
+        return index != -1 ? _seedSprites[index] : null;
+    }
+
+    public Sprite GetSproutSprite(ItemData seed)
+    {
+        int index = System.Array.FindIndex(_cropResults, c => c.name == seed.name);
+        return index != -1 ? _sproutSprites[index] : null;
+    }
+
+    public Sprite GetGrownPlantSprite(ItemData seed)
+    {
+        int index = System.Array.FindIndex(_cropResults, c => c.name == seed.name);
+        return index != -1 ? _grownPlantSprites[index] : null;
     }
 }
