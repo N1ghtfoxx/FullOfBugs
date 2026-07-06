@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using Crafting;
 using Unity.VisualScripting;
 
-public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
+public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler, IPointerClickHandler
 {
     public Image itemImage;
     public TMP_Text itemCountText;
@@ -152,6 +152,22 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         TestInventoryUiManager.instance.UpdateInventoryUI();
         TestInventoryUiManager.instance.UpdateInventoryPlusUI();
         TestStorageUiManager.instance.UpdateStorageUI();   
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if(slotType == SlotType.Inventory && _item != null)
+        {
+            if(FarmingManager.instance.isWaitingForSeed)
+            {
+                FarmingManager.instance.SelectSeed(_item);
+            }
+        }
+
+        if(eventData.button == PointerEventData.InputButton.Right && FarmingManager.instance.isWaitingForSeed)
+        {
+            FarmingManager.instance.CancelSeedSelection();
+        }
     }
 
     public enum SlotType
