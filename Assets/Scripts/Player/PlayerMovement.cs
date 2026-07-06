@@ -50,4 +50,12 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("Walking", walking);
 
     }
+
+    public void OnStoryContinue(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed && DialogueManager.instance.isDialogueActive)
+        {
+            DialogueManager.instance.OnContinue();
+        }
+    }
 }
