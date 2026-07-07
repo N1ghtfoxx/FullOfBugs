@@ -1,3 +1,5 @@
+using Ink.Parsed;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -6,7 +8,7 @@ public class DialogueNpc : MonoBehaviour, IInteractable
     public bool instantInteract { get; set; } = false;
 
     [Header("Trigger Settings")]
-    [SerializeField] private TextAsset inkFile;
+    [SerializeField] private List<TextAsset> randomDialogue;
     [SerializeField] private bool triggerOnlyOnce = false;
     [SerializeField] private bool isAutoPlay = false;
 
@@ -14,8 +16,7 @@ public class DialogueNpc : MonoBehaviour, IInteractable
     [SerializeField] private GameObject visualIndicator;
 
     [Header("Quest System Settings")]
-    // Add quest ID / reference here if needed to initiate quests when interacting with this NPC
-    private bool hasQuest; // placeholder to avoid the header error.
+    private List<string> questsToGive = new List<string>();
 
 
     public void Interact()
@@ -24,6 +25,13 @@ public class DialogueNpc : MonoBehaviour, IInteractable
         if (DialogueManager.instance.isDialogueActive)
             return;
 
+        if(questsToGive.Count > 0)
+        {
+            QuestManager.instance.StartQuest(questsToGive[0]);
+        }
+
+
+        TextAsset inkFile = randomDialogue[Random.Range(0, randomDialogue.Count)];
         // start the dialogue using the ink file assigned to this trigger
         DialogueManager.instance.StartDialogue(inkFile, isAutoPlay);
 
