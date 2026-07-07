@@ -12,6 +12,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public TMP_Text itemCountText;
     public static InventorySlot draggedSlot;
     public SlotType slotType;
+    public bool showDetailOnClick = false; // New variable to control detail display on click
     private Canvas _canvas;
     private GameObject _draggedItem;
     protected ItemData _item;
@@ -162,8 +163,12 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             {
                 FarmingManager.instance.SelectSeed(_item);
             }
+            else if(showDetailOnClick)
+            {
+            TestInventoryUiManager.instance.ShowItemDetails(_item);
+            }
         }
-
+        
         if(eventData.button == PointerEventData.InputButton.Right && FarmingManager.instance.isWaitingForSeed)
         {
             FarmingManager.instance.CancelSeedSelection();

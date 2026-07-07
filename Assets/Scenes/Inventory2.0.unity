@@ -7009,6 +7009,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 2819974f-8802-484b-ad0d-2522e93e6cbd
     m_ActionName: 'Skilltree/Zoom[/Mouse/scroll]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2f4b16b4-b977-4bda-91ab-90089005cab9
+    m_ActionName: 'Player/SwitchInteract[/Keyboard/r]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6c9a1695-71eb-4002-bfdf-ae4231e60787
+    m_ActionName: 'Player/Continue[/Mouse/leftButton,/Keyboard/enter,/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: UI
@@ -7044,6 +7052,9 @@ MonoBehaviour:
   - {fileID: 679234366}
   - {fileID: 679234365}
   inventoryPlus: {fileID: 1438284807}
+  _detailItemImage: {fileID: 1191407255}
+  _detailDescriptionText: {fileID: 1396098356}
+  _inventoryConsumeButton: {fileID: 1090473024}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -8174,6 +8185,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1096527333989568704, guid: 83c9c36f54cd5da47b9c579b247370a7, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113842763574620520, guid: 83c9c36f54cd5da47b9c579b247370a7, type: 3}
+      propertyPath: showDetailOnClick
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234894213875892531, guid: 83c9c36f54cd5da47b9c579b247370a7, type: 3}
+      propertyPath: showDetailOnClick
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1384389473165105887, guid: 83c9c36f54cd5da47b9c579b247370a7, type: 3}
@@ -8368,6 +8387,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2929858203333794044, guid: 83c9c36f54cd5da47b9c579b247370a7, type: 3}
+      propertyPath: showDetailOnClick
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3045965829165233201, guid: 83c9c36f54cd5da47b9c579b247370a7, type: 3}
       propertyPath: _spawnPoint
       value: 
@@ -8444,6 +8467,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4029085826873660134, guid: 83c9c36f54cd5da47b9c579b247370a7, type: 3}
+      propertyPath: showDetailOnClick
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4089983197524403383, guid: 83c9c36f54cd5da47b9c579b247370a7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -8492,6 +8519,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4628922436399627657, guid: 83c9c36f54cd5da47b9c579b247370a7, type: 3}
+      propertyPath: showDetailOnClick
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4928896501147398629, guid: 83c9c36f54cd5da47b9c579b247370a7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -8539,6 +8570,10 @@ PrefabInstance:
     - target: {fileID: 5109515042440382727, guid: 83c9c36f54cd5da47b9c579b247370a7, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139314237859719413, guid: 83c9c36f54cd5da47b9c579b247370a7, type: 3}
+      propertyPath: showDetailOnClick
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5148380603199718692, guid: 83c9c36f54cd5da47b9c579b247370a7, type: 3}
       propertyPath: m_AnchorMax.y
@@ -9023,6 +9058,10 @@ PrefabInstance:
     - target: {fileID: 8167522637956284945, guid: 83c9c36f54cd5da47b9c579b247370a7, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259661719354564582, guid: 83c9c36f54cd5da47b9c579b247370a7, type: 3}
+      propertyPath: showDetailOnClick
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8297976043862285565, guid: 83c9c36f54cd5da47b9c579b247370a7, type: 3}
       propertyPath: m_AnchorMax.y

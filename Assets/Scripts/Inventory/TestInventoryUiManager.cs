@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using TMPro;
 
 public class TestInventoryUiManager : Singleton<TestInventoryUiManager>
 {
@@ -8,6 +9,9 @@ public class TestInventoryUiManager : Singleton<TestInventoryUiManager>
     public GameObject inventory;
     public InventorySlot[] inventoryPlusSlots;
     public GameObject inventoryPlus;
+    [SerializeField] private Image _detailItemImage;
+    [SerializeField] private TMP_Text _detailDescriptionText;
+    [SerializeField] private GameObject _inventoryConsumeButton;
         
     void Start()
     {
@@ -80,5 +84,13 @@ public class TestInventoryUiManager : Singleton<TestInventoryUiManager>
                 inventorySlots[i].UpdateItemSlot(null);
             }
         }
+    }
+
+    public void ShowItemDetails(ItemData item)
+    {
+        _detailItemImage.sprite = item.icon;
+        _detailItemImage.color = Color.white; // Ensure the image is visible
+        _detailDescriptionText.text = item.description;
+        _inventoryConsumeButton.SetActive(Consumables.instance.IsConsumable(item.name));
     }
 }
