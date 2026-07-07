@@ -8,6 +8,7 @@ public class PlayerInteractionController : MonoBehaviour
     public GameObject progressBar;
     [SerializeField] GameObject _interactIndicator;
     private List<IInteractable> _interactablesInRange = new List<IInteractable>();
+    private DialogueNpc dialogueNpc;
 
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -24,6 +25,11 @@ public class PlayerInteractionController : MonoBehaviour
             _interactablesInRange.Add(interactable);
             _interactIndicator.SetActive(true);
             Debug.Log("Player entered trigger with " + other.name);
+            if(interactable is DialogueNpc npc)
+            {
+                dialogueNpc = npc;
+                dialogueNpc.ShowVisualIndicator();
+            }
         }
     }
 
@@ -35,6 +41,11 @@ public class PlayerInteractionController : MonoBehaviour
         if (_interactablesInRange.Count == 0)
         {
             _interactIndicator.SetActive(false);
+            if(dialogueNpc != null)
+            {
+                dialogueNpc.HideVisualIndicator();
+                dialogueNpc = null;
+            }
         }
     }
 
