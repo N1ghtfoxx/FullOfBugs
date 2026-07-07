@@ -134,7 +134,7 @@ public class UiManager : Singleton<UiManager>
                 inFightScene = true;
                 inGameScene = false;
                 break;
-            case "MainScene":
+            case "InsideHermi":
                 inFightScene = false;
                 inGameScene = true;
                 break;

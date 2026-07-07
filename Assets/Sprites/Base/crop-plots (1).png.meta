@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 916d10bc4ff410246ae4be9ac7a959e7
+guid: 2b5464ae0682d6b479933a20d600b8b7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1434316798489482013
-    second: "Minze_Spr\xF6\xDFling_0"
+      213: -5085197483874483696
+    second: crop-plots (1)_0
+  - first:
+      213: 723673144221341823
+    second: crop-plots (1)_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Minze_Spr\xF6\xDFling_0"
+      name: crop-plots (1)_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 9
-        width: 162
-        height: 162
+        x: 1549
+        y: 729
+        width: 662
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3eca8aa9878481ce0800000000000000
-      internalID: -1434316798489482013
+      spriteID: 01283f8b4dfbd69b0800000000000000
+      internalID: -5085197483874483696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crop-plots (1)_1
+      rect:
+        serializedVersion: 2
+        x: 1549
+        y: 229
+        width: 662
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f789dc6f3e00b0a00800000000000000
+      internalID: 723673144221341823
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Minze_Spr\xF6\xDFling_0": -1434316798489482013
+      crop-plots (1)_0: -5085197483874483696
+      crop-plots (1)_1: 723673144221341823
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
