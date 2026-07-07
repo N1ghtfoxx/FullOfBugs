@@ -16,7 +16,7 @@ public class DialogueNpc : MonoBehaviour, IInteractable
     [SerializeField] private GameObject visualIndicator;
 
     [Header("Quest System Settings")]
-    private List<string> questsToGive = new List<string>();
+    private List<QuestID> questsToGive = new();
 
 
     public void Interact()

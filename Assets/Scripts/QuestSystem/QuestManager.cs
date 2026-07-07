@@ -12,12 +12,12 @@ public class QuestManager : Singleton<QuestManager>
     [SerializeField] private GameObject newQuestIndicator;
     [SerializeField] private float indicatorDuration = 3f;
 
-    public void StartQuest(string questID)
+    public void StartQuest(QuestID questID)
     {
-        Quest quest = quests.Find(q => q.QuestName == questID);
+        Quest quest = quests.Find(q => q.QuestId == questID);
         if (quest != null)
         {
-            Debug.Log($"Quest '{quest.QuestName}' started!");
+            Debug.Log($"Quest '{quest.QuestId}' started!");
             // Show the new quest indicator
             newQuestIndicator.SetActive(true);
 
@@ -37,7 +37,7 @@ public class QuestManager : Singleton<QuestManager>
     }
 }
 
-public enum QuestName
+public enum QuestID
 {
     None,
     HermbertHelp,
