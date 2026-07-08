@@ -72,4 +72,23 @@ public class FarmingManager : Singleton<FarmingManager>
         int index = System.Array.FindIndex(_cropResults, c => c.name == seed.name);
         return index != -1 ? _grownPlantSprites[index] : null;
     }
+
+    public void UnlockFields(int count)
+    {
+        if(count > fields.Count)
+            count = fields.Count;
+
+        for (int i = 0; i < count && i < fields.Count; i++)
+        {
+            fields[i].Unlock();
+        }
+    }
+
+    public void ReduceGrowtime(float amount)
+    {
+        foreach (var field in fields)
+        {
+            field.ReduceGrowthTime(amount);
+        }
+    }
 }

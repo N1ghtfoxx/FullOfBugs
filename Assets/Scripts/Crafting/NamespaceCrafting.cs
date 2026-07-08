@@ -21,7 +21,8 @@ namespace Crafting
         Mint,
         LuminousMoss,
         DungBall,
-        CaveMineral
+        CaveMineral,
+        WaterDrop
     }
 
     public enum Result
@@ -31,12 +32,16 @@ namespace Crafting
         GlowingPotion,
         GlowingPotionPlus,
         Fertilizer,
+        StrawberrySeed,
+        MintSeed
     }
 
     public enum RecipeName
     {
         HealingRecipe,
         GlowingRecipe,
-        FertilizerRecipe
+        FertilizerRecipe,
+        StrawberrySeedRecipe,
+        MintSeedRecipe
     }
 }

@@ -3347,12 +3347,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectableOverTime
   _data:
-    name: Water
+    name: Waterdrop
     quantity: 1
     description: Its fluent
     type: 
     icon: {fileID: 21300000, guid: 72998a3015e5cb248855a5758e642bd7, type: 3}
-    ingrediant: 0
+    ingrediant: 6
   _collectionTime: 5
 --- !u!1 &2876128020331843846
 GameObject:

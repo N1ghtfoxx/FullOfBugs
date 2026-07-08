@@ -57,7 +57,7 @@ public class InventoryManager : Singleton<InventoryManager>
 
         if(existingItem != null)
         {
-            existingItem.quantity++;
+            existingItem.quantity += newItem.quantity;
 
         } else {
             
@@ -72,7 +72,7 @@ public class InventoryManager : Singleton<InventoryManager>
         }
     }
 
-    public void RemoveItemFromInventory(string itemName, List<ItemData> targetList = null)
+    public bool RemoveItemFromInventory(string itemName, List<ItemData> targetList = null)
     {
         targetList = targetList == null ? inventory : targetList;
 
@@ -90,7 +90,6 @@ public class InventoryManager : Singleton<InventoryManager>
         if(existingItem != null)
         {
             existingItem.quantity--;
-
             if(existingItem.quantity <= 0)
             {
                 targetList.Remove(existingItem);
@@ -102,6 +101,7 @@ public class InventoryManager : Singleton<InventoryManager>
             Debug.Log("CollectableItem " + itemName + " not found in inventory!");
 
         }
+        return existingItem != null;
     }
 
     public void RemoveItemFromStorage(string itemName, List<ItemData> targetList)

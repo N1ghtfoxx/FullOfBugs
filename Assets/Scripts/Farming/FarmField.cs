@@ -1,3 +1,5 @@
+using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FarmField : MonoBehaviour, IInteractable
@@ -6,8 +8,8 @@ public class FarmField : MonoBehaviour, IInteractable
     [SerializeField] private Sprite _blockedSprite;
     [SerializeField] private Sprite _emptySprite;
     private SpriteRenderer _spriteRenderer;
-    private ItemData _plantedSeed;
-    private float _growthTime = 30f; 
+    public ItemData _plantedSeed;
+    [SerializeField] private float _growthTime = 180f; 
     public bool instantInteract { get; set; } = false;
 
     private void Awake()
@@ -56,33 +58,54 @@ public class FarmField : MonoBehaviour, IInteractable
 
     public void Plant(ItemData seed)
     {
-        _plantedSeed = seed;
+        _plantedSeed = new ItemData { 
+            name = seed.name,
+            quantity = seed.quantity,
+            icon = seed.icon,
+            description = seed.description,
+            type = seed.type,
+            ingrediant = seed.ingrediant 
+        };
         _state = FieldState.Planted;
         UpdateSprite();
     }
 
     public void Water()
     {
-        bool hasWaterdrop = false;
-        foreach(ItemData item in InventoryManager.instance.inventory)
+        if (InventoryManager.instance.RemoveItemFromInventory("Fertilizer"))
         {
-            if(item.name == "Waterdrop" && item.quantity > 0)
+            _plantedSeed.quantity++;
+            if (SkillManager.instance.HasSkill(Skilltree.SkillID.PowerFertilizer))
             {
-                item.quantity--;
-                TestInventoryUiManager.instance.UpdateInventoryUI();
-                if(item.quantity <= 0)
-                {
-                    InventoryManager.instance.inventory.Remove(item);
-                }
-                hasWaterdrop = true;
-                break;
+                _plantedSeed.quantity += 2;
             }
         }
-        if (!hasWaterdrop)
+        else if (!InventoryManager.instance.RemoveItemFromInventory("Waterdrop"))
         {
             Debug.LogWarning("No Waterdrop in inventory! Cannot water the field.");
             return;
         }
+
+        //    bool hasWaterdrop = false;
+        //foreach(ItemData item in InventoryManager.instance.inventory)
+        //{
+        //    if(item.name == "Waterdrop" && item.quantity > 0)
+        //    {
+        //        item.quantity--;
+        //        TestInventoryUiManager.instance.UpdateInventoryUI();
+        //        if(item.quantity <= 0)
+        //        {
+        //            InventoryManager.instance.inventory.Remove(item);
+        //        }
+        //        hasWaterdrop = true;
+        //        break;
+        //    }
+        //}
+        //if (!hasWaterdrop)
+        //{
+        //    Debug.LogWarning("No Waterdrop in inventory! Cannot water the field.");
+        //    return;
+        //}
         _state = FieldState.Watered;
         UpdateSprite();
         StartCoroutine(GrowCrops());
@@ -141,7 +164,17 @@ public class FarmField : MonoBehaviour, IInteractable
             default:
                 break;
         }
+    }   
+    
+    public void Unlock()
+    {
+        if (_state == FieldState.Blocked)
+        {
+            _state = FieldState.Empty;
+            UpdateSprite();
+        }
     }
+
 
     public enum FieldState
     {
