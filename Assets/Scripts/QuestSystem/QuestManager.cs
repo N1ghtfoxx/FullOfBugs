@@ -12,6 +12,8 @@ public class QuestManager : Singleton<QuestManager>
     [SerializeField] private GameObject newQuestIndicator;
     [SerializeField] private float indicatorDuration = 3f;
 
+    private List<Key> collectedKeys = new List<Key>();
+
     public void StartQuest(QuestID questID)
     {
         Quest quest = quests.Find(q => q.QuestId == questID);
@@ -34,6 +36,25 @@ public class QuestManager : Singleton<QuestManager>
     {
         yield return new WaitForSeconds(indicatorDuration);
         questUI.SetActive(false);
+    }
+
+    public void CollectKey(Key k)
+    {
+        if (!collectedKeys.Contains(k))
+        {
+            collectedKeys.Add(k);
+            Debug.Log($"Collected key: {k.keyId}");
+        }
+    }
+
+    public bool CanOpenLock(LockID lockId)
+    {
+        return collectedKeys.Exists(k => k.lockId == lockId);
+    }
+
+    public bool HasKey(KeyID keyId)
+    {
+        return collectedKeys.Exists(k => k.keyId == keyId);
     }
 }
 

@@ -43,7 +43,8 @@ public class CollectableOverTime : MonoBehaviour, IInteractable
             _collectionRoutine = null;        
 
         }
-        _progressBar.SetActive(false);
+        if (_progressBar != null)
+            _progressBar.SetActive(false);
     }
 
     IEnumerator CollectionProcess()
