@@ -22,22 +22,22 @@ public class TestInventoryUiManager : Singleton<TestInventoryUiManager>
 
     public void ToggleInventory()
     {
-        if (!inventory.activeSelf) // if inventory is currently closed, update the UI before opening
+        inventory.SetActive(!inventory.activeSelf);
+        if (inventory.activeSelf) // if inventory is currently closed, update the UI before opening
         {
             UpdateInventoryUI();
             ClearItemDetail(); // Clear item details when opening the inventory
         }
-        inventory.SetActive(!inventory.activeSelf);
         PauseManager.instance.SetPause();
     }
 
     public void ToggleInventoryPlus()
     {
-        if(!inventoryPlus.activeSelf)
+        inventoryPlus.SetActive(!inventoryPlus.activeSelf);
+        if(inventoryPlus.activeSelf)
         {
             UpdateInventoryPlusUI();
         }
-        inventoryPlus.SetActive(!inventoryPlus.activeSelf);
         PauseManager.instance.SetPause();
     }
 
