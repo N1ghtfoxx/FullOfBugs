@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.SearchService;
 using UnityEngine.UI;
@@ -41,6 +42,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
     public bool choiceVisible { get; private set; }
 
+    private UnityEvent _onEndDialogEvent;
 
     private void Start()
     {
@@ -59,7 +61,7 @@ public class DialogueManager : Singleton<DialogueManager>
         }
     }
 
-    public void StartDialogue(TextAsset inkFile, bool autoPlay = false)
+    public void StartDialogue(TextAsset inkFile, bool autoPlay = false, UnityEvent endEvent = null)
     {
         if (inkFile != null)
         {
@@ -67,7 +69,7 @@ public class DialogueManager : Singleton<DialogueManager>
             isDialogueActive = true;
             dialoguePanel.SetActive(true);
             isAutoPlay = autoPlay;
-
+            _onEndDialogEvent = endEvent;
             ContinueDialogue();
             if (isAutoPlay)
                 //StartAutoPlay();
@@ -247,6 +249,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
         // enable player movement after dialogue ends
         PauseManager.instance.SetPause();
+        _onEndDialogEvent?.Invoke();
     }
 
     private void ShowOptions()

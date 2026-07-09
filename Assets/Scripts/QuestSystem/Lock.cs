@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Lock : MonoBehaviour, IInteractable
 {
-    [SerializeField] GameObject _wall;
+    [SerializeField] GameObject _closed;
+    [SerializeField] GameObject _open;
     [SerializeField] LockID _lockId;
 
     public bool instantInteract { get; set; } = true;
@@ -21,15 +22,18 @@ public class Lock : MonoBehaviour, IInteractable
 
     public void TryOpenLock()
     {
-        if (QuestManager.instance.CanOpenLock(_lockId))
+        if (QuestManager.instance.TryOpenLock(_lockId))
         {
-            _wall.SetActive(false);
+            _closed.SetActive(false);
+            _open.SetActive(true);
+            QuestManager.instance.UpdAllQuestObjByName("OpenDoors", 1);
             FindAnyObjectByType<HermbertMovement>().MoveHermbert();
         }
     }
 
     public void Interact()
     {
+        if(_closed.activeSelf)
         TryOpenLock();
     }
 

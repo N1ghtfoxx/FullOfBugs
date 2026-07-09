@@ -15,21 +15,11 @@ public class DialogueNpc : MonoBehaviour, IInteractable
     [Header("Visual Settings")]
     [SerializeField] private GameObject visualIndicator;
 
-    [Header("Quest System Settings")]
-    private List<QuestID> questsToGive = new();
-
-
-    public void Interact()
+    public virtual void Interact()
     {
         //return if the dialogue is already active
         if (DialogueManager.instance.isDialogueActive)
             return;
-
-        if(questsToGive.Count > 0)
-        {
-            QuestManager.instance.StartQuest(questsToGive[0]);
-        }
-
 
         TextAsset inkFile = randomDialogue[Random.Range(0, randomDialogue.Count)];
         // start the dialogue using the ink file assigned to this trigger
