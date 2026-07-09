@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using TMPro;
 
 public class TestInventoryUiManager : Singleton<TestInventoryUiManager>
 {
@@ -8,6 +9,10 @@ public class TestInventoryUiManager : Singleton<TestInventoryUiManager>
     public GameObject inventory;
     public InventorySlot[] inventoryPlusSlots;
     public GameObject inventoryPlus;
+    private ItemData _currentDetailItem;
+    [SerializeField] private Image _detailItemImage;
+    [SerializeField] private TMP_Text _detailDescriptionText;
+    [SerializeField] private GameObject _inventoryConsumeButton;
         
     void Start()
     {
@@ -20,6 +25,7 @@ public class TestInventoryUiManager : Singleton<TestInventoryUiManager>
         if (!inventory.activeSelf) // if inventory is currently closed, update the UI before opening
         {
             UpdateInventoryUI();
+            ClearItemDetail(); // Clear item details when opening the inventory
         }
         inventory.SetActive(!inventory.activeSelf);
         PauseManager.instance.SetPause();
@@ -79,6 +85,44 @@ public class TestInventoryUiManager : Singleton<TestInventoryUiManager>
             {
                 inventorySlots[i].UpdateItemSlot(null);
             }
+        }
+    }
+
+    public void ShowItemDetails(ItemData item)
+    {
+        _currentDetailItem = item;
+        _detailItemImage.sprite = item.icon;
+        _detailItemImage.color = Color.white; // Ensure the image is visible
+        _detailDescriptionText.text = ItemDescriptions.instance.GetDescription(item.name);
+        _inventoryConsumeButton.SetActive(Consumables.instance.IsConsumable(item.name));
+    }
+
+    public void ClearItemDetail()
+    {
+        _detailItemImage.sprite = null;
+        _detailItemImage.color = new Color(1, 1, 1, 0); // Make the image transparent
+        _detailDescriptionText.text = "";
+        _inventoryConsumeButton.SetActive(false);
+    }
+
+    public void ConsumeCurrentItem()
+    {
+        if (_currentDetailItem == null) return;
+
+        string itemName = _currentDetailItem.name;
+
+        InventoryManager.instance.RemoveItemFromInventory(itemName);
+        Consumables.instance.UseConsumable(itemName);
+        UpdateInventoryUI();
+
+        ItemData remainingItem = InventoryManager.instance.inventory.Find(i => i.name == itemName);
+        if(remainingItem != null)
+        {
+            ShowItemDetails(remainingItem);
+        }
+        else
+        {
+            ClearItemDetail();
         }
     }
 }

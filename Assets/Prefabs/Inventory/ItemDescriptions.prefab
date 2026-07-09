@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &984631715641143668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6226151767564908829}
+  - component: {fileID: 2359881685745089134}
+  m_Layer: 0
+  m_Name: ItemDescriptions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6226151767564908829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984631715641143668}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1090.2081, y: 585.3591, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2359881685745089134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984631715641143668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889785ccd8b8d8143b6a46773ba42c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDescriptions
+  _entries:
+  - itemName: Strawberry
+    description: "Klein, rot, verd\xE4chtig fr\xF6hlich f\xFCr einen Ort wie diesen.
+      Schmeckt nach Sommer und stellt etwas HP wieder her."
+  - itemName: StrawberrySeed
+    description: "Ein unscheinbares Samenkorn. Mit etwas Wasser und viel Geduld wird
+      daraus etwas S\xFC\xDFes."
+  - itemName: Mint
+    description: "Riecht nach Zahnpasta, hilft aber beim Heilen mehr als beim L\xE4cheln.
+      Wichtige Zutat f\xFCr Heiltr\xE4nke."
+  - itemName: MintSeed
+    description: "Ein kleiner, gr\xFCner Samen. Unscheinbar und stur, wie das ganze
+      restliche Gr\xFCnzeug hier unten. Wird mit der Zeit zu wohlriechender Minze."
+  - itemName: Dungball
+    description: "Eine kompakte Kugel aus...na ja, du wei\xDFt schon was. Fliegt
+      \xFCberraschend gut aus der Steinschleuder"
+  - itemName: HealingPotion
+    description: Gemixt von jemandem, der offenbar nie einen Trank studiert hat.
+      Funktioniert trotzdem besser, als jeder Erste-Hilfe-Kasten.
+  - itemName: HealingPotionPlus
+    description: "Die verbesserte Version vom Heiltrank. Niemand wei\xDF, was verbessert
+      wurde, aber die Wunden verschwinden schneller als die Zweifel."
+  - itemName: GlowPotion
+    description: "Aus Leuchtmoos gebraut. Neue Schatten sind beeindruckt, alte haben
+      den Trick schon l\xE4ngst durchschaut"
+  - itemName: GlowPotionPlus
+    description: Gleiche Brauweise, mehr Leuchtkraft. Schatten haben's noch schwerer
+      mit ihren miesen Tricks, aufgeben tun sie deswegen trotzdem nicht.
+  - itemName: CaveMineral
+    description: "Glitzert verd\xE4chtig im Dunkeln. Pflanzen scheinen \xFCbrigens
+      auf Bling-Bling zu stehen."
+  - itemName: Luminousmoss
+    description: "Leuchtendes Moos, das im Dunkeln sanft schimmert. W\xE4chst dort,
+      wo normale Pflanzen l\xE4ngst aufgegeben haben. Gut f\xFCr Leuchttr\xE4nke. "
+  - itemName: Waterdrop
+    description: "Das Unspektakul\xE4rste, was man hier unten finden kann. Ohne ihn
+      w\xFCrde hier aber gar nichts wachsen."
+  - itemName: Fertilizer
+    description: "Riecht fragw\xFCrdig, glitzert leicht, wirkt Wunder. Pflanzen sind
+      von der Kombination v\xF6llig hin und weg."
