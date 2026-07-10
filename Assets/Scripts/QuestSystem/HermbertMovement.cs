@@ -8,18 +8,6 @@ public class HermbertMovement : MonoBehaviour
 
     [SerializeField] float _speed = 1;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void MoveHermbert()
     {
         StopAllCoroutines();
@@ -38,6 +26,26 @@ public class HermbertMovement : MonoBehaviour
             transform.position = wp.position;
         }
         currentQuestpointIndex++;
+        string objName = "";
+        switch (currentQuestpointIndex)
+        {
+            case 1:
+                objName = "GreenDoor";
+                break;
+            case 2:
+                objName = "OrangeDoor";
+                break;
+            case 3:
+                objName = "YellowDoor";
+                break;
+            case 4:
+                objName = "BlueDoor";
+                break;
+            case 5:
+                objName = "RedDoor";
+                break;
+        }
+        QuestManager.instance.UpdAllQuestObjByName(objName, 1);
         Debug.Log(currentQuestpointIndex);
     }
 }

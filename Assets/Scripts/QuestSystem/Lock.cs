@@ -5,6 +5,7 @@ public class Lock : MonoBehaviour, IInteractable
     [SerializeField] GameObject _closed;
     [SerializeField] GameObject _open;
     [SerializeField] LockID _lockId;
+    [SerializeField] GameObject _nextKey;
 
     public bool instantInteract { get; set; } = true;
 
@@ -26,7 +27,9 @@ public class Lock : MonoBehaviour, IInteractable
         {
             _closed.SetActive(false);
             _open.SetActive(true);
-            QuestManager.instance.UpdAllQuestObjByName("OpenDoors", 1);
+            if(_nextKey != null)
+                _nextKey.SetActive(true);
+            //QuestManager.instance.UpdAllQuestObjByName("OpenDoors", 1);
             FindAnyObjectByType<HermbertMovement>().MoveHermbert();
         }
     }

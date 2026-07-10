@@ -7,7 +7,7 @@ using UnityEngine;
 public class QuestManager : Singleton<QuestManager>
 {
     [Header("Quest System Settings")]
-    [SerializeField] private List<Quest> quests = new List<Quest>();
+    [SerializeField] private List<Quest> _quests = new List<Quest>();
     [SerializeField] private GameObject questUI;
     [SerializeField] private GameObject newQuestIndicator;
     [SerializeField] private float indicatorDuration = 3f;
@@ -18,7 +18,7 @@ public class QuestManager : Singleton<QuestManager>
 
     public void DiscoverQuest(QuestID questID)
     {
-        Quest quest = quests.Find(q => q.QuestId == questID);
+        Quest quest = _quests.Find(q => q.QuestId == questID);
         if (quest != null)
         {
             if(quest.questState == QuestState.Unknown)
@@ -32,7 +32,7 @@ public class QuestManager : Singleton<QuestManager>
     public bool StartQuest(QuestID questID)
     {
         bool hasDialog = false;
-        Quest quest = quests.Find(q => q.QuestId == questID);
+        Quest quest = _quests.Find(q => q.QuestId == questID);
         if (quest != null)
         {
             if (quest.questState == QuestState.Known)
@@ -57,7 +57,7 @@ public class QuestManager : Singleton<QuestManager>
 
     public bool WaitForQuestCompletion(QuestID questID)
     {
-        Quest quest = quests.Find(q => q.QuestId == questID);
+        Quest quest = _quests.Find(q => q.QuestId == questID);
         if (quest != null)
         {
             return quest.WaitForQuestCompletion();
@@ -71,7 +71,7 @@ public class QuestManager : Singleton<QuestManager>
 
     public bool CollectQuest(QuestID questID)
     {
-        Quest quest = quests.Find(q => q.QuestId == questID);
+        Quest quest = _quests.Find(q => q.QuestId == questID);
         if (quest != null)
         {
             if (quest.IsCompleted)
@@ -98,7 +98,7 @@ public class QuestManager : Singleton<QuestManager>
 
     public void UpdAllQuestObjByType(ObjectiveType type, int count)
     {
-        foreach (Quest quest in quests)
+        foreach (Quest quest in _quests)
         {
             quest.UpdObjByType(type, count);
         }
@@ -106,7 +106,7 @@ public class QuestManager : Singleton<QuestManager>
 
     public void UpdAllQuestObjByName(string name, int count)
     {
-        foreach (Quest quest in quests)
+        foreach (Quest quest in _quests)
         {
             quest.UpdObjByName(name, count);
         }
@@ -129,12 +129,18 @@ public class QuestManager : Singleton<QuestManager>
 
     public bool TryOpenLock(LockID lockId)
     {
+        if ((int)lockId > GetQuest(QuestID.HermbertHelp).Progress) return false;
         if( _collectedKeys.Exists(k => k.lockId == lockId))
         {
             _collectedKeys.Remove(_collectedKeys.Find(k => k.lockId == lockId));
             return true;
         }
         return false;
+    }
+
+    private Quest GetQuest(QuestID id)
+    {
+        return _quests.Find(k => k.QuestId == id);
     }
 
     public bool HasKey(KeyID keyId)

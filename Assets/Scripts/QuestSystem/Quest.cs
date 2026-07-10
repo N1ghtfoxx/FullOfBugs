@@ -19,6 +19,7 @@ public class Quest
 
     public QuestID QuestId => questID;
     public bool IsCompleted => isCompleted;
+    public int Progress => _objectives.FindAll(o => o.isCompleted).Count;
 
     public bool StartQuest()
     {
@@ -68,6 +69,7 @@ public class Quest
         {
             objective.currentCount += count;
             Debug.Log($"Objective '{objective.name}' updated: {objective.currentCount}/{objective.requiredCount}");
+            Debug.Log($"IsCompleted: {objective.isCompleted}");
 
             CheckCompletion();
         }
@@ -75,6 +77,7 @@ public class Quest
 
     private void CheckCompletion()
     {
+        Debug.Log($"Quest '{questID}' is completed: {isCompleted}");
         if (isCompleted)
         {
             QuestManager.instance.CompleteQuest(questID);
