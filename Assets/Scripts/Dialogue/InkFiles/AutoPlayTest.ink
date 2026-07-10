@@ -1,4 +1,4 @@
-﻿-> AutoDialogue
+-> AutoDialogue
 === AutoDialogue ===
 This is a test of the auto-play feature in Ink. #speaker: Milbert #visual: Milbert #layout: leftLayout
 The next line will appear after a short delay. #speaker: hermbert #visual: Hermbert #layout: rightLayout
