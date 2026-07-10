@@ -49,7 +49,7 @@ public class WelcomeScreenManager : MonoBehaviour
     // called by the Play button's OnClick event
     public void OnPlayClicked()
     {
-        SceneManager.LoadScene("StartScreen2.0"); // Load the StartScreen scene
+        SceneManager.LoadScene("StartScreen"); // Load the StartScreen scene
     }
 
     // called by the Quit button's OnClick event
