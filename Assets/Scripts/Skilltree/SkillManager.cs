@@ -16,7 +16,7 @@ public class SkillManager : Singleton<SkillManager>
     //Data
     private List<SkillID> _unlockedSkills; //storage of unlocked skills
     private int[] _shadows; //storage of shadow amounts, index corresponds to ShadowType enum
-
+    [SerializeField] int _testStartShadowAmount = 0;
     [SerializeField] Recipe _fertilizerRecipe;
 
     protected override void Awake()
@@ -38,7 +38,7 @@ public class SkillManager : Singleton<SkillManager>
             _shadowCounterTexts[i] = shadowCounterParent.GetChild(i).GetComponent<TMP_Text>();
     //Load Values
             //Test replace with load shadows
-            _shadows[i] = 5;
+            _shadows[i] = _testStartShadowAmount;
         }
         //load skill list
         _unlockedSkills = new List<SkillID>();
