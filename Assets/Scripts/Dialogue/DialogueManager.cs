@@ -14,7 +14,7 @@ public class DialogueManager : Singleton<DialogueManager>
     [Header("Dialogue Settings")]
     [SerializeField] private TextMeshProUGUI displayText;
     [SerializeField] private GameObject dialoguePanel;
-    private Story story;
+    [SerializeField] private Story story;
     [SerializeField] private GameObject[] diaogueOptions;
     private TextMeshProUGUI[] optionTexts;
 
@@ -160,7 +160,6 @@ public class DialogueManager : Singleton<DialogueManager>
         Debug.LogWarning("Character portrait not found for character: " + characterName);
     }
 
-
     private void StartTyping(string line)
     {
         if (typeCoroutine != null)
@@ -211,6 +210,7 @@ public class DialogueManager : Singleton<DialogueManager>
             ContinueDialogue();
         }
     }
+   
     public void OnContinue()
     {
         if (!isDialogueActive)
@@ -231,7 +231,6 @@ public class DialogueManager : Singleton<DialogueManager>
 
         ContinueDialogue();
     }
-
 
     private void InstantlyCompleteTyping()
     {
