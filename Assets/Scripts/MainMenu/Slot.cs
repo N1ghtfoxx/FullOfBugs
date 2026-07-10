@@ -7,9 +7,12 @@ public class Slot : MonoBehaviour
     public int slotIndex;
     public Button slotButton;
     public Image slotImage;
-    public TMP_Text emptySlotText;
+    public Image slotBackgroundImage;
+    public Sprite emptySlotSprite;
+    public Sprite filledSlotSprite;
+    // public TMP_Text emptySlotText;
     public TMP_Text playtimeText;
-    public TMP_Text progressText;
+    // public TMP_Text progressText;
     private StartScreenManager startScreenManager;
 
     private void Start()
@@ -51,19 +54,21 @@ public class Slot : MonoBehaviour
         if(SaveLoadManager.Instance.SaveExists(slotIndex))
         {
             SaveData data = SaveLoadManager.Instance.LoadGame(slotIndex);
-            emptySlotText.gameObject.SetActive(false);
+            //emptySlotText.gameObject.SetActive(false);
             playtimeText.gameObject.SetActive(true);
             playtimeText.text = "Playtime: " + Mathf.FloorToInt(data.playtime) + "s";
-            progressText.gameObject.SetActive(true);
-            progressText.text = "Level: " + data.level;
+            //progressText.gameObject.SetActive(true);
+            //progressText.text = "Level: " + data.level;
             slotImage.gameObject.SetActive(true);
+            slotBackgroundImage.sprite = filledSlotSprite;
         }
         else
         {
-            emptySlotText.gameObject.SetActive(true);
+            //emptySlotText.gameObject.SetActive(true);
             playtimeText.gameObject.SetActive(false);
-            progressText.gameObject.SetActive(false);
+            //progressText.gameObject.SetActive(false);
             slotImage.gameObject.SetActive(false);
+            slotBackgroundImage.sprite = emptySlotSprite;
         }
     }
 }
