@@ -34,6 +34,21 @@ public class Consumables : Singleton<Consumables>
         }
     }
 
+    public bool IsConsumable(string itemName)
+    {
+        switch (itemName)
+        {
+            case "Strawberry":
+            case "HealingPotion":
+            case "HealingPotionPlus":
+            case "GlowPotion":
+            case "GlowPotionPlus":
+                return true;
+            default:
+                return false;
+        }
+    }
+
     [ContextMenu("Use GLow Potion")]
     public void UseGlowPotion()
     {

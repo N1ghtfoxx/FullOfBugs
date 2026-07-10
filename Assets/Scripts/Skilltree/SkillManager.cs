@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.InputSystem;
 using Skilltree;
 using UnityEngine.Events;
+using Crafting;
 
 public class SkillManager : Singleton<SkillManager>
 {
@@ -15,6 +16,8 @@ public class SkillManager : Singleton<SkillManager>
     //Data
     private List<SkillID> _unlockedSkills; //storage of unlocked skills
     private int[] _shadows; //storage of shadow amounts, index corresponds to ShadowType enum
+    [SerializeField] int _testStartShadowAmount = 0;
+    [SerializeField] Recipe _fertilizerRecipe;
 
     protected override void Awake()
     {
@@ -35,7 +38,7 @@ public class SkillManager : Singleton<SkillManager>
             _shadowCounterTexts[i] = shadowCounterParent.GetChild(i).GetComponent<TMP_Text>();
     //Load Values
             //Test replace with load shadows
-            _shadows[i] = 0;
+            _shadows[i] = _testStartShadowAmount;
         }
         //load skill list
         _unlockedSkills = new List<SkillID>();
@@ -81,21 +84,26 @@ public class SkillManager : Singleton<SkillManager>
             break;
 
         case SkillID.Garden:
+                FarmingManager.instance.UnlockFields(4);
             break;
 
         case SkillID.Farm:
+                FarmingManager.instance.UnlockFields(6);
             break;
 
         case SkillID.Fertilizer:
-            break;
+                CraftingManager.instance.AddRecipe(_fertilizerRecipe);
+                break;
 
         case SkillID.PowerFertilizer:
             break;
 
         case SkillID.GreenThumb:
+                FarmingManager.instance.ReduceGrowtime(30f);
             break;
 
         case SkillID.PlantMaster:
+                FarmingManager.instance.ReduceGrowtime(30f);
             break;
 
         default:

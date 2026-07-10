@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 0428365b929b59743b40e43e8b21c10b
+guid: 80139027cd03a794daac47f4c762ac62
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 889910038136938054
-    second: Side_AnimL_0
+      213: -4694854400984427969
+    second: idleSide_AnimR_0
   - first:
-      213: 4780077123462387440
-    second: Side_AnimL_1
+      213: -6873797670316354161
+    second: idleSide_AnimR_1
   - first:
-      213: 3913190496404040760
-    second: Side_AnimL_2
+      213: -7977215300644824000
+    second: idleSide_AnimR_2
   - first:
-      213: 679296387623117388
-    second: Side_AnimL_3
+      213: -6455161627122446266
+    second: idleSide_AnimR_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -105,51 +105,16 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Side_AnimL_0
+      name: idleSide_AnimR_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 5
         y: 1
-        width: 16
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 64ed439f678995c00800000000000000
-      internalID: 889910038136938054
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Side_AnimL_1
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 1
-        width: 16
+        width: 15
         height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -159,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0f652fe51de365240800000000000000
-      internalID: 4780077123462387440
+      spriteID: f32d425fbc688deb0800000000000000
+      internalID: -4694854400984427969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side_AnimL_2
+      name: idleSide_AnimR_1
       rect:
         serializedVersion: 2
-        x: 52
+        x: 29
         y: 1
-        width: 16
-        height: 23
+        width: 15
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,19 +146,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 83ce89406027e4630800000000000000
-      internalID: 3913190496404040760
+      spriteID: f85d2e2107d5b90a0800000000000000
+      internalID: -6873797670316354161
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side_AnimL_3
+      name: idleSide_AnimR_2
       rect:
         serializedVersion: 2
-        x: 76
+        x: 53
         y: 1
-        width: 16
+        width: 15
         height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -203,8 +168,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c426b7927785d6900800000000000000
-      internalID: 679296387623117388
+      spriteID: 04c114cf2fc3b4190800000000000000
+      internalID: -7977215300644824000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idleSide_AnimR_3
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 1
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64052a773b8aa66a0800000000000000
+      internalID: -6455161627122446266
       vertices: []
       indices: 
       edges: []
@@ -223,10 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Side_AnimL_0: 889910038136938054
-      Side_AnimL_1: 4780077123462387440
-      Side_AnimL_2: 3913190496404040760
-      Side_AnimL_3: 679296387623117388
+      idleSide_AnimR_0: -4694854400984427969
+      idleSide_AnimR_1: -6873797670316354161
+      idleSide_AnimR_2: -7977215300644824000
+      idleSide_AnimR_3: -6455161627122446266
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

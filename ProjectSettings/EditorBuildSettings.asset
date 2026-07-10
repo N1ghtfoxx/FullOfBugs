@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 0
+    path: Assets/Scenes/Inventory2.0.unity
+    guid: 447bb4f49ad62d64eb1c72ac877fc0b5
+  - enabled: 0
     path: Assets/Scenes/InsideHermi.unity
     guid: 139b5c7c7d5a2b842b80d30cdbc639bf
   - enabled: 0

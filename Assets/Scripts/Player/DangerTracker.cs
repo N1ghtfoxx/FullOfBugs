@@ -14,6 +14,7 @@ public class DangerTracker : MonoBehaviour
 
     private List<GameObject> _lights = new List<GameObject>();
     private bool _inLight = false;
+    public static bool _inSaveZone = false;
 
     [SerializeField] GameObject _enemyGo;
 
@@ -28,7 +29,7 @@ public class DangerTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PauseManager.instance.isPaused) return;
+        if (PauseManager.instance.isPaused || _inSaveZone) return;
         _progress += Time.deltaTime;
         _progressbar.fillAmount = _progress / _duration;
         if (!_inLight)
@@ -58,6 +59,10 @@ public class DangerTracker : MonoBehaviour
             if (IsLightBlocked(other.gameObject)) return;
             _lights.Add(other.gameObject);
             _inLight = true;
+        }
+        if (other.CompareTag("SaveZone"))
+        {
+            _inSaveZone = true;
         }
     }
 
@@ -98,6 +103,11 @@ public class DangerTracker : MonoBehaviour
         {
             _lights.Remove(other.gameObject);
             _inLight = _lights.Count != 0;
+        }
+
+        if (other.CompareTag("SaveZone"))
+        {
+            _inSaveZone = false;
         }
     }
 

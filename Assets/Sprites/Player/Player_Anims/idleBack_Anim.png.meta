@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: f42c51ef18bf3ec4a9c91cc9f017cadf
+guid: f17a3d87530d7d8409cb88030cb6658d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5240866651875899914
-    second: side_0
+      213: -4833626701872500364
+    second: idleBack_Anim_0
   - first:
-      213: -4285248907806587610
-    second: side_1
+      213: -4717674924692035755
+    second: idleBack_Anim_1
   - first:
-      213: -5381216536627614246
-    second: side_2
+      213: -2501558664910139107
+    second: idleBack_Anim_2
   - first:
-      213: 8255966939233883970
-    second: side_3
+      213: -1455852819525327325
+    second: idleBack_Anim_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -105,106 +105,93 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: side_0
+      name: idleBack_Anim_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 24
-        height: 24
+        x: 1
+        y: 1
+        width: 22
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: fec1dc04b7fdef5479f972a76825a72c
-      internalID: -1598917979
+      spriteID: 471fb02df128becb0800000000000000
+      internalID: -4833626701872500364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: side_1
+      name: idleBack_Anim_1
       rect:
         serializedVersion: 2
-        x: 24
-        y: 0
-        width: 24
-        height: 24
+        x: 25
+        y: 1
+        width: 22
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b333f616cdc02414bb2b6f1fdad4427d
-      internalID: 1866014177
+      spriteID: 557a6fbb6a3778eb0800000000000000
+      internalID: -4717674924692035755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: side_2
+      name: idleBack_Anim_2
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
-        width: 24
-        height: 24
+        x: 49
+        y: 1
+        width: 22
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d3658b0c59d2f9749b90ffdf82efaab5
-      internalID: 2102335817
+      spriteID: d111b39e5ada84dd0800000000000000
+      internalID: -2501558664910139107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: side_3
+      name: idleBack_Anim_3
       rect:
         serializedVersion: 2
-        x: 72
-        y: 0
-        width: 24
-        height: 24
+        x: 73
+        y: 1
+        width: 22
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0db7057a716b6a84695835200ffd7fb6
-      internalID: 766172441
+      spriteID: 32621f6f295cbcbe0800000000000000
+      internalID: -1455852819525327325
       vertices: []
       indices: 
       edges: []
@@ -213,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c248b394e96ac0c43b7c5b74bb8c9120
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -221,16 +208,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceOnImport
-        value: False
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":24.0,"y":24.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      side_0: -1598917979
-      side_1: 1866014177
-      side_2: 2102335817
-      side_3: 766172441
+      idleBack_Anim_0: -4833626701872500364
+      idleBack_Anim_1: -4717674924692035755
+      idleBack_Anim_2: -2501558664910139107
+      idleBack_Anim_3: -1455852819525327325
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
