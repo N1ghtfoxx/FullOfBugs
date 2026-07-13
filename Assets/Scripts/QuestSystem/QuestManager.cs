@@ -43,6 +43,7 @@ public class QuestManager : Singleton<QuestManager>
 
             Debug.Log($"Quest '{quest.QuestId}' started!");
             // Show the new quest indicator
+            if(newQuestIndicator != null)
             newQuestIndicator.SetActive(true);
 
             // Hide the indicator after a delay
@@ -115,6 +116,7 @@ public class QuestManager : Singleton<QuestManager>
     private IEnumerator HideQuestIndicator()
     {
         yield return new WaitForSeconds(indicatorDuration);
+        if(questUI != null)
         questUI.SetActive(false);
     }
 

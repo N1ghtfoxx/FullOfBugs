@@ -23,7 +23,7 @@ Dumme gehen, #speaker: Milbert #visual: Milbert #layout: leftLayout
 Kluge warten,
 Weise gehen in den Garten.
 Es ist ein Gewächshaus, Millie. #speaker: Hermbert #visual: Hermbert #layout: rightLayout
-Ich glaube auch nicht, dass jemand ihn dir den Schlüssel versteckt hat, Herm. #speaker: Milbert #visual: Milbert #layout: leftLayout
+Ich glaube auch nicht, dass jemand in dir den Schlüssel versteckt hat, Herm. #speaker: Milbert #visual: Milbert #layout: leftLayout
 Ich hoffe nicht! #speaker: Hermbert #visual: Hermbert #layout: rightLayout
 Ich geh' mich mal umschauen. #speaker: Milbert #visual: Milbert #layout: leftLayout
 Bin gleich wieder da!

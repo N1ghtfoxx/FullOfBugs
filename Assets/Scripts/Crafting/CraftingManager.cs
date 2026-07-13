@@ -15,7 +15,7 @@ public class CraftingManager : Singleton<CraftingManager>
     public Recipe[] testRecipe;
     public bool isCrafting = false;
 
-    [SerializeField] ItemData[] resultItems;
+    [SerializeField] ItemData[] resultItems; //in order of Result enum
 
     protected override void Awake()
     {

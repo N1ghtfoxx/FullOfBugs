@@ -8,6 +8,7 @@ public class MapChest : MonoBehaviour, IInteractable
 
     [SerializeField] List<ItemData> _items;
     [SerializeField] List<Recipe> _recipes;
+    [SerializeField] Sprite _emptySprite;
 
     public void Interact()
     {
@@ -25,6 +26,10 @@ public class MapChest : MonoBehaviour, IInteractable
             foreach (Recipe recipe in _recipes)
                 CraftingManager.instance.AddRecipe(recipe);
 
+        if(_items.Count == 0)
+        {
+            GetComponent<SpriteRenderer>().sprite = _emptySprite;
+        }
         //Save The Cheststate
     }
 
