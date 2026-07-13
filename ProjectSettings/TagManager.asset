@@ -43,5 +43,8 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Hermit
+    uniqueID: 1145274373
+    locked: 0
   m_RenderingLayers:
   - Default
