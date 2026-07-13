@@ -75,6 +75,10 @@ public class FarmField : MonoBehaviour, IInteractable
         if (InventoryManager.instance.RemoveItemFromInventory("Fertilizer"))
         {
             _plantedSeed.quantity++;
+            if (SkillManager.instance.HasSkill(Skilltree.SkillID.Fertilizer))
+            {
+                _plantedSeed.quantity++;
+            }
             if (SkillManager.instance.HasSkill(Skilltree.SkillID.PowerFertilizer))
             {
                 _plantedSeed.quantity += 2;

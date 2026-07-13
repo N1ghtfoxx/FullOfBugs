@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.SearchService;
 using UnityEngine.UI;
@@ -13,7 +14,7 @@ public class DialogueManager : Singleton<DialogueManager>
     [Header("Dialogue Settings")]
     [SerializeField] private TextMeshProUGUI displayText;
     [SerializeField] private GameObject dialoguePanel;
-    private Story story;
+    [SerializeField] private Story story;
     [SerializeField] private GameObject[] diaogueOptions;
     private TextMeshProUGUI[] optionTexts;
 
@@ -41,6 +42,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
     public bool choiceVisible { get; private set; }
 
+    private UnityEvent _onEndDialogEvent;
 
     private void Start()
     {
@@ -59,7 +61,7 @@ public class DialogueManager : Singleton<DialogueManager>
         }
     }
 
-    public void StartDialogue(TextAsset inkFile, bool autoPlay = false)
+    public void StartDialogue(TextAsset inkFile, bool autoPlay = false, UnityEvent endEvent = null)
     {
         if (inkFile != null)
         {
@@ -67,7 +69,7 @@ public class DialogueManager : Singleton<DialogueManager>
             isDialogueActive = true;
             dialoguePanel.SetActive(true);
             isAutoPlay = autoPlay;
-
+            _onEndDialogEvent = endEvent;
             ContinueDialogue();
             if (isAutoPlay)
                 //StartAutoPlay();
@@ -158,7 +160,6 @@ public class DialogueManager : Singleton<DialogueManager>
         Debug.LogWarning("Character portrait not found for character: " + characterName);
     }
 
-
     private void StartTyping(string line)
     {
         if (typeCoroutine != null)
@@ -209,6 +210,7 @@ public class DialogueManager : Singleton<DialogueManager>
             ContinueDialogue();
         }
     }
+   
     public void OnContinue()
     {
         if (!isDialogueActive)
@@ -230,7 +232,6 @@ public class DialogueManager : Singleton<DialogueManager>
         ContinueDialogue();
     }
 
-
     private void InstantlyCompleteTyping()
     {
         if (typeCoroutine != null)
@@ -247,6 +248,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
         // enable player movement after dialogue ends
         PauseManager.instance.SetPause();
+        _onEndDialogEvent?.Invoke();
     }
 
     private void ShowOptions()

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 24e5af3ba98b70a459ce90a7a8d4fae3
+guid: 21cfdc14b0ee7a045917ef6fa64ad732
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1230540914693810202
-    second: NormalChestOpen_0
+      213: -674340758412060803
+    second: hermitcrab_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,12 +51,12 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 160
+  spriteBorder: {x: 117, y: 392, z: 614, w: 393}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -96,37 +96,54 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NormalChestOpen_0
+      name: hermitcrab_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 240
-        height: 240
+        x: 169
+        y: 189
+        width: 952
+        height: 742
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6e7571ace8d3ceee0800000000000000
-      internalID: -1230540914693810202
+      spriteID: d77184d27a244a6f0800000000000000
+      internalID: -674340758412060803
       vertices: []
       indices: 
       edges: []
       weights: []
-    outline: []
+    outline:
+    - - {x: -285.5, y: -270}
+      - {x: 285.5, y: -270}
+      - {x: 285.5, y: 270}
+      - {x: -285.5, y: 269}
     customData: 
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -135,7 +152,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      NormalChestOpen_0: -1230540914693810202
+      hermitcrab_0: -674340758412060803
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
