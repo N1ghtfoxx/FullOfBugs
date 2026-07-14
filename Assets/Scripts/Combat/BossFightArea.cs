@@ -6,6 +6,7 @@ public class BossFightArea : MonoBehaviour, IInteractable
     private bool _isBossActive = true;
     [SerializeField] GameObject _bossObj;
     [SerializeField] Transform _player;
+    [SerializeField] GameObject _sleepingBoss;
     [SerializeField] string _bossQuestName;
     
 
@@ -39,5 +40,11 @@ public class BossFightArea : MonoBehaviour, IInteractable
     public void Selected()
     {
         
+    }
+
+    public void BossDefeated()
+    {
+        if (_bossObj.activeSelf && ! _sleepingBoss.activeSelf) return;
+        _sleepingBoss.SetActive(true);
     }
 }
