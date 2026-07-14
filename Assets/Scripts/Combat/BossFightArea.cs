@@ -44,7 +44,7 @@ public class BossFightArea : MonoBehaviour, IInteractable
 
     public void BossDefeated()
     {
-        if (_bossObj.activeSelf && ! _sleepingBoss.activeSelf) return;
+        if (_bossObj.activeSelf && !_sleepingBoss.activeSelf) return;
         _sleepingBoss.SetActive(true);
     }
 }
