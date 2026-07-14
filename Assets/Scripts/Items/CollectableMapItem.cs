@@ -8,8 +8,12 @@ public class CollectableMapItem : MonoBehaviour, IInteractable
     public void Interact()
     {
         if (InventoryManager.instance.AddItemToInventory(_data))
+        {
+            LootNotificationManager.instance.ShowNotification(_data);
             Destroy(gameObject);
-        else FailFeedbackManager.instance.ShowFailFeedbackInGame(_data.icon, gameObject);
+        }
+        else 
+            FailFeedbackManager.instance.ShowFailFeedbackInGame(_data.icon, gameObject);
     }
 
     public void Selected()

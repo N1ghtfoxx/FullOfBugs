@@ -33,7 +33,14 @@ public class InventoryManager : Singleton<InventoryManager>
             
             if(targetList.Count < maxSlots)
             {
-                targetList.Add(newItem);
+                ItemData copy = new ItemData();
+                copy.name = newItem.name;
+                copy.quantity = newItem.quantity;
+                copy.description = newItem.description;
+                copy.type = newItem.type;
+                copy.icon = newItem.icon;
+                copy.ingrediant = newItem.ingrediant;
+                targetList.Add(copy);
                 return true;
             } else {
                 Debug.Log("Inventory is full! Cannot add " + newItem.name);
@@ -63,8 +70,14 @@ public class InventoryManager : Singleton<InventoryManager>
             
             if(targetList.Count < maxChestSlots)
             {
-                targetList.Add(newItem);
-
+                ItemData copy = new ItemData();
+                copy.name = newItem.name;
+                copy.quantity = newItem.quantity;
+                copy.description = newItem.description;
+                copy.type = newItem.type;
+                copy.icon = newItem.icon;
+                copy.ingrediant = newItem.ingrediant;
+                targetList.Add(copy);
             } else {
 
                 Debug.Log("Storage is full! Cannot add " + newItem.name);
