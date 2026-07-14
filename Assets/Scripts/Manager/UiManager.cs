@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -147,29 +146,6 @@ public class UiManager : Singleton<UiManager>
                 Debug.LogError("No active Scene found.");
                 break;
         }
-    }
-
-    public void OnPausemenuToggle(InputAction.CallbackContext ctx)
-    {
-        if (ctx.performed)
-        {
-            ToggglePausepanel();
-        }
-        PauseManager.instance.SetPause();
-
-    }
-
-    public void ToggglePausepanel()
-    {
-        if (pausePanel.activeSelf)
-        {
-            pausePanel.SetActive(false);
-        }
-        else
-        {
-            pausePanel.SetActive(true);
-        }
-        //PauseManager.instance.SetPause();
     }
 
     #endregion
