@@ -150,7 +150,7 @@ public class SkillManager : Singleton<SkillManager>
                 {
                     ApplySkillBuy(skill);
                 });
-                ConfirmManager.instance.AskForConfirmation(e, DontAskRegion.Skilltree, $"Do you want to spend {skill.cost.amount} {ShadowType.GetName(typeof(ShadowType),skill.cost.costType)} for {skill.skillName}");
+                ConfirmManager.instance.AskForConfirmation(e, null, DontAskRegion.Skilltree, $"Do you want to spend {skill.cost.amount} {ShadowType.GetName(typeof(ShadowType),skill.cost.costType)} for {skill.skillName}");
             }
             return true;
         }

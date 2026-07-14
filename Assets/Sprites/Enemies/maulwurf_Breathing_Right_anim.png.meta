@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: d9aa2ffc1bad58444b6ecb926e3018a3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4230132836265207394
+    second: maulwurf_Breathing_Right_anim_0
+  - first:
+      213: -2414589424915323509
+    second: maulwurf_Breathing_Right_anim_1
+  - first:
+      213: 8011346377412445497
+    second: maulwurf_Breathing_Right_anim_2
+  - first:
+      213: 8957597029577016287
+    second: maulwurf_Breathing_Right_anim_3
+  - first:
+      213: 1289396462077371678
+    second: maulwurf_Breathing_Right_anim_4
+  - first:
+      213: 6378626974403601690
+    second: maulwurf_Breathing_Right_anim_5
+  - first:
+      213: 6082468926471739817
+    second: maulwurf_Breathing_Right_anim_6
+  - first:
+      213: -1974159920573978340
+    second: maulwurf_Breathing_Right_anim_7
+  - first:
+      213: -8459424750089467884
+    second: maulwurf_Breathing_Right_anim_8
+  - first:
+      213: 8985350659059970804
+    second: maulwurf_Breathing_Right_anim_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: maulwurf_Breathing_Right_anim_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2
+        width: 69
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9952bdf89c8b45c0800000000000000
+      internalID: -4230132836265207394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maulwurf_Breathing_Right_anim_1
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 2
+        width: 69
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b85e18906b7ad7ed0800000000000000
+      internalID: -2414589424915323509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maulwurf_Breathing_Right_anim_2
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 2
+        width: 69
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 935084695150e2f60800000000000000
+      internalID: 8011346377412445497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maulwurf_Breathing_Right_anim_3
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 2
+        width: 69
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd3480df907cf4c70800000000000000
+      internalID: 8957597029577016287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maulwurf_Breathing_Right_anim_4
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 2
+        width: 69
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1564c0304bd4e110800000000000000
+      internalID: 1289396462077371678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maulwurf_Breathing_Right_anim_5
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 2
+        width: 69
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a152d04107f658850800000000000000
+      internalID: 6378626974403601690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maulwurf_Breathing_Right_anim_6
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 2
+        width: 69
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a913b72345496450800000000000000
+      internalID: 6082468926471739817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maulwurf_Breathing_Right_anim_7
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 2
+        width: 69
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c19ef5403006a94e0800000000000000
+      internalID: -1974159920573978340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maulwurf_Breathing_Right_anim_8
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 2
+        width: 69
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41805ce72061a9a80800000000000000
+      internalID: -8459424750089467884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maulwurf_Breathing_Right_anim_9
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 2
+        width: 69
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f2779761d062bc70800000000000000
+      internalID: 8985350659059970804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      maulwurf_Breathing_Right_anim_0: -4230132836265207394
+      maulwurf_Breathing_Right_anim_1: -2414589424915323509
+      maulwurf_Breathing_Right_anim_2: 8011346377412445497
+      maulwurf_Breathing_Right_anim_3: 8957597029577016287
+      maulwurf_Breathing_Right_anim_4: 1289396462077371678
+      maulwurf_Breathing_Right_anim_5: 6378626974403601690
+      maulwurf_Breathing_Right_anim_6: 6082468926471739817
+      maulwurf_Breathing_Right_anim_7: -1974159920573978340
+      maulwurf_Breathing_Right_anim_8: -8459424750089467884
+      maulwurf_Breathing_Right_anim_9: 8985350659059970804
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

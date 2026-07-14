@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 433c8da4af5f4ed4bb46a89992925e98
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1544817078030449654
+    second: Maulwurf walking_Left_anim_0
+  - first:
+      213: 1539766335625235785
+    second: Maulwurf walking_Left_anim_1
+  - first:
+      213: 1479085432790801913
+    second: Maulwurf walking_Left_anim_2
+  - first:
+      213: 2678221655613517280
+    second: Maulwurf walking_Left_anim_3
+  - first:
+      213: 4403573227941745429
+    second: Maulwurf walking_Left_anim_4
+  - first:
+      213: 8510237229558287224
+    second: Maulwurf walking_Left_anim_5
+  - first:
+      213: 4468548047273150954
+    second: Maulwurf walking_Left_anim_6
+  - first:
+      213: -3146988675791382649
+    second: Maulwurf walking_Left_anim_7
+  - first:
+      213: 7567380320984811426
+    second: Maulwurf walking_Left_anim_8
+  - first:
+      213: -4720872247317139142
+    second: Maulwurf walking_Left_anim_9
+  - first:
+      213: -3103387884461825121
+    second: Maulwurf walking_Left_anim_10
+  - first:
+      213: -2277078786475845345
+    second: Maulwurf walking_Left_anim_11
+  - first:
+      213: 6562494218692760021
+    second: Maulwurf walking_Left_anim_12
+  - first:
+      213: 8117037766064985088
+    second: Maulwurf walking_Left_anim_13
+  - first:
+      213: -2393614251886937137
+    second: Maulwurf walking_Left_anim_14
+  - first:
+      213: -5860777184694030644
+    second: Maulwurf walking_Left_anim_15
+  - first:
+      213: 6601843494667289985
+    second: Maulwurf walking_Left_anim_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Maulwurf walking_Left_anim_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 11
+        width: 69
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a04c9056d05bf8ae0800000000000000
+      internalID: -1544817078030449654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maulwurf walking_Left_anim_1
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 11
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94d0c0003595e5510800000000000000
+      internalID: 1539766335625235785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maulwurf walking_Left_anim_2
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 11
+        width: 69
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fd53f55d54c68410800000000000000
+      internalID: 1479085432790801913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maulwurf walking_Left_anim_3
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 12
+        width: 69
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ed2a9ce764fa2520800000000000000
+      internalID: 2678221655613517280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maulwurf walking_Left_anim_4
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 11
+        width: 69
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51353e90582ac1d30800000000000000
+      internalID: 4403573227941745429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maulwurf walking_Left_anim_5
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 11
+        width: 71
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87b402ecbaf6a1670800000000000000
+      internalID: 8510237229558287224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maulwurf walking_Left_anim_6
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 11
+        width: 71
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae94b7b06c8730e30800000000000000
+      internalID: 4468548047273150954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maulwurf walking_Left_anim_7
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 11
+        width: 70
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 787174b0976a354d0800000000000000
+      internalID: -3146988675791382649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maulwurf walking_Left_anim_8
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 13
+        width: 69
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a7c498ee4cb40960800000000000000
+      internalID: 7567380320984811426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maulwurf walking_Left_anim_9
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 13
+        width: 69
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3179ac04b71c7eb0800000000000000
+      internalID: -4720872247317139142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maulwurf walking_Left_anim_10
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 12
+        width: 69
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f93e66a592d8ee4d0800000000000000
+      internalID: -3103387884461825121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maulwurf walking_Left_anim_11
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 11
+        width: 69
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f19978e78e03660e0800000000000000
+      internalID: -2277078786475845345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maulwurf walking_Left_anim_12
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 11
+        width: 69
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d19cb9e8b9a21b50800000000000000
+      internalID: 6562494218692760021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maulwurf walking_Left_anim_13
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 11
+        width: 69
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 004dbb2a7d285a070800000000000000
+      internalID: 8117037766064985088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maulwurf walking_Left_anim_14
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 11
+        width: 69
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcb77f2158c28ced0800000000000000
+      internalID: -2393614251886937137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maulwurf walking_Left_anim_15
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 11
+        width: 69
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cce2996c3365aaea0800000000000000
+      internalID: -5860777184694030644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maulwurf walking_Left_anim_16
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 11
+        width: 69
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1850e5a2ea57e9b50800000000000000
+      internalID: 6601843494667289985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Maulwurf walking_Left_anim_0: -1544817078030449654
+      Maulwurf walking_Left_anim_1: 1539766335625235785
+      Maulwurf walking_Left_anim_10: -3103387884461825121
+      Maulwurf walking_Left_anim_11: -2277078786475845345
+      Maulwurf walking_Left_anim_12: 6562494218692760021
+      Maulwurf walking_Left_anim_13: 8117037766064985088
+      Maulwurf walking_Left_anim_14: -2393614251886937137
+      Maulwurf walking_Left_anim_15: -5860777184694030644
+      Maulwurf walking_Left_anim_16: 6601843494667289985
+      Maulwurf walking_Left_anim_2: 1479085432790801913
+      Maulwurf walking_Left_anim_3: 2678221655613517280
+      Maulwurf walking_Left_anim_4: 4403573227941745429
+      Maulwurf walking_Left_anim_5: 8510237229558287224
+      Maulwurf walking_Left_anim_6: 4468548047273150954
+      Maulwurf walking_Left_anim_7: -3146988675791382649
+      Maulwurf walking_Left_anim_8: 7567380320984811426
+      Maulwurf walking_Left_anim_9: -4720872247317139142
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

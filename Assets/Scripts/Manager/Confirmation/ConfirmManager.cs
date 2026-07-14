@@ -32,6 +32,7 @@ public class ConfirmManager : MonoBehaviour
     private bool[] dontAskToggle;
 
     public UnityEvent onConfirm;
+    public UnityEvent onCancel;
 
     private DontAskRegion currentRegion;
 
@@ -67,7 +68,7 @@ public class ConfirmManager : MonoBehaviour
         AskForConfirmation(testEvent);
     }
 
-    public void AskForConfirmation(UnityEvent confirmAction, DontAskRegion region = DontAskRegion.none, string text = "Are you sure?")
+    public void AskForConfirmation(UnityEvent confirmAction,UnityEvent cancelAction = null, DontAskRegion region = DontAskRegion.none, string text = "Are you sure?")
     {
         currentRegion = region;
         if (dontAskToggle[(int)region])
@@ -76,6 +77,7 @@ public class ConfirmManager : MonoBehaviour
             return;
         }
         onConfirm = confirmAction;
+        onCancel = cancelAction;
         _confirmText.text = text;
         _dontAskAgainToggle.gameObject.SetActive(region != DontAskRegion.none); //only show toggle if the region is not none
         _dontAskAgainToggle.isOn = false;
@@ -91,6 +93,7 @@ public class ConfirmManager : MonoBehaviour
     public void Cancel()
     {
         _confirmPanel.SetActive(false);
+        onCancel?.Invoke();
     }
 
     public void ToggleDontAsk(bool value)
