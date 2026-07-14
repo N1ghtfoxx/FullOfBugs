@@ -28,7 +28,6 @@ public class TestInventoryUiManager : Singleton<TestInventoryUiManager>
             UpdateInventoryUI();
             ClearItemDetail(); // Clear item details when opening the inventory
         }
-        PauseManager.instance.SetPause();
     }
 
     public void ToggleInventoryPlus()
@@ -53,6 +52,7 @@ public class TestInventoryUiManager : Singleton<TestInventoryUiManager>
             {
                 inventoryPlusSlots[i].UpdateItemSlot(null);
             }
+            PauseManager.instance.SetPause();
         }
     }
 
@@ -71,6 +71,7 @@ public class TestInventoryUiManager : Singleton<TestInventoryUiManager>
         {
             ToggleInventory();
         }
+        PauseManager.instance.SetPause();
     }
 
     public void UpdateInventoryUI()
