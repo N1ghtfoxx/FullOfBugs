@@ -20,6 +20,8 @@ public class MapChest : MonoBehaviour, IInteractable
                 items.Add(item);
                 FailFeedbackManager.instance.ShowFailFeedbackInGame(GetComponent<SpriteRenderer>().sprite, gameObject);
             }
+            else
+                LootNotificationManager.instance.ShowNotification(item);
         }
         _items = items;
         if (_recipes != null)

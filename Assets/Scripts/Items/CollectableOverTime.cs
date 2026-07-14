@@ -66,6 +66,11 @@ public class CollectableOverTime : MonoBehaviour, IInteractable
         _progressBar.SetActive(false);
         if (!InventoryManager.instance.AddItemToInventory(_data))
             FailFeedbackManager.instance.ShowFailFeedbackInGame(_data.icon, gameObject);
+        else
+        {
+            LootNotificationManager.instance.ShowNotification(_data);
+        }
+
         _collectionRoutine = null;
     }
 }
