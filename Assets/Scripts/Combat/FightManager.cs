@@ -19,7 +19,13 @@ public class FightManager : Singleton<FightManager>
     [SerializeField] int _enemiesBeforeUpgrade = 7;
     private int _defeatedEnemys;
     [SerializeField] EnemyGroup[] _enemiesByLevel;
+    [SerializeField] Enemy _boss;
 
+    private bool _animatedEnemy = false;
+    private bool _bossEnemy = false;
+    private string _questName;
+    [SerializeField] Animator _animator;
+    [SerializeField] GameObject _staticEnemy;
 
     public void UseItem(string itemName)
     {
@@ -97,6 +103,7 @@ public class FightManager : Singleton<FightManager>
         Debug.Log("Enemy turn");
         yield return new WaitForSeconds(1f);
         Debug.Log("Enemy atacks");
+        _animator.SetTrigger("AttackTr");
         yield return new WaitForSeconds(0.5f);
         PlayerStatsManager.instance.modifyHp(-_enemy.dmg);
         UiManager.instance.UpdateHealthUi(PlayerStatsManager.instance.hp, _enemy.hp);
@@ -124,6 +131,11 @@ public class FightManager : Singleton<FightManager>
         {
             SkillManager.instance.AddShadow(_enemy.reward);
             _defeatedEnemys++;
+            if (_bossEnemy)
+            {
+                _bossEnemy = false;
+                QuestManager.instance.UpdAllQuestObjByName(_questName, 1);
+            }
             if(_defeatedEnemys >= _enemiesBeforeUpgrade)
             {
                 _defeatedEnemys = 0;
@@ -152,13 +164,38 @@ public class FightManager : Singleton<FightManager>
             reward = random.reward,
             sprite = random.sprite
         };
-
+        _animatedEnemy = false;
         UiManager.instance.SetFightUi("Hermbert", PlayerStatsManager.instance.maxHp, PlayerStatsManager.instance.hp, _enemy.name, _enemy.variant, _enemy.hp, _enemy.sprite);
+        _staticEnemy.SetActive(!_animatedEnemy);
+        _animator.gameObject.SetActive(_animatedEnemy);
         PauseManager.instance.SetPause();
         Coinflip();
         UiManager.instance.PlayerFightControl(_playerTurn);
         if(!_playerTurn)
             Attack();
+    }
+
+    public void StartBossFight(string quest)
+    {
+        _animatedEnemy = true;
+        _questName = quest;
+        _bossEnemy = true;
+        _enemy = new Enemy
+        {
+            name = _boss.name,
+            variant = _boss.variant,
+            hp = _boss.hp,
+            dmg = _boss.dmg,
+            reward = _boss.reward,
+            sprite = _boss.sprite
+        };
+        UiManager.instance.SetFightUi("Hermbert", PlayerStatsManager.instance.maxHp, PlayerStatsManager.instance.hp, _enemy.name, _enemy.variant, _enemy.hp, _enemy.sprite);
+        _staticEnemy.SetActive(!_animatedEnemy);
+        _animator.gameObject.SetActive(_animatedEnemy);
+        PauseManager.instance.SetPause();
+        _playerTurn = true;
+        UiManager.instance.PlayerFightControl(_playerTurn);
+        if(!_playerTurn) Attack();
     }
 
     // temp method
