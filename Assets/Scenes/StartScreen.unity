@@ -539,6 +539,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot2
       objectReference: {fileID: 0}
+    - target: {fileID: 8938978376768241117, guid: 5b131ca28f3c2094eb1c4c8ceebf6380, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938978376768241117, guid: 5b131ca28f3c2094eb1c4c8ceebf6380, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 889ffed9b44638d48957922d71454744, type: 2}
+    - target: {fileID: 8938978376768241117, guid: 5b131ca28f3c2094eb1c4c8ceebf6380, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938978376768241117, guid: 5b131ca28f3c2094eb1c4c8ceebf6380, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938978376768241117, guid: 5b131ca28f3c2094eb1c4c8ceebf6380, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -979042445913696484, guid: 889ffed9b44638d48957922d71454744, type: 2}
+    - target: {fileID: 8938978376768241117, guid: 5b131ca28f3c2094eb1c4c8ceebf6380, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1040,8 +1064,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Delete
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 889ffed9b44638d48957922d71454744, type: 2}
+  m_sharedMaterial: {fileID: -979042445913696484, guid: 889ffed9b44638d48957922d71454744, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1217,6 +1241,30 @@ PrefabInstance:
     - target: {fileID: 8533940971613137244, guid: 5b131ca28f3c2094eb1c4c8ceebf6380, type: 3}
       propertyPath: m_Name
       value: Slot3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938978376768241117, guid: 5b131ca28f3c2094eb1c4c8ceebf6380, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938978376768241117, guid: 5b131ca28f3c2094eb1c4c8ceebf6380, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 889ffed9b44638d48957922d71454744, type: 2}
+    - target: {fileID: 8938978376768241117, guid: 5b131ca28f3c2094eb1c4c8ceebf6380, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938978376768241117, guid: 5b131ca28f3c2094eb1c4c8ceebf6380, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938978376768241117, guid: 5b131ca28f3c2094eb1c4c8ceebf6380, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -979042445913696484, guid: 889ffed9b44638d48957922d71454744, type: 2}
+    - target: {fileID: 8938978376768241117, guid: 5b131ca28f3c2094eb1c4c8ceebf6380, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1421,8 +1469,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Load
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 889ffed9b44638d48957922d71454744, type: 2}
+  m_sharedMaterial: {fileID: -979042445913696484, guid: 889ffed9b44638d48957922d71454744, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1698,6 +1746,30 @@ PrefabInstance:
     - target: {fileID: 8533940971613137244, guid: 5b131ca28f3c2094eb1c4c8ceebf6380, type: 3}
       propertyPath: m_Name
       value: Slot1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938978376768241117, guid: 5b131ca28f3c2094eb1c4c8ceebf6380, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938978376768241117, guid: 5b131ca28f3c2094eb1c4c8ceebf6380, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 889ffed9b44638d48957922d71454744, type: 2}
+    - target: {fileID: 8938978376768241117, guid: 5b131ca28f3c2094eb1c4c8ceebf6380, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938978376768241117, guid: 5b131ca28f3c2094eb1c4c8ceebf6380, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938978376768241117, guid: 5b131ca28f3c2094eb1c4c8ceebf6380, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -979042445913696484, guid: 889ffed9b44638d48957922d71454744, type: 2}
+    - target: {fileID: 8938978376768241117, guid: 5b131ca28f3c2094eb1c4c8ceebf6380, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
