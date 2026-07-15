@@ -3,6 +3,7 @@ using System.Collections;
 
 using Skilltree;
 using System.Collections.Generic;
+using static UnityEditor.Experimental.GraphView.GraphView;
 /*
  To start a fight you need an Enemy yourEnemyClass.
 Call: Fightmanager.instance.StartFight(yourEnemyClass);
@@ -26,6 +27,8 @@ public class FightManager : Singleton<FightManager>
     private string _questName;
     [SerializeField] Animator _animator;
     [SerializeField] GameObject _staticEnemy;
+
+    [SerializeField] MapTransition _transitionToHerm;
 
     public void UseItem(string itemName)
     {
@@ -142,6 +145,10 @@ public class FightManager : Singleton<FightManager>
                 if(_enemyLevel<2)
                     _enemyLevel++;
             }
+        }
+        else
+        {
+            PlayerStatsManager.instance.modifyHp(PlayerStatsManager.instance.maxHp * 2);
         }
         UiManager.instance.FightEnded(_playerWon, _enemy.name, PlayerStatsManager.instance.hp);
     }
