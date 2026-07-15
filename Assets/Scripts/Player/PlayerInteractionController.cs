@@ -23,12 +23,17 @@ public class PlayerInteractionController : MonoBehaviour
         {
             if(_interactablesInRange.Contains(interactable)) return;
             _interactablesInRange.Add(interactable);
-            _interactIndicator.SetActive(true);
+          //  _interactIndicator.SetActive(true);
             Debug.Log("Player entered trigger with " + other.name);
-            if(interactable is DialogueNpc npc)
+            if (interactable is DialogueNpc npc)
             {
                 dialogueNpc = npc;
+                _interactIndicator.SetActive(false);
                 dialogueNpc.ShowVisualIndicator();
+            }
+            else
+            {
+                _interactIndicator.SetActive(true);
             }
         }
     }
