@@ -187,7 +187,6 @@ public class SkillManager : Singleton<SkillManager>
     #region Interaction
     [SerializeField] RectTransform _rectTransform; //reference to the skilltree rect transform for movement and zooming
     private Vector2 _lastMousePos; //used to calculate mouse movement delta for dragging the skilltree
-    private bool _skilltreeOpen = false; //state of the skilltree, used to toggle and to prevent interaction when closed
     //Input references and settings
     [SerializeField] InputActionReference _toggleInput;
     [SerializeField] InputActionReference _resetInput;
@@ -202,20 +201,19 @@ public class SkillManager : Singleton<SkillManager>
 
     void Start()
     {
-        _skilltreePanel.SetActive(_skilltreeOpen); //Close skilltree after initialization
+        _skilltreePanel.SetActive(false); //Close skilltree after initialization
     }
     private void Update()
     {
         //Toggle Skilltree by key
         if (_toggleInput.action.WasPerformedThisFrame())
         {
-            _skilltreeOpen = !_skilltreeOpen;
-            _skilltreePanel.SetActive(_skilltreeOpen);
+            _skilltreePanel.SetActive(!_skilltreePanel.activeSelf);
             //toggle pause
             PauseManager.instance.SetPause();
         }
         //Prevent interaction when skilltree is closed
-        if (!_skilltreeOpen) return;
+        if (!_skilltreePanel.activeSelf) return;
         //Keyboard movement
         if (_moveInput.action.IsPressed()) //check for input
         {
