@@ -651,6 +651,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "TogglePause",
+                    "type": "Button",
+                    "id": "98c71749-8c15-46a3-b298-901f8e6043c9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1080,6 +1089,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ToggleInventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "876745be-7406-49b1-bf4d-359240df458e",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TogglePause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

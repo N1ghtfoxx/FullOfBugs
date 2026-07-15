@@ -71,6 +71,7 @@ public class TestInventoryUiManager : Singleton<TestInventoryUiManager>
         {
             ToggleInventory();
         }
+        PauseManager.instance.SetPause();
     }
 
     public void UpdateInventoryUI()
