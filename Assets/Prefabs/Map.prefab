@@ -318219,8 +318219,8 @@ MonoBehaviour:
   m_ShadowMesh:
     m_Mesh: {fileID: 0}
     m_LocalBounds:
-      m_Center: {x: 3, y: 37.5, z: 0}
-      m_Extent: {x: 18, y: 9.5, z: 0}
+      m_Center: {x: 2.5, y: 35.5, z: 0}
+      m_Extent: {x: 18.5, y: 11.5, z: 0}
     m_EdgeProcessing: 1
     m_TrimEdge: 0
     m_FlipX: 0
@@ -456330,7 +456330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671503421071125066, guid: 05578af2e7f22f84797448d0416861ad, type: 3}
       propertyPath: m_ShadowMesh.m_LocalBounds.m_Center.y
-      value: -0.06436157
+      value: 0.002708435
       objectReference: {fileID: 0}
     - target: {fileID: 4671503421071125066, guid: 05578af2e7f22f84797448d0416861ad, type: 3}
       propertyPath: m_ShadowMesh.m_LocalBounds.m_Extent.x
@@ -456338,7 +456338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671503421071125066, guid: 05578af2e7f22f84797448d0416861ad, type: 3}
       propertyPath: m_ShadowMesh.m_LocalBounds.m_Extent.y
-      value: 1.1181335
+      value: 1.1852036
       objectReference: {fileID: 0}
     - target: {fileID: 5356588553589308723, guid: 05578af2e7f22f84797448d0416861ad, type: 3}
       propertyPath: m_Name
@@ -456528,7 +456528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671503421071125066, guid: 05578af2e7f22f84797448d0416861ad, type: 3}
       propertyPath: m_ShadowMesh.m_LocalBounds.m_Center.y
-      value: -0.06436157
+      value: 0.002708435
       objectReference: {fileID: 0}
     - target: {fileID: 4671503421071125066, guid: 05578af2e7f22f84797448d0416861ad, type: 3}
       propertyPath: m_ShadowMesh.m_LocalBounds.m_Extent.x
@@ -456536,7 +456536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671503421071125066, guid: 05578af2e7f22f84797448d0416861ad, type: 3}
       propertyPath: m_ShadowMesh.m_LocalBounds.m_Extent.y
-      value: 1.1181335
+      value: 1.1852036
       objectReference: {fileID: 0}
     - target: {fileID: 5356588553589308723, guid: 05578af2e7f22f84797448d0416861ad, type: 3}
       propertyPath: m_Name
