@@ -28,8 +28,6 @@ public class FightManager : Singleton<FightManager>
     [SerializeField] Animator _animator;
     [SerializeField] GameObject _staticEnemy;
 
-    [SerializeField] MapTransition _transitionToHerm;
-
     public void UseItem(string itemName)
     {
         InventoryManager.instance.RemoveItemFromInventory(itemName);

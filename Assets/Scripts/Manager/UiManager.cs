@@ -29,7 +29,6 @@ public class UiManager : Singleton<UiManager>
     [SerializeField] private GameObject loadButton;
     [SerializeField] private GameObject optionsButton;
     [SerializeField] private GameObject exitButton;
-    [SerializeField] private GameObject optionsPanel;
     [SerializeField] private GameObject messagePanel;
     [SerializeField] private GameObject messageText;
     [SerializeField] private GameObject messageButtonPanel;
@@ -186,7 +185,6 @@ public class UiManager : Singleton<UiManager>
     public void GameDisableUi()
     {
         pausePanel.SetActive(false);
-        optionsPanel.SetActive(false);
         messagePanel.SetActive(false);
     }
 
