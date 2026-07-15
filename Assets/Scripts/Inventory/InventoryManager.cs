@@ -10,6 +10,11 @@ public class InventoryManager : Singleton<InventoryManager>
 
     [SerializeField] private Sprite _testSprite; // Assign a test sprite in the inspector
 
+    protected override void Awake()
+    {
+        base.Awake();
+        DontDestroyOnLoad(gameObject);
+    }
 
     public bool AddItemToInventory(ItemData newItem, List<ItemData> targetList = null, int maxSlots = 7)
     {

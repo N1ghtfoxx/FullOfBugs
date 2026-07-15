@@ -3,7 +3,6 @@ using UnityEngine.Events;
 
 public class BossFightArea : MonoBehaviour, IInteractable
 {
-    private bool _isBossActive = true;
     [SerializeField] GameObject _bossObj;
     [SerializeField] Transform _player;
     [SerializeField] GameObject _sleepingBoss;
@@ -46,5 +45,14 @@ public class BossFightArea : MonoBehaviour, IInteractable
     {
         if (_bossObj.activeSelf && !_sleepingBoss.activeSelf) return;
         _sleepingBoss.SetActive(true);
+    }
+
+    public void LostAgainstBoss()
+    {
+        if (_bossObj.activeSelf && !_sleepingBoss.activeSelf) return;
+        _bossObj.SetActive(true);
+        GetComponent<BoxCollider2D>().enabled = true;
+
+        CancelBossFight();
     }
 }
