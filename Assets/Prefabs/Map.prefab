@@ -288578,6 +288578,59 @@ TilemapRenderer:
   m_SortOrder: 0
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
+--- !u!1 &3789863406786721635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8838284358868945131}
+  m_Layer: 0
+  m_Name: Dungballs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8838284358868945131
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3789863406786721635}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 879740373006718629}
+  - {fileID: 9167617511547633349}
+  - {fileID: 1203262394784374529}
+  - {fileID: 2636784706785916364}
+  - {fileID: 7448771169572648141}
+  - {fileID: 7111818919340365971}
+  - {fileID: 2398774316332364870}
+  - {fileID: 4426184579565803811}
+  - {fileID: 8934774659748688127}
+  - {fileID: 5528023336799867476}
+  - {fileID: 5102581506807684596}
+  - {fileID: 3628029589899318853}
+  - {fileID: 2669858062212646981}
+  - {fileID: 4180389812837225322}
+  - {fileID: 6455248741765915528}
+  - {fileID: 5940544009873479501}
+  - {fileID: 3507196343540219468}
+  - {fileID: 624833121526921635}
+  - {fileID: 6594105185650916105}
+  - {fileID: 2590573902920465886}
+  - {fileID: 4242299309569375302}
+  - {fileID: 1366128643854110860}
+  m_Father: {fileID: 2476921572164270833}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3941816409596322468
 GameObject:
   m_ObjectHideFlags: 0
@@ -318166,8 +318219,8 @@ MonoBehaviour:
   m_ShadowMesh:
     m_Mesh: {fileID: 0}
     m_LocalBounds:
-      m_Center: {x: 2, y: 30.5, z: 0}
-      m_Extent: {x: 19, y: 16.5, z: 0}
+      m_Center: {x: 2.5, y: 35.5, z: 0}
+      m_Extent: {x: 18.5, y: 11.5, z: 0}
     m_EdgeProcessing: 1
     m_TrimEdge: 0
     m_FlipX: 0
@@ -318722,6 +318775,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8838284358868945131}
   - {fileID: 2887758661081586901}
   - {fileID: 6916067790644123344}
   m_Father: {fileID: 6548687783655628116}
@@ -450814,6 +450868,96 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 439374179979584271, guid: cb78cc861de58f546b38ddff0132fe86, type: 3}
   m_PrefabInstance: {fileID: 128096629251758546}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &293301478927107373
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -49.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 115.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &5102581506807684596 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 293301478927107373}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &380030302200869840
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -451332,6 +451476,96 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
   m_PrefabInstance: {fileID: 688068519555824552}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1041876410390891149
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -33.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 109.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &5528023336799867476 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 1041876410390891149}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1066373122145952412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -451401,6 +451635,96 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 439374179979584271, guid: cb78cc861de58f546b38ddff0132fe86, type: 3}
   m_PrefabInstance: {fileID: 1066373122145952412}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1203318384035794836
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -84.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 100.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &5940544009873479501 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 1203318384035794836}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1243426669059235946
 PrefabInstance:
@@ -451838,6 +452162,96 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 439374179979584271, guid: cb78cc861de58f546b38ddff0132fe86, type: 3}
   m_PrefabInstance: {fileID: 1802320427512346796}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1819719533137191888
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -58.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 69.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &6594105185650916105 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 1819719533137191888}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1851495952717402477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -451907,6 +452321,96 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 439374179979584271, guid: cb78cc861de58f546b38ddff0132fe86, type: 3}
   m_PrefabInstance: {fileID: 1851495952717402477}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1970219815973780305
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -102.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 137.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &6455248741765915528 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 1970219815973780305}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1979739603791391812
 PrefabInstance:
@@ -452286,6 +452790,96 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 439374179979584271, guid: cb78cc861de58f546b38ddff0132fe86, type: 3}
   m_PrefabInstance: {fileID: 2290835421864324384}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2337446667388485706
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 55.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &7111818919340365971 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 2337446667388485706}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2594808503851791608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -452359,6 +452953,96 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
   m_PrefabInstance: {fileID: 2594808503851791608}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2710427095867042836
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 41.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &7448771169572648141 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 2710427095867042836}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3020691960288309123
 PrefabInstance:
@@ -452667,7 +453351,7 @@ PrefabInstance:
     - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
       propertyPath: _items.Array.data[0].icon
       value: 
-      objectReference: {fileID: 21300000, guid: e3dd2696e2d381d41bedc9cc20793e4b, type: 3}
+      objectReference: {fileID: 21300000, guid: 28bc810e73a3ded4a95b2bb1a761fb74, type: 3}
     - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
       propertyPath: _items.Array.data[0].name
       value: Fertilizer
@@ -453178,6 +453862,96 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
   m_PrefabInstance: {fileID: 3884873349133235921}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4124370140442175526
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 121.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &8934774659748688127 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 4124370140442175526}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4141934941238918989
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -453345,7 +454119,7 @@ PrefabInstance:
     - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
       propertyPath: _items.Array.data[2].icon
       value: 
-      objectReference: {fileID: 21300000, guid: e3dd2696e2d381d41bedc9cc20793e4b, type: 3}
+      objectReference: {fileID: 21300000, guid: 28bc810e73a3ded4a95b2bb1a761fb74, type: 3}
     - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
       propertyPath: _items.Array.data[2].name
       value: Fertilizer
@@ -453419,6 +454193,96 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2213334818611994378, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
   m_PrefabInstance: {fileID: 4388852170585231035}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4466424526753867292
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -45.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 28.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &9167617511547633349 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 4466424526753867292}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4831515333784149645
 PrefabInstance:
@@ -453560,6 +454424,276 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 439374179979584271, guid: cb78cc861de58f546b38ddff0132fe86, type: 3}
   m_PrefabInstance: {fileID: 4928072556395055129}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5362059365038776698
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -52.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 63.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &624833121526921635 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 5362059365038776698}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5690141765841014396
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -43.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 44.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &879740373006718629 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 5690141765841014396}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5780212066654275669
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -89.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &1366128643854110860 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 5780212066654275669}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5829234501833372230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -453629,6 +454763,96 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
   m_PrefabInstance: {fileID: 5829234501833372230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5940492246062630872
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -27.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &1203262394784374529 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 5940492246062630872}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6182238287808707715
 PrefabInstance:
@@ -454388,6 +455612,186 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
   m_PrefabInstance: {fileID: 6857184925648718348}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7003545753520661767
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -80.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 49.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &2590573902920465886 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 7003545753520661767}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7172033484828044447
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 69.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &2398774316332364870 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 7172033484828044447}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7253319898470497161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -454457,6 +455861,186 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 439374179979584271, guid: cb78cc861de58f546b38ddff0132fe86, type: 3}
   m_PrefabInstance: {fileID: 7253319898470497161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7374005869582478613
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &2636784706785916364 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 7374005869582478613}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7480262650267832476
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -92.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 122.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &2669858062212646981 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 7480262650267832476}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7705993028603300876
 PrefabInstance:
@@ -454602,6 +456186,96 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 439374179979584271, guid: cb78cc861de58f546b38ddff0132fe86, type: 3}
   m_PrefabInstance: {fileID: 8001949422047254492}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8114183933756559004
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -72.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 127.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &3628029589899318853 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 8114183933756559004}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8114900279205805002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -454656,7 +456330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671503421071125066, guid: 05578af2e7f22f84797448d0416861ad, type: 3}
       propertyPath: m_ShadowMesh.m_LocalBounds.m_Center.y
-      value: -0.06436157
+      value: 0.002708435
       objectReference: {fileID: 0}
     - target: {fileID: 4671503421071125066, guid: 05578af2e7f22f84797448d0416861ad, type: 3}
       propertyPath: m_ShadowMesh.m_LocalBounds.m_Extent.x
@@ -454664,7 +456338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671503421071125066, guid: 05578af2e7f22f84797448d0416861ad, type: 3}
       propertyPath: m_ShadowMesh.m_LocalBounds.m_Extent.y
-      value: 1.1181335
+      value: 1.1852036
       objectReference: {fileID: 0}
     - target: {fileID: 5356588553589308723, guid: 05578af2e7f22f84797448d0416861ad, type: 3}
       propertyPath: m_Name
@@ -454705,6 +456379,96 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3840208413644894490, guid: 05578af2e7f22f84797448d0416861ad, type: 3}
   m_PrefabInstance: {fileID: 8114900279205805002}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8245552717770040981
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -45.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 109.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &3507196343540219468 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 8245552717770040981}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8246617040120689462
 PrefabInstance:
@@ -454764,7 +456528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671503421071125066, guid: 05578af2e7f22f84797448d0416861ad, type: 3}
       propertyPath: m_ShadowMesh.m_LocalBounds.m_Center.y
-      value: -0.06436157
+      value: 0.002708435
       objectReference: {fileID: 0}
     - target: {fileID: 4671503421071125066, guid: 05578af2e7f22f84797448d0416861ad, type: 3}
       propertyPath: m_ShadowMesh.m_LocalBounds.m_Extent.x
@@ -454772,7 +456536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671503421071125066, guid: 05578af2e7f22f84797448d0416861ad, type: 3}
       propertyPath: m_ShadowMesh.m_LocalBounds.m_Extent.y
-      value: 1.1181335
+      value: 1.1852036
       objectReference: {fileID: 0}
     - target: {fileID: 5356588553589308723, guid: 05578af2e7f22f84797448d0416861ad, type: 3}
       propertyPath: m_Name
@@ -455012,11 +456776,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671503421071125066, guid: 05578af2e7f22f84797448d0416861ad, type: 3}
       propertyPath: m_ShadowMesh.m_LocalBounds.m_Center.x
-      value: 3.0242538
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4671503421071125066, guid: 05578af2e7f22f84797448d0416861ad, type: 3}
       propertyPath: m_ShadowMesh.m_LocalBounds.m_Extent.x
-      value: 1.8457413
+      value: 4.869995
       objectReference: {fileID: 0}
     - target: {fileID: 5356588553589308723, guid: 05578af2e7f22f84797448d0416861ad, type: 3}
       propertyPath: m_Name
@@ -455054,6 +456818,96 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3814872065138530304, guid: 05578af2e7f22f84797448d0416861ad, type: 3}
   m_PrefabInstance: {fileID: 8593826134333130381}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8655261260544713887
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -121.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &4242299309569375302 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 8655261260544713887}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8699612149886590339
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -455065,7 +456919,7 @@ PrefabInstance:
     - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
       propertyPath: _items.Array.data[1].icon
       value: 
-      objectReference: {fileID: 21300000, guid: e3dd2696e2d381d41bedc9cc20793e4b, type: 3}
+      objectReference: {fileID: 21300000, guid: 28bc810e73a3ded4a95b2bb1a761fb74, type: 3}
     - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
       propertyPath: _items.Array.data[1].name
       value: Fertilizer
@@ -455131,6 +456985,96 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2213334818611994378, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
   m_PrefabInstance: {fileID: 8699612149886590339}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8701443342952614835
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -119.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 139.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &4180389812837225322 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 8701443342952614835}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8758057226317126410
 PrefabInstance:
@@ -455345,4 +457289,94 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 439374179979584271, guid: cb78cc861de58f546b38ddff0132fe86, type: 3}
   m_PrefabInstance: {fileID: 8852173486614811037}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9200556689783718394
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8838284358868945131}
+    m_Modifications:
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.icon
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.name
+      value: Dungball
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.type
+      value: weapon, ingrediant
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.ingrediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5805056053762645711, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: _data.description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623474113249923939, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Name
+      value: Dungball (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 111.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759590714977769840, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 392718251859985995, guid: 9f975b3817c286b428e5e8330f1510eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+--- !u!4 &4426184579565803811 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4810415033956948185, guid: 6e0a4ae53e33e454bbbe97796c5f2d43, type: 3}
+  m_PrefabInstance: {fileID: 9200556689783718394}
   m_PrefabAsset: {fileID: 0}
