@@ -153,9 +153,8 @@ public class UiManager : Singleton<UiManager>
         if (ctx.performed)
         {
             ToggglePausepanel();
+            PauseManager.instance.SetPause();
         }
-        PauseManager.instance.SetPause();
-
     }
 
     public void ToggglePausepanel()
@@ -372,7 +371,7 @@ public class UiManager : Singleton<UiManager>
 
     public void OnClickBackToMainMenu()
     {
-        SceneLoadingManager.Instance.LoadScene("StartScreen");
+        SceneLoadingManager.Instance.LoadScene("WelcomeScreen");
     }
 
     #endregion

@@ -1,4 +1,6 @@
+using UnityEditor.Build;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PauseManager : Singleton<PauseManager>
 {
@@ -26,5 +28,25 @@ public class PauseManager : Singleton<PauseManager>
     {
         isPaused = true;
         _hud.SetActive(false);
+    }
+
+    public void OnEsc(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            if (!isPaused)
+            {
+                UiManager.instance.ToggglePausepanel();
+                SetPause();
+            }
+            else
+            {
+                foreach (GameObject go in _menuesWithPause)
+                {
+                    go.SetActive(false);
+                }
+                SetPause();
+            }
+        }
     }
 }
