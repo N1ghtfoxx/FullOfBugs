@@ -3,7 +3,6 @@ using System.Collections;
 
 using Skilltree;
 using System.Collections.Generic;
-using static UnityEditor.Experimental.GraphView.GraphView;
 /*
  To start a fight you need an Enemy yourEnemyClass.
 Call: Fightmanager.instance.StartFight(yourEnemyClass);
