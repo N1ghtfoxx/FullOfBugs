@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CollectableKey : MonoBehaviour, IInteractable
 {
-    public bool instantInteract { get; set; } = true;
+    public bool instantInteract { get; set; } = false;
 
     [SerializeField] Key _key;
 
