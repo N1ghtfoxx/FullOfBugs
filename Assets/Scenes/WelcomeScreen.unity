@@ -414,9 +414,49 @@ PrefabInstance:
       propertyPath: m_ReferencePixelsPerUnit
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 4683794005873954466, guid: d91c9767f6addf345be095f8aef380e4, type: 3}
+      propertyPath: m_fontSize
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683794005873954466, guid: d91c9767f6addf345be095f8aef380e4, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 889ffed9b44638d48957922d71454744, type: 2}
+    - target: {fileID: 4683794005873954466, guid: d91c9767f6addf345be095f8aef380e4, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683794005873954466, guid: d91c9767f6addf345be095f8aef380e4, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -979042445913696484, guid: 889ffed9b44638d48957922d71454744, type: 2}
+    - target: {fileID: 4683794005873954466, guid: d91c9767f6addf345be095f8aef380e4, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4730610654209067224, guid: d91c9767f6addf345be095f8aef380e4, type: 3}
       propertyPath: m_Name
       value: WelcomeCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564348384390366362, guid: d91c9767f6addf345be095f8aef380e4, type: 3}
+      propertyPath: m_fontSize
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564348384390366362, guid: d91c9767f6addf345be095f8aef380e4, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 889ffed9b44638d48957922d71454744, type: 2}
+    - target: {fileID: 7564348384390366362, guid: d91c9767f6addf345be095f8aef380e4, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564348384390366362, guid: d91c9767f6addf345be095f8aef380e4, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -979042445913696484, guid: 889ffed9b44638d48957922d71454744, type: 2}
+    - target: {fileID: 7564348384390366362, guid: d91c9767f6addf345be095f8aef380e4, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7583685234316751357, guid: d91c9767f6addf345be095f8aef380e4, type: 3}
       propertyPath: m_Pivot.x
