@@ -48,6 +48,7 @@ MonoBehaviour:
   _player: {fileID: 0}
   _target: {fileID: 0}
   _mapBorder: {fileID: 0}
+  _reviveDialog: {fileID: 0}
 --- !u!61 &2548088715035103475
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -438,7 +439,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: bdaf7e46056089747804af90048ca7a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
