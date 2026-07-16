@@ -50,6 +50,7 @@ public class InventoryManager : Singleton<InventoryManager>
             } else {
                 Debug.Log("Inventory is full! Cannot add " + newItem.name);
                 UiManager.instance.SetNotification("Inventory is full! Cannot add " + newItem.name);
+                LootNotificationManager.instance.ShowMessage("Inventory is full! Cannot add " + newItem.name);
                 return false;
             }
         }
