@@ -35,7 +35,6 @@ public class LootNotificationManager : Singleton<LootNotificationManager>
             activeNotifications.Add(itemData.name, notification);
             activeTimers.Add(itemData.name, StartCoroutine(RemoveAfterTime(itemData.name)));
         }
-
     }
 
     private IEnumerator RemoveAfterTime(string itemName)
