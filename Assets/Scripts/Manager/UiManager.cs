@@ -391,5 +391,10 @@ public class UiManager : Singleton<UiManager>
         SceneLoadingManager.Instance.LoadScene("WelcomeScreen");
     }
 
+
+    public void OnClickLink(string link)
+    {
+        Application.OpenURL(link);
+    }
     #endregion
 }
