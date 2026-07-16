@@ -36,6 +36,21 @@ public class LootNotificationManager : Singleton<LootNotificationManager>
             activeTimers.Add(itemData.name, StartCoroutine(RemoveAfterTime(itemData.name)));
         }
     }
+    public void ShowMessage(string msg)
+    {
+        /*ShowItemUI notification = Instantiate(notificationPrefab, parent);
+        notification.Setup(itemData);
+        Destroy(notification.gameObject, visibleDuration);*/
+
+        
+            // if item is not visible already, instantiate new notification
+            ShowItemUI notification = Instantiate(notificationPrefab, parent);
+            notification.SetupMsg(msg);
+
+            // Add the item to the dictionary and start the timer
+            activeNotifications.Add(msg, notification);
+            activeTimers.Add(msg, StartCoroutine(RemoveAfterTime(msg)));
+    }
 
     private IEnumerator RemoveAfterTime(string itemName)
     {

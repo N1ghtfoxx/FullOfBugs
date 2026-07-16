@@ -58,6 +58,7 @@ public class CraftingManager : Singleton<CraftingManager>
     public void AddRecipe(Recipe recipe)
     {
         if (recipes.Contains(recipe)) return;
+        LootNotificationManager.instance.ShowMessage( recipe.name.ToString());
         recipes.Add(recipe);
         switch (recipe.name)
         {
