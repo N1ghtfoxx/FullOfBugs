@@ -16,6 +16,8 @@ public class CraftingUI : MonoBehaviour
     [SerializeField] Image _progressbar;
     [SerializeField] Image _background;
 
+    [SerializeField] GameObject _skillRequired;
+
     [SerializeField] Button _startButton;
     [SerializeField] Image _startButtonImg;
 
@@ -92,6 +94,7 @@ public class CraftingUI : MonoBehaviour
         Color color;
         ColorUtility.TryParseHtmlString("#837EA3", out color);
         _background.color = SkillManager.instance.HasSkill(recipe.requiredSkill) ? color : Color.grey;
+        _skillRequired.SetActive(!SkillManager.instance.HasSkill(recipe.requiredSkill));
         _startButton.interactable = SkillManager.instance.HasSkill(recipe.requiredSkill);
         UpdateProgressbar(0);
     }
