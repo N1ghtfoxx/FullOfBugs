@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class PauseManager : Singleton<PauseManager>
 {
     [SerializeField] GameObject[] _menuesWithPause;
+    //Fightpanel index
+    [SerializeField] int _fightPanelIndex = 5;
     [SerializeField] GameObject _hud;
 
     public bool isPaused { get; private set; } = false;
@@ -40,6 +42,7 @@ public class PauseManager : Singleton<PauseManager>
             }
             else
             {
+                if (_menuesWithPause[_fightPanelIndex].activeSelf) return;
                 foreach (GameObject go in _menuesWithPause)
                 {
                     go.SetActive(false);

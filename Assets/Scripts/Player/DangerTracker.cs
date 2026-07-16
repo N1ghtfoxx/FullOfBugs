@@ -20,6 +20,8 @@ public class DangerTracker : MonoBehaviour
 
     [SerializeField] LayerMask _shadowCaster;
 
+    [SerializeField] Transform _hermbert;
+
     private void Start()
     {
         _progressbar.fillAmount = _progress;
@@ -30,13 +32,22 @@ public class DangerTracker : MonoBehaviour
     void Update()
     {
         if (PauseManager.instance.isPaused || _inSaveZone) return;
-        _progress += Time.deltaTime;
-        _progressbar.fillAmount = _progress / _duration;
         if (!_inLight)
         {
-            _danger += Time.deltaTime;
+            float multiplyer = Vector3.Distance(_hermbert.position, transform.position) < 60 ? 1.25f : 1.5f;
+            //Show some Partikle effect if distance is above 60
+            _danger += Time.deltaTime * multiplyer;
             _dangerbar.fillAmount = _danger / _duration;
+            _progress += Time.deltaTime * multiplyer;
+            Debug.Log(_progress);
+            _progressbar.fillAmount = _progress / _duration;
         }
+        else
+        {
+            _progress += Time.deltaTime;
+            _progressbar.fillAmount = _progress / _duration;
+        }
+
         if(_progress >= _duration)
         {
             float ran = Random.Range(0, _duration);
