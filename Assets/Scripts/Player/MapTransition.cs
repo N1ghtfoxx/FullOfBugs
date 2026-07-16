@@ -1,5 +1,5 @@
+using System.Threading.Tasks;
 using Unity.Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class MapTransition : MonoBehaviour, IInteractable
@@ -8,7 +8,9 @@ public class MapTransition : MonoBehaviour, IInteractable
     [SerializeField] Transform _target;
     [SerializeField] PolygonCollider2D _mapBorder;
     CinemachineConfiner2D _confiner;
-    CinemachineCamera _cmCam; 
+    CinemachineCamera _cmCam;
+
+    [SerializeField] TextAsset _reviveDialog;
 
     public bool instantInteract { get; set; } = false;
 
@@ -24,10 +26,15 @@ public class MapTransition : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        FadeTransition();
+        StartFade();
     }
 
-    async void FadeTransition()
+    private async void StartFade()
+    {
+        await FadeTransition();
+    }
+
+    async Task FadeTransition()
     {
         await UiManager.instance.FadeIn();
         _confiner.BoundingShape2D = _mapBorder;
@@ -37,6 +44,16 @@ public class MapTransition : MonoBehaviour, IInteractable
         await UiManager.instance.FadeOut();
     }
 
+    public void TransitionAfterFight()
+    {
+        TAF();
+    }
+
+    async void TAF()
+    {
+        await FadeTransition();
+        DialogueManager.instance.StartDialogue(_reviveDialog);
+    }
 
     public void Selected()
     {
