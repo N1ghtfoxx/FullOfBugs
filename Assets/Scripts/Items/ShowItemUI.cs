@@ -22,8 +22,8 @@ public class ShowItemUI : MonoBehaviour
 
     public void SetupMsg(string msg)
     {
-        icon.enabled = false;
         icon.sprite = null;
+        icon.gameObject.SetActive(false);
         itemName.text = msg;
         quantity = 0;
         UpdateQuantity();
@@ -40,9 +40,10 @@ public class ShowItemUI : MonoBehaviour
     { 
         if (quantity <= 0)
         {
-            ItemQuantity.text = "";
+            ItemQuantity.gameObject.SetActive(false);
             return;
         }
+        ItemQuantity.gameObject.SetActive(true);
         // update item quantity text in ui
         ItemQuantity.text = quantity.ToString() + "x";
     }
