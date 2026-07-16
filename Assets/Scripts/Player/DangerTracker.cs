@@ -39,7 +39,6 @@ public class DangerTracker : MonoBehaviour
             _danger += Time.deltaTime * multiplyer;
             _dangerbar.fillAmount = _danger / _duration;
             _progress += Time.deltaTime * multiplyer;
-            Debug.Log(_progress);
             _progressbar.fillAmount = _progress / _duration;
         }
         else
