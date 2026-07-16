@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 082d33cb939a904478661603a7ea5cc0, type: 3}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5864,7 +5864,7 @@ SpriteRenderer:
   m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 082d33cb939a904478661603a7ea5cc0, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -288715,7 +288715,7 @@ SpriteRenderer:
   m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 082d33cb939a904478661603a7ea5cc0, type: 3}
-  m_Color: {r: 1, g: 0.49803922, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -318219,8 +318219,8 @@ MonoBehaviour:
   m_ShadowMesh:
     m_Mesh: {fileID: 0}
     m_LocalBounds:
-      m_Center: {x: 2.5, y: 35.5, z: 0}
-      m_Extent: {x: 18.5, y: 11.5, z: 0}
+      m_Center: {x: -1, y: 29.5, z: 0}
+      m_Extent: {x: 22, y: 17.5, z: 0}
     m_EdgeProcessing: 1
     m_TrimEdge: 0
     m_FlipX: 0
@@ -318418,7 +318418,7 @@ SpriteRenderer:
   m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 082d33cb939a904478661603a7ea5cc0, type: 3}
-  m_Color: {r: 0, g: 0, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -318563,7 +318563,7 @@ SpriteRenderer:
   m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 082d33cb939a904478661603a7ea5cc0, type: 3}
-  m_Color: {r: 1, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -451992,7 +451992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
       propertyPath: _recipes.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
       propertyPath: _items.Array.data[0].icon
@@ -452019,12 +452019,20 @@ PrefabInstance:
       value: weapon, ingrediant
       objectReference: {fileID: 0}
     - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
+      propertyPath: _recipes.Array.data[0].name
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
       propertyPath: _items.Array.data[0].quantity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
       propertyPath: _items.Array.data[1].quantity
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
+      propertyPath: _recipes.Array.data[0].result
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
       propertyPath: _items.Array.data[0].ingrediant
@@ -452038,6 +452046,50 @@ PrefabInstance:
       propertyPath: _items.Array.data[0].description
       value: Heals You
       objectReference: {fileID: 0}
+    - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
+      propertyPath: _recipes.Array.data[0].craftTime
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
+      propertyPath: _recipes.Array.data[0].requiredSkill
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
+      propertyPath: _recipes.Array.data[0].ingrediants.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
+      propertyPath: _recipes.Array.data[0].slotSprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
+      propertyPath: '_recipes.Array.data[0].ingrediants.Array.data[0]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
+      propertyPath: '_recipes.Array.data[0].ingrediants.Array.data[1]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
+      propertyPath: '_recipes.Array.data[0].ingrediants.Array.data[2]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
+      propertyPath: '_recipes.Array.data[0].slotSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 21300000, guid: fb957577aca15c141bffef16a52d963c, type: 3}
+    - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
+      propertyPath: '_recipes.Array.data[0].slotSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 4aaba4355c6b0e04d82f03d7af1612f0, type: 3}
+    - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
+      propertyPath: '_recipes.Array.data[0].slotSprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 4aaba4355c6b0e04d82f03d7af1612f0, type: 3}
+    - target: {fileID: 562840407822439441, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
+      propertyPath: '_recipes.Array.data[0].slotSprites.Array.data[3]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 4aaba4355c6b0e04d82f03d7af1612f0, type: 3}
     - target: {fileID: 2213334818611994378, guid: 86d296f0307232446afc0b57ee59d233, type: 3}
       propertyPath: m_LocalPosition.x
       value: -110
