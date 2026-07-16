@@ -169,7 +169,7 @@ public class FightManager : Singleton<FightManager>
             sprite = random.sprite
         };
         _animatedEnemy = false;
-        UiManager.instance.SetFightUi("Hermbert", PlayerStatsManager.instance.maxHp, PlayerStatsManager.instance.hp, _enemy.name, _enemy.variant, _enemy.hp, _enemy.sprite);
+        UiManager.instance.SetFightUi("Milbert", PlayerStatsManager.instance.maxHp, PlayerStatsManager.instance.hp, _enemy.name, _enemy.variant, _enemy.hp, _enemy.sprite);
         _staticEnemy.SetActive(!_animatedEnemy);
         _animator.gameObject.SetActive(_animatedEnemy);
         PauseManager.instance.SetPause();
@@ -193,7 +193,7 @@ public class FightManager : Singleton<FightManager>
             reward = _boss.reward,
             sprite = _boss.sprite
         };
-        UiManager.instance.SetFightUi("Hermbert", PlayerStatsManager.instance.maxHp, PlayerStatsManager.instance.hp, _enemy.name, _enemy.variant, _enemy.hp, _enemy.sprite);
+        UiManager.instance.SetFightUi("Milbert", PlayerStatsManager.instance.maxHp, PlayerStatsManager.instance.hp, _enemy.name, _enemy.variant, _enemy.hp, _enemy.sprite);
         _staticEnemy.SetActive(!_animatedEnemy);
         _animator.gameObject.SetActive(_animatedEnemy);
         PauseManager.instance.SetPause();
