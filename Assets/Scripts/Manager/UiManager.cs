@@ -64,6 +64,9 @@ public class UiManager : Singleton<UiManager>
     [SerializeField] TMP_Text _fightWonText;
     [SerializeField] TMP_Text _fightLostText;
 
+    [SerializeField] GameObject notificationPanel;
+    [SerializeField] TMP_Text notificationText;
+
     public bool inFightScene;
 
 
@@ -217,6 +220,20 @@ public class UiManager : Singleton<UiManager>
         PauseManager.instance.SetPause();
     }
 
+    public void SetNotification(string notifMsg)
+    {
+        notificationText.text = notifMsg;
+    }
+
+    public void ClearNotification()
+    {
+        notificationText.text = "";
+    }
+
+    public void ShowNotification()
+    {
+        notificationPanel.SetActive(true);
+    }
     #endregion
 
     #region FightScene
